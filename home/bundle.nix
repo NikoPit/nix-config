@@ -11,5 +11,6 @@
     ./fastfetch.nix
     ./fish.nix
     ./lazygit.nix
+    ./path.nix
   ];
 }
