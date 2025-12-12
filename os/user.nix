@@ -7,6 +7,6 @@
     description = "elysia";
     extraGroups = [ "networkmanager" "wheel" ];
     packages = with pkgs; [];
-    #shell = pkgs.fish;
+    shell = pkgs.fish;
   };
 }
