@@ -8,5 +8,8 @@
     ./waybar.nix
     ./dunst.nix
     ./wofi.nix
+    ./fastfetch.nix
+    ./fish.nix
+    ./lazygit.nix
   ];
 }
