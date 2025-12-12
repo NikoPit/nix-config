@@ -6,6 +6,7 @@
     ./nixvim/nixvim.nix
     ./sudo.nix
     ./user.nix
+    ./fish.nix
     #./graphics-driver.nix
   ];
 }
