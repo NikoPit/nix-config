@@ -10,9 +10,11 @@
     };
 
     nixvim.url = "github:nix-community/nixvim/nixos-25.05";
+
+    niri.url = "github:sodiboo/niri-flake";
   };
 
-  outputs = { nixpkgs, home-manager, nixvim, ... }: {
+  outputs = { nixpkgs, home-manager, nixvim, niri, ... }: {
     # System configuration   
     nixosConfigurations.elysiapc = nixpkgs.lib.nixosSystem {
       system = "x86_64-linux";
@@ -27,6 +29,8 @@
         }
 
         nixvim.nixosModules.nixvim
+
+	niri.nixosModules.niri
       ];
     };
   };
