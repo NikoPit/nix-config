@@ -1,6 +1,6 @@
 {
   programs.niri.settings = {
-    import = [
+    imports = [
       "./binds.nix"
     ];   
   };
