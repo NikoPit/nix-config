@@ -5,13 +5,13 @@
     enable = true;
     settings = {
       initial_session = {
-        command = "hyprland";
+        command = "niri";
         user = "elysia";
       };
 
       # The session when you log out of hyprland / hyprland breaks
       default_session = {
-        command = "${pkgs.greetd.tuigreet}/bin/tuigreet -cmd hyprland";
+        command = "${pkgs.greetd.tuigreet}/bin/tuigreet -cmd niri";
         user = "greeter";
       };
     };
