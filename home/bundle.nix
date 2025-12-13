@@ -2,7 +2,6 @@
   imports = [
     ./software.nix
     ./ghostty.nix
-    ./hyprland.nix
     ./firefox.nix
     ./git.nix
     ./waybar.nix
@@ -12,5 +11,6 @@
     ./fish.nix
     ./lazygit.nix
     ./path.nix
+    ./wm.nix
   ];
 }

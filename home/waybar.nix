@@ -4,4 +4,6 @@
 
     settings = {};
   };
+
+  services.waybar.enable = true;
 }

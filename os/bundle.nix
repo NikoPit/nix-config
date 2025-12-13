@@ -1,6 +1,6 @@
 {
   imports = [
-    ./hyprland.nix
+    ./wm.nix
     ./greetd.nix
     ./v2raya.nix
     ./nixvim/nixvim.nix
