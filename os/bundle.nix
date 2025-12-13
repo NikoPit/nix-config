@@ -1,6 +1,6 @@
 {
   imports = [
-    ./wm.nix
+    ./niri.nix
     ./greetd.nix
     ./v2raya.nix
     ./nixvim/nixvim.nix
