@@ -11,6 +11,6 @@
     ./fish.nix
     ./lazygit.nix
     ./path.nix
-    ./wm.nix
+    ./niri/niri.nix
   ];
 }
