@@ -12,5 +12,7 @@
     ./lazygit.nix
     ./path.nix
     ./niri.nix
+    ./input-method.nix
+    ./steam.nix
   ];
 }

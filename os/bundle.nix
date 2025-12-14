@@ -7,6 +7,7 @@
     ./sudo.nix
     ./user.nix
     ./fish.nix
+    ./xwayland.nix
     #./graphics-driver.nix
   ];
 }
