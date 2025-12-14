@@ -1,3 +1,5 @@
+{ pkgs, ... }:
+
 {
   programs.niri.settings = {
     binds = {
@@ -70,6 +72,7 @@
 
     spawn-at-startup = [
       { sh = "waybar"; } 
+      { sh = "${pkgs.linux-wallpaperengine}/bin/linux-wallpaperengine ${../wallpaper} --screen-root DP-3 --silent --no-audio-processing --no-fullscreen-pause"; }
     ];
   };
 }

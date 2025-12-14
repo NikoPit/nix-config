@@ -12,5 +12,6 @@
     ./path.nix
     ./niri.nix
     ./input-method.nix
+    ./yazi.nix
   ];
 }

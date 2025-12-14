@@ -10,5 +10,7 @@
     ./xwayland.nix
     ./steam.nix
     ./graphics-driver.nix
+
+    ../script/scripts.nix
   ];
 }
