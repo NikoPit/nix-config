@@ -4,4 +4,8 @@
     userName = "elysia";
     userEmail = "3302843873@qq.com";
   };
+
+  programs.lazygit = {
+    enable = true;
+  };
 }
