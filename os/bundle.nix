@@ -8,6 +8,7 @@
     ./user.nix
     ./fish.nix
     ./xwayland.nix
+    ./steam.nix
     #./graphics-driver.nix
   ];
 }
