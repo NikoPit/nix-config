@@ -8,6 +8,10 @@
       xdg-desktop-portal-gnome
     ];
 
+    config = {
+      common = { default = [ "gtk" ]; };
+    };
+
     configPackages = [ pkgs.xdg-desktop-portal-gtk ];
   };
 }
