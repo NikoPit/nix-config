@@ -9,5 +9,6 @@
     linux-wallpaperengine
     qq
     vesktop
+    gh
   ];  
 }
