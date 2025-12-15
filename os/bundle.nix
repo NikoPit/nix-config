@@ -12,6 +12,7 @@
     ./graphics-driver.nix
     ./electron-wl.nix
     ./bootloader.nix
+    ./fonts.nix
 
     ../script/scripts.nix
   ];
