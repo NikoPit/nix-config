@@ -3,7 +3,7 @@
     enable = true;
   };
 
-  programs.niri.settings.spawn-at-startup = [
-    { sh = "dunst"; }
-  ];
+  #programs.niri.settings.spawn-at-startup = [
+  #  { sh = "dunst"; }
+  #];
 }
