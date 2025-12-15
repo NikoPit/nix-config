@@ -13,5 +13,6 @@
     ./niri.nix
     ./input-method.nix
     ./yazi.nix
+    ./desktop-portal.nix
   ];
 }
