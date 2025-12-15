@@ -13,7 +13,5 @@
     ./electron-wl.nix
 
     ../script/scripts.nix
-
-    ./test.nix
   ];
 }
