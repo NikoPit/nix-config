@@ -11,6 +11,7 @@
     ./steam.nix
     ./graphics-driver.nix
     ./electron-wl.nix
+    ./desktop-portal.nix
 
     ../script/scripts.nix
   ];
