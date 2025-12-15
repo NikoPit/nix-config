@@ -15,5 +15,7 @@
     ../script/scripts.nix
 
     ./test.nix
+
+    ../home/desktop-portal.nix
   ];
 }
