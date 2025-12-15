@@ -12,6 +12,7 @@
     ./graphics-driver.nix
     ./electron-wl.nix
     ./desktop-portal.nix
+    ./bootloader.nix
 
     ../script/scripts.nix
   ];
