@@ -6,10 +6,10 @@
 
     config = {
       common = {
-        default = [ "gnome" ];
+        default = [ "gtk" ];
       };
     };
 
-    extraPortals = [ pkgs.xdg-desktop-portal-gnome ];
+    extraPortals = [ pkgs.xdg-desktop-portal-gtk ];
   };
 }
