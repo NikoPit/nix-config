@@ -5,7 +5,7 @@
     enable = true;
     settings = {
       initial_session = {
-        command = "niri";
+        command = "niri-session";
         user = "elysia";
       };
 
