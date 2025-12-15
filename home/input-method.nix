@@ -24,8 +24,4 @@
       };
     };
   };
-
-  #programs.niri.settings.spawn-at-startup = [
-  #  { sh = "fcitx5 -d -r"; }
-  #];
 }
