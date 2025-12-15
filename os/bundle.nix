@@ -10,6 +10,7 @@
     ./xwayland.nix
     ./steam.nix
     ./graphics-driver.nix
+    ./electron-wl.nix
 
     ../script/scripts.nix
   ];
