@@ -4,6 +4,7 @@
 
     imports = [
       ./clipboard.nix
+      ./lualine.nix
     ];
   };
 }
