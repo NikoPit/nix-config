@@ -9,7 +9,6 @@
     ./wofi.nix
     ./fastfetch.nix
     ./fish.nix
-    ./path.nix
     ./niri.nix
     ./input-method.nix
     ./yazi.nix

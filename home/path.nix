@@ -1,5 +1,0 @@
-{
-  home.sessionPath = [
-    "~/cbin"
-  ];
-}

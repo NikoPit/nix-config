@@ -1,5 +1,0 @@
-{
-  "$terminal" = "ghostty";
-  "$fileManager" = "yazi";
-  "$menu" = "wofi --show drun";
-}
