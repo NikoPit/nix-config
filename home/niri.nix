@@ -2,6 +2,8 @@
 
 {
   programs.niri.settings = {
+    hotkey-overlay.skip-at-startup = true;
+
     binds = {
       "Mod+Q".action.spawn = "ghostty";
       "Mod+Space".action.spawn-sh = "wofi --show drun";
