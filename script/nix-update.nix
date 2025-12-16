@@ -12,6 +12,7 @@ pkgs.writeShellScriptBin "nix-update" ''
     echo $new_nix_generation >./.nix-generation
 
     git commit -m "[Generation "$new_nix_generation"] $1"
+    git push origin master
   fi
 ''
 
