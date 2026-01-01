@@ -17,9 +17,8 @@
   outputs = { nixpkgs, home-manager, nixvim, niri, ... }: {
     # System configuration   
     nixosConfigurations.elysiapc = nixpkgs.lib.nixosSystem {
-      system = "x86_64-linux";
       modules = [ 
-        ./os/configuration.nix 
+        ./hosts/elysiapc/config.nix
   
         home-manager.nixosModules.home-manager {
           home-manager.useGlobalPkgs = true;
