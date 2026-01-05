@@ -2,7 +2,23 @@
   programs.waybar = {
     enable = true;
 
-    settings = {};
+    settings.main = {
+      height = 40;
+      spacing = 10;
+      modules-left = [
+        "tray"
+      ];
+
+      modules-center = [
+        "niri/workspaces"
+      ];
+
+      modules-right = [
+        "pulseaudio"
+        "battery"
+        "clock"
+      ];
+    };
   };
   
   programs.niri.settings.spawn-at-startup = [
