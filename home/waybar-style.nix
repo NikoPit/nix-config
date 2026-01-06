@@ -8,8 +8,9 @@
 
 window#waybar {
     background-color: rgba(230, 240, 255, 0.5);
-    border-bottom: 3px solid rgba(100, 114, 125, 0.5);
     color: #ffffff;
+    margin: 5px;
+    padding: 10px;
     transition-property: background-color;
     transition-duration: .5s;
 }
