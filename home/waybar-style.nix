@@ -3,7 +3,7 @@
   * {
     /* `otf-font-awesome` is required to be installed for icons */
     font-family: JetBrains Mono;
-    font-size: 13px;
+    font-size: 15px;
 }
 
 window#waybar {
