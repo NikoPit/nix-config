@@ -2,7 +2,7 @@
   programs.waybar.style = ''
   * {
     /* `otf-font-awesome` is required to be installed for icons */
-    font-family: FontAwesome, Roboto, Helvetica, Arial, sans-serif;
+    font-family: JetBrains Mono;
     font-size: 13px;
 }
 
