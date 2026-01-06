@@ -4,6 +4,13 @@
   programs.niri.settings = {
     hotkey-overlay.skip-at-startup = true;
 
+    layer-rules = [
+      {
+        matches = [ { namespace = "^wallpaper$"; } { namespace = "^waybar$"; } ];
+        place-within-backdrop = true;
+      }
+      ];
+
     binds = {
       "Mod+Q".action.spawn = "ghostty";
       "Mod+Space".action.spawn-sh = "wofi --show drun";
