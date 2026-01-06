@@ -7,7 +7,7 @@
 }
 
 window#waybar {
-    background-color: rgba(120, 183, 227, 0.8);
+    background-color: rgba(108, 176, 224, 0.8);
     border-bottom: 3px solid rgba(82, 131, 255,1);
     border-radius: 10px;
     color: rgba(10, 56, 110, 1);
