@@ -118,7 +118,9 @@ button:hover {
 }
 
 #clock {
-    
+    border-radius: 10px;
+    padding: 5px;
+    margin: 5px;
 
     background-color: #64727D;
 }
