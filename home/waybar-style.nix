@@ -5,10 +5,6 @@
     font-family: JetBrains Mono;
     font-size: 14px;
     font-weight: bold;
-
-    border-radius: 5px;
-    padding: 5px;
-    margin: 5px;
 }
 
 window#waybar {
