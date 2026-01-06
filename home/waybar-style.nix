@@ -5,6 +5,7 @@
     font-family: JetBrains Mono;
     font-size: 14px;
     font-weight: bold;
+    text-color: rgb(10, 56, 110);
 }
 
 window#waybar {
