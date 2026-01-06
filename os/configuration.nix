@@ -17,7 +17,6 @@
 
   nix.settings.experimental-features = ["nix-command" "flakes"];
 
-  programs.command-not-found.enable = false;
 
   # networking.wireless.enable = true;  # Enables wireless support via wpa_supplicant.
 

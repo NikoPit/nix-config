@@ -12,6 +12,7 @@
     ./electron-wl.nix
     ./bootloader.nix
     ./fonts.nix
+    ./command-not-found.nix
 
     ../script/scripts.nix
   ];
