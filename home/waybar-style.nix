@@ -10,7 +10,7 @@
 window#waybar {
     background-color: rgba(230, 240, 255, 0.5);
     border-radius: 10px;
-    color: #ffffff;
+    color: rgba(10, 56, 110, 1);
     margin: 5px;
     padding: 10px;
     transition-property: background-color;
