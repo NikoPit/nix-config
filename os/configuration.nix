@@ -26,7 +26,10 @@
   # Enable networking
   networking.networkmanager.enable = true;
 
-  services.xserver.enable = true;
+  services.xserver = {
+    enable = true;
+    desktopManager.xterm.enable = false;
+  };
 
   # Set your time zone.
   time.timeZone = "Asia/Shanghai";
