@@ -8,6 +8,7 @@
 
 window#waybar {
     background-color: rgba(230, 240, 255, 0.5);
+    border-radius: 10px;
     color: #ffffff;
     margin: 5px;
     padding: 10px;
@@ -117,6 +118,8 @@ button:hover {
 }
 
 #clock {
+    
+
     background-color: #64727D;
 }
 
