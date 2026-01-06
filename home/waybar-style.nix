@@ -4,7 +4,6 @@
     /* `otf-font-awesome` is required to be installed for icons */
     font-family: JetBrains Mono;
     font-size: 14px;
-    font-weight: bold;
 }
 
 window#waybar {
