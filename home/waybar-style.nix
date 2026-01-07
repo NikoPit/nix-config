@@ -94,7 +94,7 @@ button:hover {
 #wireplumber,
 #custom-media,
 #tray {
-  margin: 4px;
+  margin: 8px;
   padding: 4px;
   background-color:  rgba(82, 131, 255,0.8);
   border-radius: 5px;
