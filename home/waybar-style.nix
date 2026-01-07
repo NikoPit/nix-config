@@ -78,7 +78,7 @@ button:hover {
 }
 
 #mode {
-    background-color: #64727D;
+    background-color: rgba(82, 131, 255,1);
     box-shadow: inset 0 -3px #ffffff;
 }
 
