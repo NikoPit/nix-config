@@ -93,7 +93,10 @@ button:hover {
 #pulseaudio,
 #wireplumber,
 #custom-media,
-#tray,
+#tray {
+  margin: 4px;
+  padding: 4px;
+}
 #mode,
 #idle_inhibitor,
 #scratchpad,
