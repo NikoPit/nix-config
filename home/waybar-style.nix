@@ -78,7 +78,7 @@ button:hover {
 }
 
 #mode {
-    background-color: rgba(82, 131, 255,1);
+    background-color: #64727D;
     box-shadow: inset 0 -3px #ffffff;
 }
 
@@ -96,6 +96,8 @@ button:hover {
 #tray {
   margin: 4px;
   padding: 4px;
+  background-color:  rgba(82, 131, 255,0.8);
+  border-radius: 4px;
 }
 #mode,
 #idle_inhibitor,
