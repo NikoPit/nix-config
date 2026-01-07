@@ -97,7 +97,7 @@ button:hover {
   margin: 4px;
   padding: 4px;
   background-color:  rgba(82, 131, 255,0.8);
-  border-radius: 4px;
+  border-radius: 5px;
 }
 #mode,
 #idle_inhibitor,
