@@ -7,6 +7,7 @@
       ./clipboard.nix
       ./lualine.nix
       ./colorschemes.nix
+      ./bufferline.nix
     ];
   };
 }
