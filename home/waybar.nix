@@ -4,6 +4,7 @@
 
     settings.main = {
       height = 40;
+      margin = "10px";
       spacing = 10;
       modules-left = [
         "tray"

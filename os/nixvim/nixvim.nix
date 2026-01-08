@@ -8,6 +8,7 @@
       ./lualine.nix
       ./colorschemes.nix
       ./bufferline.nix
+      ./keymaps.nix
     ];
   };
 }
