@@ -6,6 +6,7 @@
     imports = [
       ./clipboard.nix
       ./lualine.nix
+      ./colorschemes.nix
     ];
   };
 }
