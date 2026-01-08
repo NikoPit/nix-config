@@ -16,13 +16,13 @@
       ];
 
       modules-center = [
-        "niri/workspaces"
+        #"niri/workspaces"
       ];
 
       modules-right = [
-        "pulseaudio"
-        "battery"
-        "clock"
+       # "pulseaudio"
+        #"battery"
+        #"clock"
       ];
     };
   };
