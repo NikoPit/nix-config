@@ -1,3 +1,3 @@
 {
-  colorschemes.tokyonight.enable = true;
+  colorschemes.catppuccin.enable = true;
 }
