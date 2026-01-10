@@ -10,5 +10,6 @@
     qq
     vesktop
     gh
+    wineWowPackages.stable
   ];  
 }
