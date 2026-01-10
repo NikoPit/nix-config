@@ -7,7 +7,7 @@
     ./waybar.nix
     ./waybar-style.nix
     ./dunst.nix
-    ./wofi.nix
+    ./rofi.nix
     ./fastfetch.nix
     ./fish.nix
     ./niri.nix

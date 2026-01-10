@@ -2,6 +2,7 @@
 
 {
   programs.niri.settings = {
+
     hotkey-overlay.skip-at-startup = true;
 
     layer-rules = [
@@ -13,7 +14,7 @@
 
     binds = {
       "Mod+Q".action.spawn = "ghostty";
-      "Mod+Space".action.spawn-sh = "wofi --show drun";
+      "Mod+Space".action.spawn-sh = "rofi -show drun";
 
       "Mod+O".action.toggle-overview = [];
       "Mod+C".action.close-window = [];
