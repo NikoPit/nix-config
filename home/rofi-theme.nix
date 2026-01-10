@@ -1,3 +1,5 @@
 {
-  programs.rofi.theme = {};
+  programs.rofi.theme = {
+    
+  };
 }

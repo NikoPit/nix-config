@@ -5,7 +5,7 @@
     enable = true;
 
     package = pkgs.rofi-wayland;
-  };
 
-  imports = [ ./rofi-theme.nix ];
+    theme = ./rofi-theme.rasi;
+  };
 }
