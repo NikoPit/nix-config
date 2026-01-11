@@ -29,7 +29,6 @@
 
   services.xserver = {
     enable = true;
-    desktopManager.xterm.enable = false;
   };
 
   # Set your time zone.
