@@ -13,5 +13,6 @@
     wineWowPackages.stable
     bottles
     unzip
+    ghostty.terminfo
   ];  
 }
