@@ -6,4 +6,6 @@
     	window-decoration = "none";
     };
   };
+
+  home.sessionVariables."TERM" = "ghostty";
 }
