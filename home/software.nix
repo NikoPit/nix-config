@@ -12,5 +12,6 @@
     gh
     wineWowPackages.stable
     bottles
+    unzip
   ];  
 }
