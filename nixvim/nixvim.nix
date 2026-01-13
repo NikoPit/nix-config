@@ -9,6 +9,7 @@
       ./colorschemes.nix
       ./bufferline.nix
       ./keymaps.nix
+      ./lsp.nix
     ];
   };
 }
