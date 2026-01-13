@@ -14,6 +14,5 @@
     bottles
     unzip
     killall
-    nautilus
   ];  
 }
