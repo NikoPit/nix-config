@@ -12,9 +12,11 @@
     nixvim.url = "github:nix-community/nixvim/nixos-25.05";
 
     niri.url = "github:sodiboo/niri-flake";
+
+    nixcord.url = "github:kaylorben/nixcord";
   };
 
-  outputs = { nixpkgs, home-manager, nixvim, niri, ... }: {
+  outputs = { nixpkgs, home-manager, nixvim, niri, nixcord, ... }: {
     # System configuration   
     nixosConfigurations.elysiapc = nixpkgs.lib.nixosSystem {
       modules = [ 
@@ -25,6 +27,8 @@
           home-manager.useUserPackages = true;
 
           home-manager.users.elysia = import ./home/configuration-home.nix;
+
+	  home-manager.sharedModules = [ nixcord.homeModules.nixcord ];
         }
 
         nixvim.nixosModules.nixvim

@@ -8,7 +8,6 @@
     modrinth-app
     linux-wallpaperengine
     qq
-    vesktop
     gh
     wineWowPackages.stable
     bottles
