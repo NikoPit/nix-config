@@ -1,5 +1,5 @@
 { pkgs, ... }:
 
 {
-  environment.systemPackages = [ pkgs.ghostty ];
+  environment.systemPackages = [ pkgs.ghostty.terminfo ];
 }
