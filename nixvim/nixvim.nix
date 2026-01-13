@@ -10,6 +10,7 @@
       ./bufferline.nix
       ./keymaps.nix
       ./lsp.nix
+      ./misc.nix
     ];
   };
 }
