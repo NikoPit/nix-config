@@ -8,7 +8,7 @@
     modrinth-app
     linux-wallpaperengine
     qq
-    discordo
+    vesktop
     gh
     wineWowPackages.stable
     bottles
