@@ -10,9 +10,10 @@
     qq
     vesktop
     gh
-    wineWowPackages.stable
+    #wineWowPackages.stable
     bottles
     unzip
     killall
+    wineWowPackages.waylandFull
   ];  
 }
