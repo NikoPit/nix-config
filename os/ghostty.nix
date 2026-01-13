@@ -1,5 +1,13 @@
 { pkgs, ... }:
 
 {
-  environment.systemPackages = [ pkgs.ghostty.terminfo ];
+
+  xdg.terminal-exec = {
+    enable = true;
+    settings = {
+      default = [
+        "ghostty.desktop"
+      ];
+    };
+  };
 }
