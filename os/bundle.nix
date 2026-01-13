@@ -13,6 +13,7 @@
     ./bootloader.nix
     ./fonts.nix
     ./command-not-found.nix
+    ./file-chooser.nix
 
     ../script/scripts.nix
   ];

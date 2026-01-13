@@ -13,6 +13,5 @@
     ./niri.nix
     ./input-method.nix
     ./yazi.nix
-    ./file-chooser.nix
   ];
 }
