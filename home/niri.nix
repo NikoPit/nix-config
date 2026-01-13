@@ -85,6 +85,6 @@
       { sh = "${pkgs.linux-wallpaperengine}/bin/linux-wallpaperengine ~/nix/wallpaper --screen-root DP-3 --silent --no-audio-processing --no-fullscreen-pause"; }
     ];
 
-    prefer-no-csd = true;
+    layout.focus-ring.enable = false;
   };
 }
