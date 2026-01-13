@@ -13,5 +13,6 @@
     bottles
     unzip
     killall
+    vesktop
   ];  
 }
