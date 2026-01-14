@@ -13,10 +13,9 @@
     niri.url = "github:sodiboo/niri-flake";
     nixcord.url = "github:kaylorben/nixcord";
     nix-citizen.url = "github:LovingMelody/nix-citizen";
-    nix-flatpak.url = "github:gmodena/nix-flatpak/?ref=latest";
   };
 
-  outputs = { nixpkgs, home-manager, nixvim, niri, nixcord, nix-citizen, nix-flatpak, ... }: {
+  outputs = { nixpkgs, home-manager, nixvim, niri, nixcord, nix-citizen, ... }: {
     # System configuration   
     nixosConfigurations.elysiapc = nixpkgs.lib.nixosSystem {
       specialArgs = {inherit nix-citizen;};
@@ -36,8 +35,6 @@
         nixvim.nixosModules.nixvim
 
 	niri.nixosModules.niri
-
-	nix-flatpak.nixosModules.nix-flatpak
       ];
     };
   };
