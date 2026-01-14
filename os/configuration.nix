@@ -10,7 +10,6 @@
       ./bundle.nix
     ];
   
-  nix.settings.substituters = [ "https://mirrors.ustc.edu.cn/nix-channels/store" ];
 
   # Use latest kernel.
   boot.kernelPackages = pkgs.linuxPackages_latest;

@@ -10,15 +10,16 @@
     };
 
     nixvim.url = "github:nix-community/nixvim/nixos-25.05";
-
     niri.url = "github:sodiboo/niri-flake";
-
     nixcord.url = "github:kaylorben/nixcord";
+    nix-citizen.url = "github:LovingMelody/nix-citizen";
   };
 
-  outputs = { nixpkgs, home-manager, nixvim, niri, nixcord, ... }: {
+  outputs = { nixpkgs, home-manager, nixvim, niri, nixcord, nix-citizen, ... }: {
     # System configuration   
     nixosConfigurations.elysiapc = nixpkgs.lib.nixosSystem {
+      specialArgs = {inherit nix-citizen;};
+
       modules = [ 
         ./hosts/elysiapc/config.nix
   

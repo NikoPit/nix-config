@@ -14,6 +14,7 @@
     ./fonts.nix
     ./command-not-found.nix
     ./file-chooser.nix
+    ./substituters.nix
 
     ../script/scripts.nix
   ];
