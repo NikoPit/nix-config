@@ -4,6 +4,6 @@
   environment.systemPackages = with pkgs; [ 
     obs-studio
     hyprpicker
-    #nix-citizen.packages.${system}.rsi-launcher
+    nix-citizen.packages.${system}.rsi-launcher
   ];
 }
