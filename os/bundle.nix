@@ -15,6 +15,7 @@
     ./command-not-found.nix
     ./file-chooser.nix
     ./substituters.nix
+    ./flatpak.nix
 
     ../script/scripts.nix
   ];
