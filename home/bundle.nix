@@ -10,7 +10,7 @@
     ./rofi.nix
     ./fastfetch.nix
     ./fish.nix
-    ./niri.nix
+    ../niri/niri.nix
     ./input-method.nix
     ./yazi.nix
     #../nixcord/nixcord.nix
