@@ -11,6 +11,7 @@
       ./keymaps.nix
       ./lsp.nix
       ./misc.nix
+      ./completion.nix
     ];
   };
 }
