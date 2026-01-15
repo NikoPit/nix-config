@@ -12,6 +12,7 @@
 	width = "(0, 500)";
 	gap_size = 10;
 	corners = "left";
+	frame_width = 0;
       };
     };
   };
