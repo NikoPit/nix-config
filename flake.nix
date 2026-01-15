@@ -18,8 +18,6 @@
   outputs = { nixpkgs, home-manager, nixvim, niri, nixcord, nix-citizen, ... }: {
     # System configuration   
     nixosConfigurations.elysiapc = nixpkgs.lib.nixosSystem {
-      specialArgs = {inherit nix-citizen;};
-
       modules = [ 
         ./hosts/elysiapc/config.nix
   
@@ -35,6 +33,7 @@
         nixvim.nixosModules.nixvim
 
 	niri.nixosModules.niri
+	nix-citizen.nixosModules.default
       ];
     };
   };

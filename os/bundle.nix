@@ -18,7 +18,5 @@
     ./flatpak.nix
 
     ../script/scripts.nix
-
-    ../test/openprt.nix
   ];
 }
