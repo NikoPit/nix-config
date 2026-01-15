@@ -11,6 +11,7 @@
 	offset = "(0, 100)";
 	width = "(0, 500)";
 	gap_size = 10;
+	corners = "left";
       };
     };
   };
