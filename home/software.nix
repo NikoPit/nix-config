@@ -10,7 +10,6 @@
     qq
     gh
     wineWowPackages.stable
-    bottles
     unzip
     killall
     vesktop
