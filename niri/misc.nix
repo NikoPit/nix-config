@@ -4,7 +4,7 @@
     layout.focus-ring.enable = false;
 
     window-rules = [{
-      matches = [{ app-id = "all"; }];
+      matches = [{ app-id = ".*"; }];
       open-floating = true;
     }];
   };
