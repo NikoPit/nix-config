@@ -4,8 +4,17 @@
     layout.focus-ring.enable = false;
 
     window-rules = [{
-      matches = [{ app-id = ".*"; }];
       open-floating = true;
+      clip-to-geometry = true;
+      geometry-corner-radius = 
+        let
+	  r = 10.0;
+	in {
+	  top-right = r;
+	  top-left = r;
+	  bottom-left = r;
+	  bottom-right = r;
+	};
     }];
   };
 }
