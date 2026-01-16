@@ -8,8 +8,8 @@
       wallpaperId = "3203778110";
       scaling = "default";
       audio = {
-        silent = true;
-	processing = false;
+#        silent = true;
+#	processing = false;
       };
     } ];
   };
