@@ -1,17 +1,14 @@
 {
   services.linux-wallpaperengine = {
     enable = true;
-    assetsPath = ../wallpaper;
-    #clamping = "clamp";
+    #assetsPath = ../wallpaper;
 
     wallpapers = [ {
       monitor = "DP-3";
       wallpaperId = "3203778110";
-      scaling = "default";
-      #fps = 60;
       audio = {
-#        silent = true;
-#	processing = false;
+        silent = true;
+	processing = false;
       };
     } ];
   };
