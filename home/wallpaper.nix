@@ -15,6 +15,6 @@
     #} ];
   };
 
-  programs.niri.settings.spawn-at-startup = [{ sh = "${pkgs.linux-wallpaperengine}/bin/linux-wallpaperengine ../wallpaper/3203778110 
+  programs.niri.settings.spawn-at-startup = [{ sh = "${pkgs.linux-wallpaperengine}/bin/linux-wallpaperengine ${../wallpaper/3203778110} 
     --screen-root DP-3 --silent --no-audio-processing --no-fullscreen-pause"; }];
 }
