@@ -1,7 +1,6 @@
 { pkgs, ... }:
 
 { 
-
   services.linux-wallpaperengine = {
     enable = true;
     

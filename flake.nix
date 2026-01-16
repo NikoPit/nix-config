@@ -12,9 +12,10 @@
     nixvim.url = "github:nix-community/nixvim/nixos-25.11";
     niri.url = "github:sodiboo/niri-flake";
     nixcord.url = "github:kaylorben/nixcord";
+    nix-citizen.url = "github:LovingMelody/nix-citizen";
   };
 
-  outputs = { nixpkgs, home-manager, nixvim, niri, nixcord, ... }: {
+  outputs = { nixpkgs, home-manager, nixvim, niri, nixcord, nix-citizen, ... }: {
     # System configuration   
     nixosConfigurations.elysiapc = nixpkgs.lib.nixosSystem {
       modules = [ 
@@ -30,8 +31,13 @@
         }
 
         nixvim.nixosModules.nixvim
-
 	niri.nixosModules.niri
+	nix-citizen.nixosModules.default {
+                    nix.settings = {
+                        substituters = ["https://nix-citizen.cachix.org"];
+                        trusted-public-keys = ["nix-citizen.cachix.org-1:lPMkWc2X8XD4/7YPEEwXKKBg+SVbYTVrAaLA2wQTKCo="];
+                    };
+	}
       ];
     };
   };
