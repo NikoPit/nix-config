@@ -3,11 +3,11 @@
 { 
   services.linux-wallpaperengine = {
     enable = true;
-    assetsPath = "";
+    assetsPath = ../wallpaper/assets;
     
     wallpapers = [ {
       monitor = "DP-3";
-      backgroundId = "3203778110";
+      wallpaperId = "${../wallpaper/bg}";
       audio = {
         silent = true;
     	processing = false;
