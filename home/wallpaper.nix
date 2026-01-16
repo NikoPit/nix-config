@@ -7,8 +7,8 @@
       monitor = "DP-3";
       wallpaperId = "3203778110";
       audio = {
-        silent = true;
-	processing = false;
+        #silent = true;
+	#processing = false;
       };
     } ];
   };
