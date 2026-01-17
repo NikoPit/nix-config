@@ -7,5 +7,16 @@
 	  silent = true;
         };	
     }
+    {
+        action = "<cmd>Yazi<cr>";
+	key = "<space>-";
+	options.silent = true;
+    }
+    {
+        action = "<cmd>Lspsaga term_toggle<cr>";
+	key = "<A-x>";
+	options.silent = true;
+	mode  = ["n" "t"];
+    }
   ];
 }
