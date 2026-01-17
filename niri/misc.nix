@@ -8,7 +8,7 @@
       clip-to-geometry = true;
       geometry-corner-radius = 
         let
-	  r = 20.0;
+	  r = 10.0;
 	in {
 	  top-right = r;
 	  top-left = r;
