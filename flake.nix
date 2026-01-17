@@ -16,11 +16,15 @@
   };
 
   outputs = { nixpkgs, home-manager, nixvim, niri, nixcord, nix-citizen, ... }: let
-    makeSystem = { hostname }: nixpkgs.lib.nixosSystem {
+    makeSystem = { hostname, display }: nixpkgs.lib.nixosSystem {
+      specialArgs = { inherit hostname display; };
+
       modules = [ 
         ./hosts/${hostname}/config.nix
   
         home-manager.nixosModules.home-manager {
+	  home-manager.extraSpecialArgs = { inherit hostname display; };
+
           home-manager.useGlobalPkgs = true;
           home-manager.useUserPackages = true;
 
@@ -37,6 +41,7 @@
 
   in {
     # System configuration   
-    nixosConfigurations.elysiapc = makeSystem { hostname = "elysiapc"; } ; 
+    nixosConfigurations.elysiapc = makeSystem { hostname = "elysiapc"; display = "DP-3"; };
+    nixosConfigurations.surface = makeSystem { hostname = "surface"; display = "eDP-1"; }; 
   };  
 }

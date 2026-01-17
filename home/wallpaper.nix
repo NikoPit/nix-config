@@ -1,10 +1,12 @@
+{ display, ... }:
+
 { 
   services.linux-wallpaperengine = {
     enable = true;
     assetsPath = ../wallpaper/assets;
     
     wallpapers = [ {
-      monitor = "DP-3";
+      monitor = "${display}";
       wallpaperId = "${../wallpaper/bg}";
       audio = {
         silent = true;
