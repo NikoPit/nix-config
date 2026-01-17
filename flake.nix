@@ -13,10 +13,11 @@
     niri.url = "github:sodiboo/niri-flake";
     nixcord.url = "github:kaylorben/nixcord";
     nix-citizen.url = "github:LovingMelody/nix-citizen";
+    nixos-hardware.url = "github:NixOS/nixos-hardware/master";
   };
 
-  outputs = { nixpkgs, home-manager, nixvim, niri, nixcord, nix-citizen, ... }: let
-    makeSystem = { hostname, display }: nixpkgs.lib.nixosSystem {
+  outputs = { nixpkgs, home-manager, nixvim, niri, nixcord, nix-citizen, nixos-hardware, ... }: let
+    makeSystem = { hostname, display, hardware-module ? null }: nixpkgs.lib.nixosSystem {
       specialArgs = { inherit hostname display; };
 
       modules = [ 
@@ -36,12 +37,12 @@
         nixvim.nixosModules.nixvim
 	niri.nixosModules.niri
 	nix-citizen.nixosModules.default
-      ];
+      ] ++ (if hardware-module != null then [hardware-module] else []);
     };
 
   in {
     # System configuration   
     nixosConfigurations.elysiapc = makeSystem { hostname = "elysiapc"; display = "DP-3"; };
-    nixosConfigurations.surface = makeSystem { hostname = "surface"; display = "eDP-1"; }; 
+    nixosConfigurations.surface = makeSystem { hostname = "surface"; display = "eDP-1"; hardware-module = null; };
   };  
 }
