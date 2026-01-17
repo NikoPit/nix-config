@@ -4,7 +4,6 @@
   services.linux-wallpaperengine = {
     enable = true;
     assetsPath = ../wallpaper/assets;
-    clamping = "clamp";
     
     wallpapers = [ {
       monitor = "${display}";
