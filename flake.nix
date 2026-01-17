@@ -43,6 +43,6 @@
   in {
     # System configuration   
     nixosConfigurations.elysiapc = makeSystem { hostname = "elysiapc"; display = "DP-3"; };
-    nixosConfigurations.surface = makeSystem { hostname = "surface"; display = "eDP-1"; hardware-module = null; };
+    nixosConfigurations.surface = makeSystem { hostname = "surface"; display = "eDP-1"; };
   };  
 }
