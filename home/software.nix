@@ -12,5 +12,6 @@
     unzip
     killall
     vesktop
+    fd
   ];  
 }
