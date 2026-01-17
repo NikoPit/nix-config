@@ -15,11 +15,10 @@
     nix-citizen.url = "github:LovingMelody/nix-citizen";
   };
 
-  outputs = { nixpkgs, home-manager, nixvim, niri, nixcord, nix-citizen, ... }: {
-    # System configuration   
-    nixosConfigurations.elysiapc = nixpkgs.lib.nixosSystem {
+  outputs = { nixpkgs, home-manager, nixvim, niri, nixcord, nix-citizen, ... }: let
+    makeSystem = { hostname }: nixpkgs.lib.nixosSystem {
       modules = [ 
-        ./hosts/elysiapc/config.nix
+        ./hosts/${hostname}/config.nix
   
         home-manager.nixosModules.home-manager {
           home-manager.useGlobalPkgs = true;
@@ -35,5 +34,9 @@
 	nix-citizen.nixosModules.default
       ];
     };
-  };
+
+  in {
+    # System configuration   
+    nixosConfigurations.elysiapc = makeSystem { hostname = "elysiapc"; } ; 
+  };  
 }
