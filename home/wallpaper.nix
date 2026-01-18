@@ -12,6 +12,7 @@
         silent = true;
     	processing = false;
       };
+      extraOptions = [ "--no-fullscreen-pause" ];
     } ];
   };
 }
