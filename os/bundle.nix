@@ -13,7 +13,7 @@
     ./bootloader.nix
     ./fonts.nix
     ./command-not-found.nix
-    ./file-chooser.nix
+    # TODO ./file-chooser.nix
     ./substituters.nix
     ./flatpak.nix
 
