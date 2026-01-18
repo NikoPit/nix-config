@@ -13,5 +13,6 @@
     killall
     vesktop
     fd
+    pavucontrol
   ];  
 }
