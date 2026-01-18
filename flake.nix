@@ -13,9 +13,13 @@
     niri.url = "github:sodiboo/niri-flake";
     nixcord.url = "github:kaylorben/nixcord";
     nixos-hardware.url = "github:NixOS/nixos-hardware/master";
+
+    nix-citizen.url = "github:LovingMelody/nix-citizen";
+    nix-gaming.url = "github:fufexan/nix-gaming";
+    nix-citizen.inputs.nix-gaming.follows = "nix-gaming";
   };
 
-  outputs = { nixpkgs, home-manager, nixvim, niri, nixcord, nixos-hardware, ... }: let
+  outputs = { nixpkgs, home-manager, nixvim, niri, nixcord, nixos-hardware, nix-citizen, ... }: let
     makeSystem = { hostname, display, hardware-module ? null }: nixpkgs.lib.nixosSystem {
       specialArgs = { inherit hostname display; };
 
@@ -35,6 +39,7 @@
 
         nixvim.nixosModules.nixvim
 	niri.nixosModules.niri
+	nix-citizen.nixosModules.default
       ] ++ (if hardware-module != null then [hardware-module] else []);
     };
 
