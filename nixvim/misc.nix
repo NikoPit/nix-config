@@ -1,6 +1,8 @@
 {
-  plugins.yazi.enable = true;
-  plugins.lspsaga.enable = true;
-  plugins.nvim-autopairs.enable = true;
-  plugins.lazygit.enable = true;
+  plugins = {
+    yazi.enable = true;
+    lspsaga.enable = true;
+    nvim-autopairs.enable = true;
+    lazygit.enable = true;
+  };
 }
