@@ -18,5 +18,10 @@
 	options.silent = true;
 	mode  = ["n" "t"];
     }
+    {
+        action = "<cmd>LazyGit<cr>";
+	key = "<space-g>";
+	options.silent = true;
+    }
   ];
 }
