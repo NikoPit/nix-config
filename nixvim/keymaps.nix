@@ -20,7 +20,7 @@
     }
     {
         action = "<cmd>LazyGit<cr>";
-	key = "<space-g>";
+	key = "<space>g";
 	options.silent = true;
     }
   ];
