@@ -4,6 +4,5 @@
     enforceWaylandDrv = false;
     umu.enable = true;
     gamescope.enable = true;
-    patchXwayland = true;
   };
 }
