@@ -1,7 +1,7 @@
 {
   programs.rsi-launcher = {
     enable = true;
-    enforceWaylandDrv = false;
+    enforceWaylandDrv = true;
     umu.enable = true;
     gamescope.enable = true;
   };
