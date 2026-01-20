@@ -15,8 +15,6 @@
     nixos-hardware.url = "github:NixOS/nixos-hardware/master";
 
     nix-citizen.url = "github:LovingMelody/nix-citizen/update";
-    nix-gaming.url = "github:fufexan/nix-gaming";
-    nix-citizen.inputs.nix-gaming.follows = "nix-gaming";
   };
 
   outputs = { nixpkgs, home-manager, nixvim, niri, nixcord, nixos-hardware, nix-citizen, ... }: let

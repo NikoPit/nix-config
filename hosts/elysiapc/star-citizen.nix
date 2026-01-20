@@ -1,3 +1,3 @@
 {
-  programs.rsi-launcher.enable = true;
+  #programs.rsi-launcher.enable = true;
 }
