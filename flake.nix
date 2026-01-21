@@ -14,10 +14,9 @@
     nixcord.url = "github:kaylorben/nixcord";
     nixos-hardware.url = "github:NixOS/nixos-hardware/master";
 
-    nix-citizen.url = "github:LovingMelody/nix-citizen/update";
   };
 
-  outputs = { nixpkgs, home-manager, nixvim, niri, nixcord, nixos-hardware, nix-citizen, ... }: let
+  outputs = { nixpkgs, home-manager, nixvim, niri, nixcord, nixos-hardware, ... }: let
     makeSystem = { hostname, display, hardware-module ? null }: nixpkgs.lib.nixosSystem {
       specialArgs = { inherit hostname display; };
 
@@ -37,7 +36,6 @@
 
         nixvim.nixosModules.nixvim
 	niri.nixosModules.niri
-	nix-citizen.nixosModules.default
       ] ++ (if hardware-module != null then [hardware-module] else []);
     };
 
