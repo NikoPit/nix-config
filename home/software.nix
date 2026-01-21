@@ -11,7 +11,6 @@
     wineWowPackages.stable
     unzip
     killall
-    vesktop
     fd
     pavucontrol
     nautilus
