@@ -5,5 +5,6 @@
     obs-studio
     hyprpicker
     bolt-launcher
+    xwayland-run
   ];
 }
