@@ -9,5 +9,6 @@
     bottles
     umu-launcher
     protonplus
+    lutris
   ];
 }
