@@ -8,5 +8,6 @@
     xwayland-run
     bottles
     umu-launcher
+    protonplus
   ];
 }
