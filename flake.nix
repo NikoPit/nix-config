@@ -11,12 +11,11 @@
 
     nixvim.url = "github:nix-community/nixvim/nixos-25.11";
     niri.url = "github:sodiboo/niri-flake";
-    nixcord.url = "github:kaylorben/nixcord";
     nixos-hardware.url = "github:NixOS/nixos-hardware/master";
 
   };
 
-  outputs = { nixpkgs, home-manager, nixvim, niri, nixcord, nixos-hardware, ... }: let
+  outputs = { nixpkgs, home-manager, nixvim, niri, nixos-hardware, ... }: let
     makeSystem = { hostname, display, hardware-module ? null }: nixpkgs.lib.nixosSystem {
       specialArgs = { inherit hostname display; };
 
@@ -30,8 +29,6 @@
           home-manager.useUserPackages = true;
 
           home-manager.users.elysia = import ./home/configuration-home.nix;
-
-	  home-manager.sharedModules = [ nixcord.homeModules.nixcord ];
         }
 
         nixvim.nixosModules.nixvim

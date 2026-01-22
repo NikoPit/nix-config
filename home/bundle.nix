@@ -14,6 +14,5 @@
     ./input-method.nix
     ./yazi.nix
     ./wallpaper.nix
-    ../nixcord/nixcord.nix
   ];
 }
