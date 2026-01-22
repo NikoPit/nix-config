@@ -14,5 +14,6 @@
     fd
     pavucontrol
     nautilus
+    vesktop
   ];  
 }
