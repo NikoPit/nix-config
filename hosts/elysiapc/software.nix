@@ -6,5 +6,6 @@
     hyprpicker
     bolt-launcher
     xwayland-run
+    bottles
   ];
 }
