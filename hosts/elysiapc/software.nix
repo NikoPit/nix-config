@@ -1,4 +1,4 @@
-{ pkgs, ... }:
+{ pkgs , ... }:
 
 {
   environment.systemPackages = with pkgs; [ 
@@ -8,7 +8,6 @@
     xwayland-run
     bottles
     umu-launcher
-    protonplus
     lutris
   ];
 }
