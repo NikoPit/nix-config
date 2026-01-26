@@ -17,6 +17,7 @@
     # TODO ./file-chooser.nix
     ./substituters.nix
     ./flatpak.nix
+    ./man.nix
 
     ../script/scripts.nix
   ];
