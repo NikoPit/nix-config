@@ -13,6 +13,7 @@
       ./misc.nix
       ./completion.nix
       ./diagnostic.nix
+      ./transparent.nix
     ];
   };
 }
