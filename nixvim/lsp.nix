@@ -7,4 +7,6 @@
       rust-analyzer.enable = true;
     };
   };
+
+  lsp.inleyHints.enable = true;
 }
