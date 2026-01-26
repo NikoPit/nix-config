@@ -24,7 +24,7 @@
 	options.silent = true;
     }
     {
-    	action = "<cmd>Lspsage code_action<cr>";
+    	action = "<cmd>Lspsaga code_action<cr>";
     	key = "<space>ca";
 	options.silent = true;
     }

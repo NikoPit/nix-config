@@ -2,8 +2,9 @@
 
 
 pkgs.writeShellScriptBin "nix-update" ''
+  cd ~/nix
   git add ./*
-  sudo nixos-rebuild switch --flake ./ 
+  sudo nixos-rebuild switch --flake ./ --upgrade
 
   if [ $? -eq 0 ]
   then
