@@ -17,5 +17,6 @@
     vesktop
     cargo
     rustc
+    xray
   ];  
 }
