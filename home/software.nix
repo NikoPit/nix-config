@@ -15,5 +15,7 @@
     pavucontrol
     nautilus
     vesktop
+    cargo
+    rustc
   ];  
 }
