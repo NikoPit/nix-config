@@ -7,7 +7,7 @@ pkgs.writeShellScriptBin "nix-update" ''
 
   if [ $? -eq 0 ]
   then
-    git commit -m $1
+    git commit -m "$1"
     git push origin master
   fi
 ''
