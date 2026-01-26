@@ -19,5 +19,6 @@
     cargo
     rustc
     xray
+    gcc
   ];  
 }
