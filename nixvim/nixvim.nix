@@ -12,6 +12,7 @@
       ./lsp.nix
       ./misc.nix
       ./completion.nix
+      ./diagnostic.nix
     ];
   };
 }
