@@ -3,7 +3,7 @@
 {
   home.packages = with pkgs; [
     xclicker
-    v2raya
+    v2rayn
     jdk21
     modrinth-app
     qq
