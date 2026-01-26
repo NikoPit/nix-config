@@ -1,4 +1,6 @@
 {
+  # TODO
+  services.v2raya.enable = true;
   imports = [
     ../niri/conf.nix
     ./greetd.nix

@@ -14,6 +14,7 @@
     fd
     pavucontrol
     nautilus
+    v2raya
     vesktop
     cargo
     rustc
