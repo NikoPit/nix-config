@@ -3,7 +3,7 @@
 {
   fonts = {
     packages = with pkgs; [
-      maple-mono.truetype
+      maple-mono.CN
     ];
   };
 }
