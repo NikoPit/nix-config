@@ -20,5 +20,6 @@
     rustc
     xray
     gcc
+    ladybird
   ];  
 }
