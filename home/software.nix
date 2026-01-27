@@ -23,5 +23,6 @@
     ladybird
     pkg-config
     udev
+    libudev-zero
   ];  
 }
