@@ -22,5 +22,6 @@
     gcc
     ladybird
     pkg-config
+    udev
   ];  
 }
