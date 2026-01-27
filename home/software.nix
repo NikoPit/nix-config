@@ -21,5 +21,6 @@
     xray
     gcc
     ladybird
+    pkg-config
   ];  
 }
