@@ -29,7 +29,7 @@
 	options.silent = true;
     }
     {
-    	action = "<cmd>Telescope lsp_defininitions<cr>";
+    	action = "<cmd>Telescope lsp_definitions<cr>";
     	key = "gd";
     }
   ];
