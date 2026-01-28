@@ -14,5 +14,7 @@
     };
   };
 
-  environment.systemPackages = [pkgs.rustfmt];
+  environment.systemPackages = with pkgs; [
+    rustfmt
+  ];
 }
