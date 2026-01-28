@@ -2,6 +2,8 @@
 
 {
   fonts = {
+    enableDefaultPackages = true;
+
     packages = with pkgs; [
       maple-mono.NF-CN-unhinted
     ];
