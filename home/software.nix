@@ -23,6 +23,7 @@
     ladybird
     pkg-config
     udev
+    rustfmt
     libudev-zero
   ];  
 }
