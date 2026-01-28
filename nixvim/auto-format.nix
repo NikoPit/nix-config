@@ -14,7 +14,5 @@
     };
   };
 
-  environment.systemPackages = with pkgs; [
-    rustfmt
-  ];
+  home-manager.users.elysia.home.packages = [pkgs.rustfmt];
 }
