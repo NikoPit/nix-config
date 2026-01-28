@@ -5,7 +5,7 @@
     enableDefaultPackages = true;
 
     packages = with pkgs; [
-      maple-mono.NF-CN-unhinted
+      maple-mono.NF-CN
     ];
 
     fontconfig = {
