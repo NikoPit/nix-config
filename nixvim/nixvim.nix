@@ -15,6 +15,7 @@
       ./diagnostic.nix
       ./transparent.nix
       ./telescope.nix
+      ./auto-format.nix
     ];
   };
 }
