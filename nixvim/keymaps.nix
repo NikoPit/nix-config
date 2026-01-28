@@ -32,5 +32,9 @@
     	action = "<cmd>Telescope lsp_definitions<cr>";
     	key = "gd";
     }
+    {
+    	action = "<cmd>Trouble diagnostics toggle<cr>";
+	key = "<space>xx";
+    }
   ];
 }
