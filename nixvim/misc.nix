@@ -6,5 +6,6 @@
     lazygit.enable = true;
     trouble.enable = true;
     noice.enable = true;
+    conform-nvim.enable = true;
   };
 }
