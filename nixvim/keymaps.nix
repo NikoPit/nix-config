@@ -28,5 +28,9 @@
     	key = "<space>ca";
 	options.silent = true;
     }
+    {
+    	action = "<cmd>Telescope lsp_defininitions<cr>";
+    	key = "gd";
+    }
   ];
 }
