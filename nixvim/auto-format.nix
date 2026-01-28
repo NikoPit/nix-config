@@ -1,3 +1,5 @@
+{ pkgs, ... }:
+
 {
   plugins.conform-nvim = {
     enable = true;
@@ -11,4 +13,6 @@
       };
     };
   };
+
+  environment.systemPackages = [pkgs.rustfmt];
 }
