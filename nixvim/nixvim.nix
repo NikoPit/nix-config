@@ -14,6 +14,7 @@
       ./completion.nix
       ./diagnostic.nix
       ./transparent.nix
+      ./telescope.nix
     ];
   };
 }
