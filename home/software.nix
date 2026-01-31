@@ -25,5 +25,6 @@
     udev
     rustfmt
     libudev-zero
+    claude-code
   ];  
 }
