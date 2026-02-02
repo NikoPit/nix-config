@@ -26,5 +26,6 @@
     rustfmt
     libudev-zero
     claude-code
+    wechat-uos
   ];  
 }
