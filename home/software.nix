@@ -27,5 +27,8 @@
     libudev-zero
     claude-code
     wechat-uos
+    gnumake
+    xorriso
+    cpio
   ];  
 }
