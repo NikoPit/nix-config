@@ -9,6 +9,7 @@
     qq
     gh
     wineWowPackages.stable
+    ripgrep
     unzip
     killall
     fd
