@@ -10,6 +10,7 @@
     gh
     wineWowPackages.stable
     ripgrep
+    ffmpeg
     unzip
     killall
     fd
