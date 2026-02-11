@@ -9,6 +9,7 @@
     qq
     gh
     wineWowPackages.stable
+    vscodium
     ripgrep
     ffmpeg
     unzip
