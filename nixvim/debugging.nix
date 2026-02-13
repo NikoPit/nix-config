@@ -23,9 +23,11 @@ dap.configurations.rust = {
         request = "attach",
         target = "localhost:1234", 
         program = function()
-            return vim.fn.getcwd() .. "/target/x86_64-unknown-none/debug/your_kernel_name"
+            return vim.fn.getcwd() .. "/target/x86_64-elysia-os/debug/elysia-os"
         end,
-        cwd = "{workspaceRoot}",
+        cwd = function()
+	    return vim.fn.getcwd()
+	end,    
         stopOnEntry = false,
     },
 }
