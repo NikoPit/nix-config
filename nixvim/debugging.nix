@@ -19,7 +19,7 @@
 dap.configurations.rust = {
     {
         name = "Attach to QEMU",
-        type = "gdb",
+        type = "rust-gdb",
         request = "attach",
         target = "localhost:1234", 
         program = function()
