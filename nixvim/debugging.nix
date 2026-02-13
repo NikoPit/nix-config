@@ -11,10 +11,15 @@
   extraConfigLua = ''
   local dap = require("dap")
 
+dap.adapters.gdb = {
+    type = "executable",
+    command = "rust-gdb", -- 或者 x86_64-elf-gdb
+    args = { "--interpreter=dap", "--eval-command", "set pagination off" }
+}
 dap.configurations.rust = {
     {
         name = "Attach to QEMU",
-        type = "gdb",
+        type = "rust-gdb",
         request = "attach",
         target = "localhost:1234", 
         program = function()
@@ -25,13 +30,6 @@ dap.configurations.rust = {
 	end,    
         stopOnEntry = false,
     },
-},
-
-dap.adapters.gdb = {
-    type = "executable",
-    command = "rust-gdb", -- 或者 x86_64-elf-gdb
-    args = { "--interpreter=dap", "--eval-command", "set pagination off" }
 }
-
 '';
 };}
