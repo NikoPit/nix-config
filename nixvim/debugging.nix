@@ -6,6 +6,13 @@
   dap-virtual-text.enable = true;
   dap = {
     enable = true;
+
+    adapters = {
+      executables.rust = {
+        command = "rust-gdb";
+	args = ["-i" "dap"];
+      };
+    };
   };
 
   extraConfigLua = ''
