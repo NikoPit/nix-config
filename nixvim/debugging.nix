@@ -15,7 +15,7 @@
   };
 
   extraConfigLua = ''
--- 配置调试目标
+  local dap = require("dap")
 dap.configurations.rust = {
     {
         name = "Attach to QEMU",
