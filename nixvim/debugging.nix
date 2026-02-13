@@ -11,6 +11,7 @@
   };
 
   extraConfigLua = ''
+local dap = require("dap")
   dap.adapters.gdb = {
     type = "executable",
     command = "gdb-multiarch", -- 或者 x86_64-elf-gdb
