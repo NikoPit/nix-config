@@ -9,6 +9,7 @@
       ./colorschemes.nix
       ./bufferline.nix
       ./keymaps.nix
+      ./debugging.nix
       ./avante.nix
       ./lsp.nix
       ./misc.nix
