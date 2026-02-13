@@ -9,6 +9,7 @@
     qq
     gh
     wineWowPackages.stable
+    nixfmt
     gdb
     vscodium
     ripgrep

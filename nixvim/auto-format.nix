@@ -6,6 +6,7 @@
     settings = {
       formatters_by_ft = {
         rust = [ "rustfmt" ];
+	nix = [ "nixfmt" ];
       };
 
       format_on_save = {
