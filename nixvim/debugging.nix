@@ -7,14 +7,16 @@
   dap = {
     enable = true;
 
-    executables.gdb = {
-      command = "rust-gdb";
-      args = ["-i" "dap"];
-    };
   };
   };
 
   extraConfigLua = ''
+  dap.adapters.gdb = {
+    type = "executable",
+    command = "gdb-multiarch", -- 或者 x86_64-elf-gdb
+    args = { "--interpreter=dap", "--eval-command", "set pagination off" }
+}
+
 -- 配置调试目标
 dap.configurations.rust = {
     {
