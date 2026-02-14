@@ -11,8 +11,6 @@
         executables.rust = {
           command = "rust-gdb";
           args = [
-            "-i"
-            "dap"
           ];
         };
 
