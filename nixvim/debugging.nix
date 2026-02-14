@@ -19,7 +19,7 @@
         configurations = # lua
           {
             __raw = ''
-                 rust{
+                 dap.configurations.rust{
                             name = "Attach to QEMU",
                             type = "rust-gdb",
                             request = "attach",
