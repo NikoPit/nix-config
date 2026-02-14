@@ -16,25 +16,26 @@
           ];
         };
 
-        configurations = # lua
-          {
-            __raw = ''
-                 dap.configurations.rust{
-                            name = "Attach to QEMU",
-                            type = "rust-gdb",
-                            request = "attach",
-                            target = "localhost:1234", 
-                            program = function()
-                                return vim.fn.getcwd() .. "/target/x86_64-elysia-os/debug/elysia-os"
-                            end,
-                            cwd = function()
-                    	    return vim.fn.getcwd()
-                    	end,    
-                            stopOnEntry = false,
-                        }
-              	'';
-          };
       };
+      configurations.rust = [
+        {
+          name = "Attach to QEMU";
+          type = "rust-gdb";
+          request = "attach";
+          target = "localhost:1234";
+          program = ''
+            function()
+                                            return vim.fn.getcwd() .. "/target/x86_64-elysia-os/debug/elysia-os"
+                                        end,'';
+          cwd = ''
+            function()
+                                	    return vim.fn.getcwd()
+                                	end,    '';
+          stopOnEntry = false;
+        }
+      ];
+
     };
+
   };
 }
