@@ -9,6 +9,7 @@
     qq
     gh
     wineWowPackages.stable
+    virtualbox
     nixfmt
     gdb
     vscodium
@@ -35,5 +36,5 @@
     gnumake
     xorriso
     cpio
-  ];  
+  ];
 }
