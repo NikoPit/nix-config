@@ -9,7 +9,6 @@
     qq
     gh
     wineWowPackages.stable
-    virtualbox
     nixfmt
     gdb
     vscodium

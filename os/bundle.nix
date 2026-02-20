@@ -4,6 +4,7 @@
   imports = [
     ../niri/conf.nix
     ./greetd.nix
+    ./misc.nix
     ../nixvim/nixvim.nix
     ./sudo.nix
     ./user.nix
