@@ -9,6 +9,7 @@
     ./sudo.nix
     ./user.nix
     ./fish.nix
+    ./clash-verge.nix
     ./xwayland.nix
     ./steam.nix
     ./electron-wl.nix
