@@ -3,7 +3,6 @@
 {
   home.packages = with pkgs; [
     xclicker
-    v2rayn
     jdk21
     qq
     gh
@@ -19,7 +18,6 @@
     fd
     pavucontrol
     nautilus
-    v2raya
     vesktop
     cargo
     rustc
