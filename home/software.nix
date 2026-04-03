@@ -5,10 +5,10 @@
     xclicker
     v2rayn
     jdk21
-    modrinth-app
     qq
     gh
     wineWowPackages.stable
+    git
     nixfmt
     gdb
     vscodium
@@ -35,5 +35,6 @@
     gnumake
     xorriso
     cpio
+    prismlauncher-unwrapped
   ];
 }

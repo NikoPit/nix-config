@@ -5,6 +5,8 @@
     enable = true;
     settings = {
       formatters_by_ft = {
+        sh = [ "shfmt" ];
+        bash = [ "shfmt" ];
         rust = [ "rustfmt" ];
 	nix = [ "nixfmt" ];
       };

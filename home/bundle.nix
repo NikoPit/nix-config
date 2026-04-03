@@ -3,7 +3,6 @@
     ./software.nix
     ./ghostty.nix
     ./firefox.nix
-    ./git.nix
     ./waybar.nix
     ./waybar-style.nix
     ./dunst.nix
