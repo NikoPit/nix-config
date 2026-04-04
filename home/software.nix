@@ -33,6 +33,6 @@
     gnumake
     xorriso
     cpio
-    prismlauncher-unwrapped
+    prismlauncher
   ];
 }
