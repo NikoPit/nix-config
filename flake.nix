@@ -12,32 +12,63 @@
     nixvim.url = "github:nix-community/nixvim";
     niri.url = "github:sodiboo/niri-flake";
     nixos-hardware.url = "github:NixOS/nixos-hardware/master";
+
+    aagl = {
+      url = "github:ezKEa/aagl-gtk-on-nix";
+      inputs.nixpkgs.follows = "nixpkgs";
+
+    };
   };
 
-  outputs = { nixpkgs, home-manager, nixvim, niri, nixos-hardware, ... }: let
-    makeSystem = { hostname, display, hardware-module ? null }: nixpkgs.lib.nixosSystem {
-      specialArgs = { inherit hostname display; };
+  outputs =
+    {
+      nixpkgs,
+      home-manager,
+      nixvim,
+      niri,
+      aagl,
+      nixos-hardware,
+      ...
+    }:
+    let
+      makeSystem =
+        {
+          hostname,
+          display,
+          hardware-module ? null,
+        }:
+        nixpkgs.lib.nixosSystem {
+          specialArgs = { inherit hostname display aagl; };
 
-      modules = [ 
-        ./hosts/${hostname}/config.nix
-  
-        home-manager.nixosModules.home-manager {
-	  home-manager.extraSpecialArgs = { inherit hostname display; };
+          modules = [
+            ./hosts/${hostname}/config.nix
 
-          home-manager.useGlobalPkgs = true;
-          home-manager.useUserPackages = true;
+            home-manager.nixosModules.home-manager
+            {
+              home-manager.extraSpecialArgs = { inherit hostname display; };
 
-          home-manager.users.elysia = import ./home/configuration-home.nix;
-        }
+              home-manager.useGlobalPkgs = true;
+              home-manager.useUserPackages = true;
 
-        nixvim.nixosModules.nixvim
-	niri.nixosModules.niri
-      ] ++ (if hardware-module != null then [hardware-module] else []);
+              home-manager.users.elysia = import ./home/configuration-home.nix;
+            }
+
+            nixvim.nixosModules.nixvim
+            niri.nixosModules.niri
+          ]
+          ++ (if hardware-module != null then [ hardware-module ] else [ ]);
+        };
+
+    in
+    {
+      # System configuration
+      nixosConfigurations.elysiapc = makeSystem {
+        hostname = "elysiapc";
+        display = "DP-3";
+      };
+      nixosConfigurations.surface = makeSystem {
+        hostname = "surface";
+        display = "eDP-1";
+      };
     };
-
-  in {
-    # System configuration   
-    nixosConfigurations.elysiapc = makeSystem { hostname = "elysiapc"; display = "DP-3"; };
-    nixosConfigurations.surface = makeSystem { hostname = "surface"; display = "eDP-1"; };
-  };  
 }
