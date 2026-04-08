@@ -1,13 +1,23 @@
+let
+  httpProxy = "http://127.0.0.1:7890";
+  allProxy = "socks5://127.0.0.1:7890";
+  noProxy = "127.0.0.1,localhost,::1";
+in
 {
-  networking.proxy.httpProxy = "http://127.0.0.1:7890";
-  networking.proxy.httpsProxy = "http://127.0.0.1:7890";
-  networking.proxy.allProxy = "socks5://127.0.0.1:7890";
-  networking.proxy.noProxy = "127.0.0.1,localhost,::1";
+  networking.proxy.httpProxy = httpProxy;
+  networking.proxy.httpsProxy = httpProxy;
+  networking.proxy.allProxy = allProxy;
+  networking.proxy.noProxy = noProxy;
 
-  environment.variables = {
-    HTTP_PROXY = "http://127.0.0.1:7890";
-    HTTPS_PROXY = "http://127.0.0.1:7890";
-    ALL_PROXY = "socks5://127.0.0.1:7890";
-    NO_PROXY = "127.0.0.1,localhost,::1";
+  environment.sessionVariables = {
+    HTTP_PROXY = httpProxy;
+    HTTPS_PROXY = httpProxy;
+    ALL_PROXY = allProxy;
+    NO_PROXY = noProxy;
+
+    http_proxy = httpProxy;
+    https_proxy = httpProxy;
+    all_proxy = allProxy;
+    no_proxy = noProxy;
   };
 }
