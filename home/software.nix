@@ -29,6 +29,7 @@
     rustfmt
     libudev-zero
     claude-code
+    modrinth-app
     wechat-uos
     gnumake
     xorriso
