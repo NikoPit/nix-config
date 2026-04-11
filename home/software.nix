@@ -9,6 +9,7 @@
     wineWowPackages.stable
     git
     nixfmt
+    osu-lazer-bin
     gdb
     vscodium
     ripgrep
