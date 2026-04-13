@@ -21,6 +21,8 @@
 
   # Enable networking
   networking.networkmanager.enable = true;
+  networking.networkmanager.dns = "systemd-resolved";
+  services.resolved.enable = true;
 
   services.xserver = {
     enable = true;
