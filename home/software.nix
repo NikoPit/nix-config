@@ -6,7 +6,6 @@
     jdk21
     qq
     gh
-    wineWowPackages.stable
     git
     nixfmt
     osu-lazer-bin
