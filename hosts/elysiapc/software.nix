@@ -6,9 +6,7 @@
     hyprpicker
     bolt-launcher
     xwayland-run
-    bottles
     umu-launcher
-    lutris
     protonplus
   ];
 }
