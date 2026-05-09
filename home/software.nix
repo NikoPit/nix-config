@@ -19,14 +19,12 @@
     pavucontrol
     nautilus
     vesktop
-    cargo
-    rustc
+    rustup
     xray
     gcc
     ladybird
     pkg-config
     udev
-    rustfmt
     libudev-zero
     claude-code
     modrinth-app
