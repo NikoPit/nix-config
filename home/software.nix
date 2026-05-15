@@ -32,6 +32,7 @@
     gnumake
     xorriso
     cpio
+    localsend
     codex
   ];
 }
