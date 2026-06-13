@@ -1,10 +1,9 @@
-{ pkgs , ... }:
-
+{ pkgs, ... }:
 
 pkgs.writeShellScriptBin "nix-update" ''
   cd ~/nix
   git add ./*
-  sudo nixos-rebuild switch --flake ./ --upgrade
+  sudo nixos-rebuild switch --flake ./
 
   if [ $? -eq 0 ]
   then
@@ -12,4 +11,3 @@ pkgs.writeShellScriptBin "nix-update" ''
     git push origin master
   fi
 ''
-
