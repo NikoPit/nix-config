@@ -5,13 +5,10 @@
 { config, pkgs, ... }:
 
 {
-  imports =
-    [ # Include the results of the hardware scan.
-      ./bundle.nix
-    ];
-  
-  nix.settings.experimental-features = ["nix-command" "flakes"];
-
+  imports = [
+    # Include the results of the hardware scan.
+    ./bundle.nix
+  ];
 
   # networking.wireless.enable = true;  # Enables wireless support via wpa_supplicant.
 

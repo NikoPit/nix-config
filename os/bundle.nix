@@ -5,6 +5,7 @@
     ./misc.nix
     ../nixvim/nixvim.nix
     ./sudo.nix
+    ./nix.nix
     ./user.nix
     ./fish.nix
     ./clash-verge.nix
