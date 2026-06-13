@@ -10,6 +10,11 @@
         defaultMode = "bypassPermissions";
         disableBypassPermissionsMode = "disable";
       };
+      statusLine = {
+        type = "command";
+        command = "bash /home/elysia/.claude/statusline-command.sh";
+      };
+      theme = "auto";
     };
   };
 }
