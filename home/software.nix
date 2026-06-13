@@ -32,6 +32,5 @@
     xorriso
     cpio
     localsend
-    codex
   ];
 }

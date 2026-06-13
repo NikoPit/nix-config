@@ -9,6 +9,7 @@
     ./rofi.nix
     ./fastfetch.nix
     ./fish.nix
+    ./codex.nix
     ../niri/niri.nix
     ./input-method.nix
     ./yazi.nix
