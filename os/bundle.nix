@@ -10,7 +10,6 @@
     ./clash-verge.nix
     ./xwayland.nix
     ./distcc.nix
-    ./anime-games.nix
     ./steam.nix
     ./electron-wl.nix
     ./bootloader.nix

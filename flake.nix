@@ -15,12 +15,6 @@
     };
     niri.url = "github:sodiboo/niri-flake";
     nixos-hardware.url = "github:NixOS/nixos-hardware/master";
-
-    aagl = {
-      url = "github:ezKEa/aagl-gtk-on-nix";
-      inputs.nixpkgs.follows = "nixpkgs";
-
-    };
   };
 
   outputs =
@@ -29,7 +23,6 @@
       home-manager,
       nixvim,
       niri,
-      aagl,
       nixos-hardware,
       ...
     }:
@@ -41,7 +34,7 @@
           hardware-module ? null,
         }:
         nixpkgs.lib.nixosSystem {
-          specialArgs = { inherit hostname display aagl; };
+          specialArgs = { inherit hostname display; };
 
           modules = [
             ./hosts/${hostname}/config.nix
