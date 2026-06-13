@@ -1,6 +1,7 @@
 {
   programs.codex = {
     enable = true;
+    enableMcpIntegration = true;
     settings = {
       model_provider = "e-flowcode";
       sandbox_mode = "danger-full-access";
