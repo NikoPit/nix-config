@@ -27,7 +27,6 @@
     pkg-config
     udev
     libudev-zero
-    claude-code
     modrinth-app
     gnumake
     xorriso
