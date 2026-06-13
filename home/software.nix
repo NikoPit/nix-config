@@ -9,6 +9,7 @@
     git
     nixfmt
     osu-lazer-bin
+    python3
     gdb
     vscodium
     ripgrep
