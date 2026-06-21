@@ -13,9 +13,7 @@
           set -euo pipefail
 
           cd /home/elysia/coding-project/seele-os-linux
-          export SEELE_REPO="/home/elysia/coding-project/seele-os-linux"
-          export SEELE_QMP_SOCKET="/tmp/seele-agent-qmp.sock"
-          exec ${pkgs.nix}/bin/nix develop -c cargo run -p seele-mcp
+          exec ${pkgs.nix}/bin/nix develop -c cargo run --quiet -p control-mcp
         ''}";
       };
       github = {
