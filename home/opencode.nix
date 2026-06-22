@@ -3,7 +3,7 @@
     enable = true;
     enableMcpIntegration = true;
     settings = {
-      model = "e-flowcode/gpt-5";
+      model = "e-flowcode/gpt-5.5";
 
       provider.e-flowcode = {
         npm = "@ai-sdk/openai";
@@ -12,8 +12,8 @@
           baseURL = "https://e-flowcode.cc/v1";
           apiKey = "{env:OPENAI_API_KEY}";
         };
-        models.gpt-5 = {
-          name = "GPT-5";
+        models."gpt-5.5" = {
+          name = "GPT-5.5";
         };
       };
     };
