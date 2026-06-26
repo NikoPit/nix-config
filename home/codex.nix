@@ -12,6 +12,8 @@
         base_url = "https://e-flowcode.cc/v1";
         wire_api = "responses";
         requires_openai_auth = true;
+        request_max_retries = 100;
+        stream_max_retries = 100;
       };
     };
   };
