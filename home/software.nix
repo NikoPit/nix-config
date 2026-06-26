@@ -9,6 +9,7 @@
     git
     nixfmt
     osu-lazer-bin
+    nodejs
     python3
     gdb
     vscodium
