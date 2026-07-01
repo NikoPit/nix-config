@@ -3,6 +3,7 @@
     enable = true;
     enableMcpIntegration = true;
     settings = {
+      model = "glm-5.2";
       model_provider = "e-flowcode";
       sandbox_mode = "danger-full-access";
       approval_policy = "never";
