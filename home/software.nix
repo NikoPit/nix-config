@@ -9,6 +9,7 @@
     git
     nixfmt
     osu-lazer-bin
+    go-musicfox
     nodejs
     python3
     gdb
