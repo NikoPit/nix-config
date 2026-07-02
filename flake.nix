@@ -2,7 +2,7 @@
   description = "System config";
 
   inputs = {
-    nixpkgs.url = "github:nixos/nixpkgs/nixos-unstable";
+    nixpkgs.url = "git+https://mirrors.nju.edu.cn/git/nixpkgs.git?shallow=1";
 
     home-manager = {
       url = "github:nix-community/home-manager";
