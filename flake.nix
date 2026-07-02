@@ -9,6 +9,11 @@
       inputs.nixpkgs.follows = "nixpkgs";
     };
 
+    disko = {
+      url = "github:nix-community/disko";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
+
     nixvim = {
       url = "github:nix-community/nixvim";
       inputs.nixpkgs.follows = "nixpkgs";
@@ -20,6 +25,7 @@
   outputs =
     {
       nixpkgs,
+      disko,
       home-manager,
       nixvim,
       niri,
@@ -51,6 +57,7 @@
             }
 
             nixvim.nixosModules.nixvim
+            disko.nixosModules.disko
             niri.nixosModules.niri
           ]
           ++ (if hardware-module != null then [ hardware-module ] else [ ]);

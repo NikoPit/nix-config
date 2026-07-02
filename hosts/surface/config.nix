@@ -1,4 +1,4 @@
-{ hostname , ... }:
+{ hostname, ... }:
 
 {
   imports = [
@@ -7,4 +7,5 @@
   ];
 
   networking.hostName = "${hostname}";
+  _module.args.diskDevice = "TODO";
 }
