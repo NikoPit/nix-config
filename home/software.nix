@@ -9,8 +9,6 @@
     git
     nixfmt
     osu-lazer-bin
-    steamcmd
-    steam-tui
     go-musicfox
     nodejs
     python3
