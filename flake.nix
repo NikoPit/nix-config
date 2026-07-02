@@ -38,6 +38,7 @@
 
           modules = [
             ./hosts/${hostname}/config.nix
+            ./system/bundle.nix
 
             home-manager.nixosModules.home-manager
             {

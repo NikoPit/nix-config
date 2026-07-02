@@ -13,7 +13,6 @@
     ./distcc.nix
     ./steam.nix
     ./electron-wl.nix
-    ./bootloader.nix
     ./fonts.nix
     ./command-not-found.nix
     ./proxy.nix
