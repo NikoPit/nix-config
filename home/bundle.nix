@@ -10,7 +10,6 @@
     ./fastfetch.nix
     ./fish.nix
     ./opencode.nix
-    ./claude.nix
     ./mcp.nix
     ./codex.nix
     ../niri/niri.nix
