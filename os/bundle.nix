@@ -8,7 +8,6 @@
     ./nix.nix
     ./user.nix
     ./fish.nix
-    ./clash-verge.nix
     ./xwayland.nix
     ./distcc.nix
     ./steam.nix
