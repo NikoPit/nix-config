@@ -31,7 +31,6 @@
     pkg-config
     udev
     libudev-zero
-    modrinth-app
     gnumake
     xorriso
     cpio

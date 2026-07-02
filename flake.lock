@@ -183,15 +183,16 @@
     },
     "nixpkgs_3": {
       "locked": {
-        "lastModified": 1782890320,
-        "narHash": "sha256-Io916240sJoS3DLuFqzsen1xedVINuV0RcpVzyXUmf8=",
-        "ref": "refs/heads/master",
-        "rev": "d652a17e6e3ad05784b965fc25d3a2963a76bfad",
+        "lastModified": 1782723713,
+        "narHash": "sha256-oPXCU/SSUokcGaJREHibG1CBX3+s/W7orDWQOZDsEeQ=",
+        "ref": "nixos-unstable",
+        "rev": "b5aa0fbd538984f6e3d201be0005b4463d8b09f8",
         "shallow": true,
         "type": "git",
         "url": "https://mirrors.nju.edu.cn/git/nixpkgs.git"
       },
       "original": {
+        "ref": "nixos-unstable",
         "shallow": true,
         "type": "git",
         "url": "https://mirrors.nju.edu.cn/git/nixpkgs.git"
