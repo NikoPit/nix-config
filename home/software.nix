@@ -6,7 +6,6 @@
     jdk21
     qq
     gh
-    git
     nixfmt
     osu-lazer-bin
     go-musicfox

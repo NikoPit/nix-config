@@ -9,6 +9,7 @@
     ./rofi.nix
     ./fastfetch.nix
     ./fish.nix
+    ./git.nix
     ./opencode.nix
     ./mcp.nix
     ./codex.nix
