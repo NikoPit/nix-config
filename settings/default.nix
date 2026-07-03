@@ -1,0 +1,3 @@
+{
+  proxy = import ./proxy.nix;
+}

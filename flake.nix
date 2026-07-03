@@ -33,6 +33,7 @@
       ...
     }:
     let
+      settings = import ./settings;
       makeSystem =
         {
           hostname,
@@ -40,7 +41,7 @@
           hardware-module ? null,
         }:
         nixpkgs.lib.nixosSystem {
-          specialArgs = { inherit hostname display; };
+          specialArgs = { inherit hostname display settings; };
 
           modules = [
             ./hosts/${hostname}/config.nix

@@ -1,7 +1,7 @@
-{ pkgs, ... }:
+{ pkgs, settings, ... }:
 
 let
-  airportSubscription = "https://0b96e976-9ec3-44c0-aa2b-30bf8b0792ea.com/sabusuku?token=a4328d9669100b0158e45c0d60fc9724";
+  proxySettings = settings.proxy;
   yaml = pkgs.formats.yaml { };
   nameserver = [
     "223.5.5.5"
@@ -10,6 +10,7 @@ let
     "8.8.8.8"
 
   ];
+
   mihomoConfig = yaml.generate "mihomo-config.yaml" {
     mode = "rule";
 
@@ -34,15 +35,15 @@ let
     proxy-providers = {
       airport = {
         type = "http";
-        url = airportSubscription;
+        url = proxySettings.subscription.url;
         path = "./providers/airport.yaml";
-        interval = 300;
+        interval = proxySettings.subscription.updateInterval;
         proxy = "DIRECT";
 
         health-check = {
           enable = true;
           url = "https://cp.cloudflare.com";
-          interval = 20;
+          interval = proxySettings.subscription.healthCheckInterval;
         };
       };
     };
@@ -53,8 +54,8 @@ let
         type = "url-test";
         use = [ "airport" ];
         url = "https://cp.cloudflare.com";
-        interval = 5;
-        tolerance = 50;
+        interval = proxySettings.urlTest.interval;
+        tolerance = proxySettings.urlTest.tolerance;
       }
 
       {
