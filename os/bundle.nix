@@ -10,6 +10,7 @@
     ./fish.nix
     ./xwayland.nix
     ./distcc.nix
+    ./stylix.nix
     ./steam.nix
     ./electron-wl.nix
     ./fonts.nix
