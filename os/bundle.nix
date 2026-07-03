@@ -14,7 +14,6 @@
     ./electron-wl.nix
     ./fonts.nix
     ./command-not-found.nix
-    ./proxy.nix
     # TODO ./file-chooser.nix
     ./substituters.nix
     ./flatpak.nix
