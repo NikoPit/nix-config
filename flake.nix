@@ -28,12 +28,18 @@
       url = "github:NixOS/nixos-hardware/master";
       inputs.nixpkgs.follows = "nixpkgs";
     };
+
+    stylix = {
+      url = "github:nix-community/stylix";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
   };
 
   outputs =
     {
       nixpkgs,
       disko,
+      stylix,
       home-manager,
       nixvim,
       niri,
@@ -66,6 +72,7 @@
             }
 
             nixvim.nixosModules.nixvim
+            stylix.nixosModules.stylix
             disko.nixosModules.disko
             niri.nixosModules.niri
           ]
