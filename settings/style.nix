@@ -1,8 +1,8 @@
 { pkgs, ... }:
 {
   wallpaper = pkgs.fetchurl {
-    url = "https://wall.alphacoders.com/big.php?i=1266440";
-    hash = "sha256-MXbqu0gu0jCOHLMTTKPz9a4O1g1rmoE3x6u5azygoM4=";
+    url = "https://images4.alphacoders.com/133/thumb-1920-1336916.png";
+    hash = "sha256-RGC3pp4LRI7KC8Is4rIlMuLVhg+xTjW8Y76Tckfvu7s=";
   };
   polarity = "light";
 }
