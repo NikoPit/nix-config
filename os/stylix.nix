@@ -1,3 +1,6 @@
+{ settings, ... }:
 {
-  stylix.enable = true;
+  stylix = {
+    enable = true;
+  };
 }
