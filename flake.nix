@@ -47,7 +47,8 @@
       ...
     }:
     let
-      settings = import ./settings;
+      pkgs = import nixpkgs { system = "x86_64-linux"; };
+      settings = import ./settings { inherit pkgs; };
       makeSystem =
         {
           hostname,
