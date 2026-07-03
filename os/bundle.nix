@@ -9,7 +9,6 @@
     ./user.nix
     ./fish.nix
     ./xwayland.nix
-    ./proxy.nix
     ./distcc.nix
     ./steam.nix
     ./electron-wl.nix
