@@ -9,7 +9,7 @@
 
     gc = {
       automatic = true;
-      dates = settings.nixGC.dates;
+      dates = settings.misc.nixGC.dates;
     };
   };
 

@@ -1,0 +1,3 @@
+{
+  nixGC.dates = "daily";
+}
