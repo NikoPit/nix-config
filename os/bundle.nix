@@ -13,7 +13,6 @@
     ./stylix.nix
     ./steam.nix
     ./electron-wl.nix
-    ./fonts.nix
     ./command-not-found.nix
     # TODO ./file-chooser.nix
     ./substituters.nix

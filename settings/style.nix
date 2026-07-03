@@ -5,4 +5,9 @@
     hash = "sha256-RGC3pp4LRI7KC8Is4rIlMuLVhg+xTjW8Y76Tckfvu7s=";
   };
   polarity = "light";
+
+  font = {
+    package = pkgs.maple-mono.NF-CN;
+    name = "Maple Mono NF CN";
+  };
 }
