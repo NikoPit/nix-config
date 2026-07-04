@@ -1,4 +1,4 @@
-{ pkgs, ... }:
+{ pkgs, settings, ... }:
 
 {
   services.greetd = {
@@ -6,7 +6,7 @@
     settings = {
       initial_session = {
         command = "niri-session";
-        user = "elysia";
+        user = settings.user.name;
       };
 
       # The session when you log out of hyprland / hyprland breaks

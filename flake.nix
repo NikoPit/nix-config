@@ -69,7 +69,7 @@
               home-manager.useGlobalPkgs = true;
               home-manager.useUserPackages = true;
 
-              home-manager.users.elysia = import ./home/configuration-home.nix;
+              home-manager.users.${settings.user.name} = import ./home/configuration-home.nix;
             }
 
             nixvim.nixosModules.nixvim

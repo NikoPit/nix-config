@@ -1,12 +1,15 @@
-{ pkgs , ... }:
+{ pkgs, settings, ... }:
 
 {
   # Define a user account. Don't forget to set a password with ‘passwd’.
-  users.users.elysia = {
+  users.users.${settings.user.name} = {
     isNormalUser = true;
-    description = "elysia";
-    extraGroups = [ "networkmanager" "wheel" ];
-    packages = with pkgs; [];
+    description = settings.user.name;
+    extraGroups = [
+      "networkmanager"
+      "wheel"
+    ];
+    packages = with pkgs; [ ];
     shell = pkgs.fish;
   };
 }

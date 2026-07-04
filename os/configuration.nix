@@ -2,7 +2,12 @@
 # your system.  Help is available in the configuration.nix(5) man page
 # and in the NixOS manual (accessible by running ‘nixos-help’).
 
-{ config, pkgs, ... }:
+{
+  config,
+  pkgs,
+  settings,
+  ...
+}:
 
 {
   imports = [
@@ -50,7 +55,7 @@
   };
 
   # Enable automatic login for the user.
-  services.getty.autologinUser = "elysia";
+  services.getty.autologinUser = settings.user.name;
 
   # Allow unfree packages
   nixpkgs.config.allowUnfree = true;
