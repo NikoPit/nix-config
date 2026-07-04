@@ -8,5 +8,6 @@
     ./networking.nix
     ./localization.nix
     ./misc.nix
+    ./nix.nix
   ];
 }
