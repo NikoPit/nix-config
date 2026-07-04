@@ -17,6 +17,5 @@
     ../niri/niri.nix
     ./input-method.nix
     ./yazi.nix
-    ./wallpaper.nix
   ];
 }
