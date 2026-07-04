@@ -14,5 +14,4 @@
       dates = settings.misc.nixGC.dates;
     };
   };
-
 }
