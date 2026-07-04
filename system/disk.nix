@@ -6,6 +6,10 @@ let
     "noatime"
   ];
   defaultMountOptions = makeMountOptions { };
+  makeSubvolume = mountpoint: {
+    mountpoint = mountpoint;
+    mountOptions = defaultMountOptions;
+  };
 in
 {
   disko.devices.disk.main = {
@@ -35,25 +39,10 @@ in
             type = "btrfs";
 
             subvolumes = {
-              root = {
-                mountpoint = "/";
-                mountOptions = defaultMountOptions;
-              };
-
-              home = {
-                mountpoint = "/home";
-                mountOptions = defaultMountOptions;
-              };
-
-              nix = {
-                mountpoint = "/nix";
-                mountOptions = defaultMountOptions;
-              };
-
-              log = {
-                mountpoint = "/var/log";
-                mountOptions = defaultMountOptions;
-              };
+              root = makeSubvolume "/";
+              home = makeSubvolume "/home";
+              nix = makeSubvolume "/nix";
+              log = makeSubvolume "/var/log";
 
               swap = {
                 mountpoint = "/.swap";
