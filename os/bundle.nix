@@ -10,7 +10,6 @@
     ./stylix.nix
     ./steam.nix
     # TODO ./file-chooser.nix
-    ./flatpak.nix
     ./man.nix
   ];
 }
