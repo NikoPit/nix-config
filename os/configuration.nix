@@ -25,9 +25,6 @@
     variant = "";
   };
 
-  # Enable automatic login for the user.
-  services.getty.autologinUser = settings.user.name;
-
   # Allow unfree packages
   nixpkgs.config.allowUnfree = true;
 }
