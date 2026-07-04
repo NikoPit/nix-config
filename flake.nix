@@ -64,7 +64,7 @@
 
             home-manager.nixosModules.home-manager
             {
-              home-manager.extraSpecialArgs = { inherit hostname display; };
+              home-manager.extraSpecialArgs = { inherit hostname display settings; };
 
               home-manager.useGlobalPkgs = true;
               home-manager.useUserPackages = true;
