@@ -7,6 +7,5 @@
     ./xwayland.nix
     ./stylix.nix
     ./steam.nix
-    # TODO ./file-chooser.nix
   ];
 }
