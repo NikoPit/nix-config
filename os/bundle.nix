@@ -10,7 +10,6 @@
     ./stylix.nix
     ./steam.nix
     ./electron-wl.nix
-    ./command-not-found.nix
     # TODO ./file-chooser.nix
     ./flatpak.nix
     ./man.nix
