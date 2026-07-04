@@ -6,5 +6,6 @@
     ./disk.nix
     ./proxy.nix
     ./networking.nix
+    ./localization.nix
   ];
 }
