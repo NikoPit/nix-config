@@ -4,7 +4,6 @@
   imports = [
     ../../os/configuration.nix
     ./hardware-configuration.nix
-    ./software.nix
     ./graphics-driver.nix
   ];
 
