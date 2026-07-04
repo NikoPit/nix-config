@@ -14,4 +14,6 @@
       dates = settings.misc.nixGC.dates;
     };
   };
+
+  nixpkgs.config.allowUnfree = true;
 }
