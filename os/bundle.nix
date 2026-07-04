@@ -9,7 +9,6 @@
     ./xwayland.nix
     ./stylix.nix
     ./steam.nix
-    ./electron-wl.nix
     # TODO ./file-chooser.nix
     ./flatpak.nix
     ./man.nix
