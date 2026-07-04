@@ -5,5 +5,6 @@
     ./substituters.nix
     ./disk.nix
     ./proxy.nix
+    ./networking.nix
   ];
 }
