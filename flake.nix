@@ -60,7 +60,7 @@
 
           modules = [
             ./hosts/${hostname}/config.nix
-            ./system/bundle.nix
+            ./system
 
             home-manager.nixosModules.home-manager
             {
