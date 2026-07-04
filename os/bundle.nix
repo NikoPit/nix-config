@@ -6,7 +6,6 @@
     ../nixvim/nixvim.nix
     ./sudo.nix
     ./nix.nix
-    ./user.nix
     ./fish.nix
     ./xwayland.nix
     ./distcc.nix
@@ -15,7 +14,6 @@
     ./electron-wl.nix
     ./command-not-found.nix
     # TODO ./file-chooser.nix
-    ./substituters.nix
     ./flatpak.nix
     ./man.nix
 
