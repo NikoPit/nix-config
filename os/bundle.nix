@@ -4,7 +4,6 @@
     ./greetd.nix
     ./misc.nix
     ../nixvim/nixvim.nix
-    ./sudo.nix
     ./nix.nix
     ./fish.nix
     ./xwayland.nix
