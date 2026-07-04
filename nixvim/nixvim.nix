@@ -10,7 +10,6 @@
       ./bufferline.nix
       ./keymaps.nix
       ./debugging.nix
-      ./avante.nix
       ./lsp.nix
       ./misc.nix
       ./completion.nix
