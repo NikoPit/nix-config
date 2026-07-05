@@ -2,7 +2,7 @@
 
 {
   imports = [
-    ../../os/configuration.nix
+    ../../os
     ./hardware-configuration.nix
   ];
 
