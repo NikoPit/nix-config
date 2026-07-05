@@ -14,14 +14,4 @@
     # Include the results of the hardware scan.
     ./bundle.nix
   ];
-
-  services.xserver = {
-    enable = true;
-  };
-
-  # Configure keymap in X11
-  services.xserver.xkb = {
-    layout = "us";
-    variant = "";
-  };
 }
