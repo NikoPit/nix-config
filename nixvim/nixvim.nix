@@ -9,7 +9,6 @@
       ./lualine.nix
       ./bufferline.nix
       ./keymaps.nix
-      ./debugging.nix
       ./lsp.nix
       ./misc.nix
       ./completion.nix
