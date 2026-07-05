@@ -79,6 +79,10 @@
             stylix.nixosModules.stylix
             disko.nixosModules.disko
             niri.nixosModules.niri
+
+            {
+              networking.hostName = hostname;
+            }
           ]
           ++ (if hardware-module != null then [ hardware-module ] else [ ]);
         };
