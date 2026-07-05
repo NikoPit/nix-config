@@ -5,7 +5,6 @@
     nixpkgs.useGlobalPackages = true;
 
     imports = [
-      ./clipboard.nix
       ./lualine.nix
       ./bufferline.nix
       ./keymaps.nix
