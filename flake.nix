@@ -60,6 +60,7 @@
 
           modules = [
             ./hosts/${hostname}/config.nix
+            ./modules/os-bundle.nix
             ./system
 
             home-manager.nixosModules.home-manager
@@ -69,7 +70,7 @@
               home-manager.useGlobalPkgs = true;
               home-manager.useUserPackages = true;
 
-              home-manager.users.${settings.user.name} = import ./home/configuration-home.nix;
+              home-manager.users.${settings.user.name} = import ./modules/home-bundle.nix;
             }
 
             nixvim.nixosModules.nixvim

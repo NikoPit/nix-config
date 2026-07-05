@@ -8,7 +8,6 @@
     ./dunst.nix
     ./rofi.nix
     ./fastfetch.nix
-    ./fish.nix
     ./nh.nix
     ./direnv.nix
     ./git.nix
@@ -17,5 +16,6 @@
     ../niri/niri.nix
     ./input-method.nix
     ./yazi.nix
+    ./home.nix
   ];
 }
