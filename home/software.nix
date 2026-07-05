@@ -20,7 +20,6 @@
     fd
     pavucontrol
     nautilus
-    vesktop
     rustup
     xray
     gcc
