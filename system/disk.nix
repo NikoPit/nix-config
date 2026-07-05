@@ -1,5 +1,3 @@
-{ diskDevice, ... }:
-
 let
   makeMountOptions = { }: [
     "compress=zstd"
@@ -13,7 +11,6 @@ let
 in
 {
   disko.devices.disk.main = {
-    device = diskDevice;
     type = "disk";
 
     content = {
