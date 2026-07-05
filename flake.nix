@@ -63,6 +63,8 @@
             ./modules/os-bundle.nix
             ./system
 
+            ./nixvim
+
             home-manager.nixosModules.home-manager
             {
               home-manager.extraSpecialArgs = { inherit hostname display settings; };
