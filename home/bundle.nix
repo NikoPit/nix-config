@@ -12,7 +12,6 @@
     ./nh.nix
     ./direnv.nix
     ./git.nix
-    ./opencode.nix
     ./mcp.nix
     ./codex.nix
     ../niri/niri.nix
