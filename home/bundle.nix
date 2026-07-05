@@ -9,6 +9,7 @@
     ./rofi.nix
     ./fastfetch.nix
     ./fish.nix
+    ./nh.nix
     ./direnv.nix
     ./git.nix
     ./opencode.nix
