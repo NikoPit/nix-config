@@ -33,6 +33,11 @@
       url = "github:nix-community/stylix";
       inputs.nixpkgs.follows = "nixpkgs";
     };
+
+    hyprland = {
+      url = "github:hyprwm/Hyprland";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
   };
 
   outputs =
@@ -43,6 +48,7 @@
       home-manager,
       nixvim,
       niri,
+      hyprland,
       nixos-hardware,
       ...
     }:
@@ -64,6 +70,7 @@
             ./system
 
             ./nixvim
+            ./hyprland
 
             home-manager.nixosModules.home-manager
             {
@@ -79,6 +86,7 @@
             stylix.nixosModules.stylix
             disko.nixosModules.disko
             niri.nixosModules.niri
+            hyprland.nixosModules.default
 
             {
               networking.hostName = hostname;
