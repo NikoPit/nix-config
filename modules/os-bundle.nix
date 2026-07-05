@@ -2,7 +2,7 @@
   imports = [
     ../niri/conf.nix
     ./greetd.nix
-    ../nixvim/nixvim.nix
+    ../nixvim
     ./fish.nix
     ./xwayland.nix
     ./stylix.nix
