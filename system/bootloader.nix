@@ -1,6 +1,10 @@
 {
   boot.loader = {
-    limine.enable = true;
+    grub = {
+      enable = true;
+      efiSupport = true;
+      device = "nodev";
+    };
 
     efi.canTouchEfiVariables = true;
   };
