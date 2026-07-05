@@ -59,7 +59,7 @@
           specialArgs = { inherit hostname display settings; };
 
           modules = [
-            ./hosts/${hostname}/config.nix
+            ./hosts/${hostname}
             ./modules/os-bundle.nix
             ./system
 
