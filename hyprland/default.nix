@@ -17,6 +17,7 @@
       bind = import ./binds.nix;
       animation = import ./animation.nix;
       decoration = import ./decoration.nix;
+      general = import ./general.nix;
 
       bindm = [
         "SUPER, mouse:272, movewindow"
