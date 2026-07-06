@@ -1,6 +1,6 @@
 {
   urlTest = {
-    interval = 20;
+    interval = 5;
     tolerance = 30;
   };
 
