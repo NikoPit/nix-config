@@ -10,6 +10,11 @@
 
       addons = with pkgs; [
         fcitx5-gtk
+
+        fcitx5-pinyin-minecraft
+        fcitx5-pinyin-moegirl
+        fcitx5-pinyin-zhwiki
+
         qt6Packages.fcitx5-chinese-addons
       ];
 
