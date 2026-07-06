@@ -12,6 +12,10 @@
     xwayland.enable = true;
 
     package = pkgs.hyprland;
+
+    settings = {
+      bind = import ./binds.nix;
+    };
   };
 
   _module.args.greetdSession = "uwsm start hyprland";
