@@ -16,6 +16,5 @@
     ./input-method.nix
     ./yazi.nix
     ./home.nix
-    ./home-misc.nix
   ];
 }
