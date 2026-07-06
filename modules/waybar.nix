@@ -4,7 +4,7 @@
 
     settings.main = {
       height = 40;
-      
+
       margin-top = 10;
       margin-left = 10;
       margin-right = 10;
@@ -26,8 +26,4 @@
       ];
     };
   };
-  
-  programs.niri.settings.spawn-at-startup = [
-    { sh = "waybar"; }
-  ];
 }
