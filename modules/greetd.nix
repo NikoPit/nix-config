@@ -11,8 +11,8 @@ in
     enable = true;
 
     settings = {
-      initial-session = session;
-      default-session = session;
+      initial_session = session;
+      default_session = session;
     };
   };
 }
