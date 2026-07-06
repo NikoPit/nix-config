@@ -9,6 +9,12 @@
         install_url = "https://addons.mozilla.org/firefox/downloads/latest/ublock-origin/latest.xpi";
         installation_mode = "force_installed";
       };
+
+      # Return youtube dislikes
+      "{762f9885-5a13-4abd-9c77-433dcd38b8fd}" = {
+        install_url = "https://addons.mozilla.org/firefox/downloads/latest/return-youtube-dislikes/latest.xpi";
+        installation_mode = "force_installed";
+      };
     };
   };
 }
