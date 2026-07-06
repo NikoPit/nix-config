@@ -1,10 +1,12 @@
+{ applicationLauncher, ... }:
+
 {
   wayland.windowManager.hyprland = {
     enable = true;
     configType = "hyprlang";
 
     settings = {
-      bind = import ./binds.nix;
+      bind = import ./binds.nix { inherit applicationLauncher; };
       animation = import ./animation.nix;
       decoration = import ./decoration.nix;
       general = import ./general.nix;

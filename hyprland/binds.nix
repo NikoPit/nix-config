@@ -1,9 +1,11 @@
+{ applicationLauncher, ... }:
+
 [
   "SUPER, Q, exec, ghostty"
   "SUPER, C, killactive"
   "SUPER, V, togglefloating"
 
-  "SUPER, SPACE, exec, rofi -show drun"
+  "SUPER, SPACE, exec, ${applicationLauncher}"
 
   "SUPER, 1, workspace, 1"
   "SUPER, 2, workspace, 2"
