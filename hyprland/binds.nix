@@ -1,6 +1,7 @@
 [
   "SUPER, Q, exec, ghostty"
   "SUPER, C, killactive"
+  "SUPER, V, togglefloating"
 
   "SUPER, SPACE, exec, rofi -show drun"
 
