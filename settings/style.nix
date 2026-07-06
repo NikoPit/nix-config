@@ -10,4 +10,10 @@
     package = pkgs.maple-mono.NF-CN;
     name = "Maple Mono NF CN";
   };
+
+  cursor = {
+    name = "Bibata-Modern-Classic";
+    package = pkgs.bibata-cursors;
+    size = 24;
+  };
 }

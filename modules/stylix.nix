@@ -8,6 +8,7 @@ in
 
     image = styleSettings.wallpaper;
     polarity = styleSettings.polarity;
+    cursor = styleSettings.cursor;
 
     fonts = {
       serif = styleSettings.font;
