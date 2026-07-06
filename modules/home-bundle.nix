@@ -16,5 +16,7 @@
     ./input-method.nix
     ./yazi.nix
     ./home.nix
+
+    ../hyprland/home.nix
   ];
 }
