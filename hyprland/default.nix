@@ -10,7 +10,5 @@
     xwayland.enable = true;
   };
 
-  services.hyprpaper.enable = true;
-
   _module.args.greetdSession = "uwsm start hyprland";
 }
