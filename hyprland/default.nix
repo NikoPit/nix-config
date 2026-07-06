@@ -1,3 +1,5 @@
+{ pkgs, ... }:
+
 {
   nix.settings = {
     substituters = [ "https://hyprland.cachix.org" ];
@@ -8,6 +10,8 @@
     enable = true;
     withUWSM = true;
     xwayland.enable = true;
+
+    package = pkgs.hyprland;
   };
 
   _module.args.greetdSession = "uwsm start hyprland";
