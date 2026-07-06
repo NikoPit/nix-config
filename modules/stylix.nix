@@ -5,6 +5,7 @@ in
 {
   stylix = {
     enable = true;
+
     image = styleSettings.wallpaper;
     polarity = styleSettings.polarity;
 
