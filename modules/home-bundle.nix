@@ -13,7 +13,6 @@
     ./git.nix
     ./mcp.nix
     ./codex.nix
-    ../niri/niri.nix
     ./input-method.nix
     ./yazi.nix
     ./home.nix
