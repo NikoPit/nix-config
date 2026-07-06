@@ -2,6 +2,8 @@
   "SUPER, Q, exec, ghostty"
   "SUPER, C, killactive"
 
+  "SUPER, SPACE, exec, rofi -show drun"
+
   "SUPER, 1, workspace, 1"
   "SUPER, 2, workspace, 2"
   "SUPER, 3, workspace, 3"
