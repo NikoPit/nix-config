@@ -59,11 +59,7 @@
           specialArgs = { inherit hostname display settings; };
 
           modules = [
-            ./hosts/${hostname}
             ./modules/os-bundle.nix
-            ./system
-
-            ./nixvim
 
             home-manager.nixosModules.home-manager
             {

@@ -1,3 +1,5 @@
+{ hostname, ... }:
+
 {
   imports = [
     ./greetd.nix
@@ -6,5 +8,9 @@
     ./steam.nix
 
     ../hyprland/os.nix
+    ../nixvim
+
+    ../hosts/${hostname}
+    ../system
   ];
 }
