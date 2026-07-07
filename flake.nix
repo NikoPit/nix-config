@@ -52,18 +52,17 @@
       makeSystem =
         {
           hostname,
-          display,
           hardware-module ? null,
         }:
         nixpkgs.lib.nixosSystem {
-          specialArgs = { inherit hostname display settings; };
+          specialArgs = { inherit hostname settings; };
 
           modules = [
             ./modules/os-bundle.nix
 
             home-manager.nixosModules.home-manager
             {
-              home-manager.extraSpecialArgs = { inherit hostname display settings; };
+              home-manager.extraSpecialArgs = { inherit hostname settings; };
 
               home-manager.useGlobalPkgs = true;
               home-manager.useUserPackages = true;
@@ -88,11 +87,9 @@
       # System configuration
       nixosConfigurations.elysiapc = makeSystem {
         hostname = "elysiapc";
-        display = "DP-3";
       };
       nixosConfigurations.surface = makeSystem {
         hostname = "surface";
-        display = "eDP-1";
       };
     };
 }
