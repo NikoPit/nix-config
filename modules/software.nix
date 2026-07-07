@@ -5,8 +5,6 @@
     qq
     gh
     nixfmt
-    nodejs
-    python3
     killall
   ];
 }
