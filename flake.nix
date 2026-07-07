@@ -58,7 +58,7 @@
           specialArgs = { inherit hostname settings; };
 
           modules = [
-            ./modules/os-bundle.nix
+            ./os-bundle.nix
 
             home-manager.nixosModules.home-manager
             {
@@ -67,7 +67,7 @@
               home-manager.useGlobalPkgs = true;
               home-manager.useUserPackages = true;
 
-              home-manager.users.${settings.user.name} = import ./modules/home-bundle.nix;
+              home-manager.users.${settings.user.name} = import ./home-bundle.nix;
             }
 
             nixvim.nixosModules.nixvim
