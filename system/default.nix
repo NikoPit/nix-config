@@ -9,5 +9,6 @@
     ./misc.nix
     ./nix.nix
     ./cachix.nix
+    ./secret.nix
   ];
 }
