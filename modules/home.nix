@@ -7,7 +7,7 @@
   };
 
   imports = [
-    ./software.nix
+    ./apps.nix
 
     ./firefox.nix
     ./fastfetch.nix
