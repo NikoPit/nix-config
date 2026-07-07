@@ -18,10 +18,10 @@ in
     };
 
     opacity = {
-      terminal = 0.7;
-      applications = 0.95;
-      desktop = 1.0;
-      popups = 0.9;
+      terminal = 0.5;
+      applications = 0.8;
+      desktop = 0.9
+      popups = 0.7;
     };
   };
 }
