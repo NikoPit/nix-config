@@ -8,9 +8,7 @@
 
   imports = [
     ./software.nix
-    ./ghostty.nix
     ./firefox.nix
-    ./rofi.nix
     ./fastfetch.nix
     ./nh.nix
     ./direnv.nix
@@ -18,8 +16,11 @@
     ./mcp.nix
     ./codex.nix
     ./input-method.nix
-    ./yazi.nix
     ./wayle.nix
     ./screenshot.nix
+
+    ./app-launcher.nix
+    ./file-manager.nix
+    ./terminal.nix
   ];
 }

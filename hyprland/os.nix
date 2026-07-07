@@ -5,5 +5,5 @@
     xwayland.enable = true;
   };
 
-  _module.args.greetdSession = "uwsm start hyprland";
+  _module.args.greeterSession = "uwsm start hyprland";
 }
