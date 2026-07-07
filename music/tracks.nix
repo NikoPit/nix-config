@@ -1,0 +1,27 @@
+{ pkgs, ... }:
+
+let
+  audioFormat = "mp3";
+  fetchMusic = import ./fetch-music.nix { inherit pkgs; };
+
+  tracks = {
+    "Angel Dust (2008 Mix)" = fetchMusic {
+      url = "https://www.youtube.com/watch?v=jszUs6TvsI8";
+      hash = "sha256-6n6SJ7ChYxwV+iWkC/+5yb4O9yEZERecWTeM7RhCsS8=";
+      inherit audioFormat;
+    };
+
+    "Aegleseeker (Afterworld Full Version)" = fetchMusic {
+      url = "https://www.youtube.com/watch?v=wq7BdtAFU5w&list=RDwq7BdtAFU5w&start_radio=1";
+      hash = "sha256-6TUFn2sRaDLy3YITXOTk/aXUOdr57cW7FN17kGG8Lmo=";
+      inherit audioFormat;
+    };
+  };
+in
+
+pkgs.linkFarm "tracks" (
+  map (name: {
+    name = "${name}.${audioFormat}";
+    path = tracks.${name};
+  }) (builtins.attrNames tracks)
+)
