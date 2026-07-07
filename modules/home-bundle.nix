@@ -3,8 +3,6 @@
     ./software.nix
     ./ghostty.nix
     ./firefox.nix
-    ./waybar.nix
-    ./waybar-style.nix
     ./dunst.nix
     ./rofi.nix
     ./fastfetch.nix
@@ -16,6 +14,7 @@
     ./input-method.nix
     ./yazi.nix
     ./home.nix
+    ./wayle.nix
 
     ../hyprland/home.nix
   ];
