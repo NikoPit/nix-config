@@ -1,7 +1,7 @@
-{ applicationLauncher, ... }:
+{ applicationLauncher, terminal, ... }:
 
 [
-  "SUPER, Q, exec, ghostty"
+  "SUPER, Q, exec, ${terminal}"
   "SUPER, C, killactive"
   "SUPER, V, togglefloating"
 
