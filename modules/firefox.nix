@@ -27,6 +27,12 @@
         install_url = "https://addons.mozilla.org/firefox/downloads/file/4132891/dont_track_me_google1-4.28.xpi";
         installation_mode = "force_installed";
       };
+
+      # Privacy Badger
+      "jid1-MnnxcxisBPnSXQ@jetpack" = {
+        install_url = "https://addons.mozilla.org/firefox/downloads/file/4854040/privacy_badger17-2026.6.16.xpi";
+        installation_mode = "force_installed";
+      };
     };
   };
 }
