@@ -1,9 +1,15 @@
-{ applicationLauncher, terminal, ... }:
+{
+  applicationLauncher,
+  terminal,
+  screenshot,
+  ...
+}:
 
 [
   "SUPER, Q, exec, ${terminal}"
   "SUPER, C, killactive"
   "SUPER, V, togglefloating"
+  "PRTSC, ${screenshot}"
 
   "SUPER, SPACE, exec, ${applicationLauncher}"
 

@@ -1,4 +1,9 @@
-{ applicationLauncher, terminal, ... }:
+{
+  applicationLauncher,
+  terminal,
+  screenshot,
+  ...
+}:
 
 {
   wayland.windowManager.hyprland = {
@@ -6,7 +11,7 @@
     configType = "hyprlang";
 
     settings = {
-      bind = import ./binds.nix { inherit applicationLauncher terminal; };
+      bind = import ./binds.nix { inherit applicationLauncher terminal screenshot; };
       animation = import ./animation.nix;
       decoration = import ./decoration.nix;
       general = import ./general.nix;
