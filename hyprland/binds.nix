@@ -9,7 +9,7 @@
   "SUPER, Q, exec, ${terminal}"
   "SUPER, C, killactive"
   "SUPER, V, togglefloating"
-  "PRTSC, ${screenshot}"
+  ", Print, exec, ${screenshot}"
 
   "SUPER, SPACE, exec, ${applicationLauncher}"
 
