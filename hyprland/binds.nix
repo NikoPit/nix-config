@@ -6,11 +6,12 @@
 }:
 
 [
-  "SUPER, Q, exec, ${terminal}"
   "SUPER, C, killactive"
   "SUPER, V, togglefloating"
+
   ", Print, exec, ${screenshot}"
 
+  "SUPER, Q, exec, ${terminal}"
   "SUPER, SPACE, exec, ${applicationLauncher}"
 
   "SUPER, 1, workspace, 1"
