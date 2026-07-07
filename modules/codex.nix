@@ -1,3 +1,5 @@
+{ pkgs, ... }:
+
 {
   programs.codex = {
     enable = true;
@@ -21,5 +23,12 @@
         stream_max_retries = 100;
       };
     };
+  };
+
+  xdg.desktopEntries.codex = {
+    name = "Codex";
+    genericName = "Command Line Tool";
+    exec = "${pkgs.codex}/bin/codex";
+    terminal = true;
   };
 }
