@@ -1,27 +1,9 @@
-{ pkgs, lib, ... }:
+{ pkgs, ... }:
 
-let
-  roxyCodex = pkgs.symlinkJoin {
-    name = "roxy-codex";
-    paths = [ pkgs.codex ];
-    buildInputs = [ pkgs.makeWrapper ];
-    postBuild = ''
-      wrapProgram $out/bin/codex \
-        --prefix PATH : ${
-          lib.makeBinPath [
-            pkgs.ripgrep
-            pkgs.python3
-            pkgs.nodejs
-          ]
-        }
-    '';
-  };
-in
 {
   programs.codex = {
     enable = true;
     enableMcpIntegration = true;
-    package = roxyCodex;
 
     settings = {
       model = "gpt-5.4";
