@@ -21,6 +21,12 @@
         install_url = "https://addons.mozilla.org/firefox/downloads/file/4444302/bewlybewly-0.41.1.xpi";
         installation_mode = "force_installed";
       };
+
+      # Don't track me google
+      "dont-track-me-google@robwu.nl" = {
+        install_url = "https://addons.mozilla.org/firefox/downloads/file/4132891/dont_track_me_google1-4.28.xpi";
+        installation_mode = "force_installed";
+      };
     };
   };
 }
