@@ -17,8 +17,8 @@
     ./mcp.nix
     ./codex.nix
     ./wayle.nix
-    ./screenshot.nix
 
+    ./screenshot.nix
     ./app-launcher.nix
     ./file-manager.nix
     ./terminal.nix
