@@ -19,11 +19,6 @@
       inputs.nixpkgs.follows = "nixpkgs";
     };
 
-    niri = {
-      url = "github:sodiboo/niri-flake";
-      inputs.nixpkgs.follows = "nixpkgs";
-    };
-
     nixos-hardware = {
       url = "github:NixOS/nixos-hardware/master";
       inputs.nixpkgs.follows = "nixpkgs";
@@ -42,7 +37,6 @@
       stylix,
       home-manager,
       nixvim,
-      niri,
       nixos-hardware,
       ...
     }:
@@ -73,7 +67,6 @@
             nixvim.nixosModules.nixvim
             stylix.nixosModules.stylix
             disko.nixosModules.disko
-            niri.nixosModules.niri
 
             {
               networking.hostName = hostname;
