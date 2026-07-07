@@ -3,7 +3,6 @@
     ./software.nix
     ./ghostty.nix
     ./firefox.nix
-    ./dunst.nix
     ./rofi.nix
     ./fastfetch.nix
     ./nh.nix
