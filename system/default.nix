@@ -8,5 +8,6 @@
     ./localization.nix
     ./misc.nix
     ./nix.nix
+    ./cachix.nix
   ];
 }
