@@ -14,6 +14,7 @@
     ./yazi.nix
     ./home.nix
     ./wayle.nix
+    ./flameshot.nix
 
     ../hyprland/home.nix
   ];
