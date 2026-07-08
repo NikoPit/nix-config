@@ -1,8 +1,8 @@
 { pkgs, ... }:
 {
   wallpaper = pkgs.fetchurl {
-    url = "https://w.wallhaven.cc/full/e7/wallhaven-e78jg8.jpg";
-    hash = "sha256-bhIibvzvDKmFgQKS/G+sK2ah2Y21NPfi8IhBSZLpiEM=";
+    url = "https://w.wallhaven.cc/full/x6/wallhaven-x6vlw3.jpg";
+    hash = "sha256-mfnEiKK7vE4jQrNOnzsZYVsrYPHLmBHNURJDPkfLsQ0=";
   };
   polarity = "light";
 
