@@ -1,7 +1,5 @@
-{ settings, ... }:
+{ pkgs, ... }:
 let
-  styleSettings = settings.style;
-
   colorscheme = {
     base00 = "f7f2ee"; # main background
     base01 = "efe6df"; # lighter panel background
@@ -21,6 +19,11 @@ let
     base0E = "b48db6"; # purple / mauve
     base0F = "c89d8f"; # extra accent / blush brown
   };
+
+  font = {
+    package = pkgs.maple-mono.NF-CN;
+    name = "Maple Mono NF CN";
+  };
 in
 {
   stylix = {
@@ -28,15 +31,22 @@ in
 
     base16Scheme = colorscheme;
 
-    image = styleSettings.wallpaper;
-    polarity = styleSettings.polarity;
-    cursor = styleSettings.cursor;
+    image = pkgs.fetchurl {
+      url = "https://w.wallhaven.cc/full/x6/wallhaven-x6vlw3.jpg";
+      hash = "sha256-mfnEiKK7vE4jQrNOnzsZYVsrYPHLmBHNURJDPkfLsQ0=";
+    };
+    polarity = "light";
+    cursor = {
+      name = "Bibata-Modern-Classic";
+      package = pkgs.bibata-cursors;
+      size = 24;
+    };
 
     fonts = {
-      serif = styleSettings.font;
-      sansSerif = styleSettings.font;
-      monospace = styleSettings.font;
-      emoji = styleSettings.font;
+      serif = font;
+      sansSerif = font;
+      monospace = font;
+      emoji = font;
     };
 
     opacity = {

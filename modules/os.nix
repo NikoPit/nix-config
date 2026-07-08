@@ -5,7 +5,7 @@
     ./greeter.nix
 
     ./fish.nix
-    ./stylix.nix
+    ./style.nix
     ./steam.nix
   ];
 }
