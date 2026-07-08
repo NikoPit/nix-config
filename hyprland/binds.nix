@@ -1,13 +1,6 @@
-{
-  terminal,
-  ...
-}:
-
 [
   "SUPER, C, killactive"
   "SUPER, V, togglefloating"
-
-  "SUPER, Q, exec, ${terminal}"
 
   "SUPER, 1, workspace, 1"
   "SUPER, 2, workspace, 2"

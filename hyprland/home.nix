@@ -1,15 +1,10 @@
 {
-  terminal,
-  ...
-}:
-
-{
   wayland.windowManager.hyprland = {
     enable = true;
     configType = "hyprlang";
 
     settings = {
-      bind = import ./binds.nix { inherit terminal; };
+      bind = import ./binds.nix;
       animation = import ./animation.nix;
       decoration = import ./decoration.nix;
       general = import ./general.nix;
