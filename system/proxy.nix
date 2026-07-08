@@ -83,11 +83,7 @@ let
 in
 {
   sops = {
-    secrets.airport-token = {
-      owner = "root";
-      group = "root";
-      mode = "0400";
-    };
+    secrets.airport-token = { };
 
     templates.mihomoConfig = {
       content = builtins.readFile mihomoConfig;

@@ -10,11 +10,7 @@ in
     trusted-public-keys = [ "roxy.cachix.org-1:gj2jWTAp/0EugTY4Qlss7pqM1+035Yh5CIFPZkf33I0=" ];
   };
 
-  sops.secrets.cachix-token = {
-    owner = "root";
-    group = "root";
-    mode = "0400";
-  };
+  sops.secrets.cachix-token = { };
 
   services.cachix-watch-store = {
     enable = true;
