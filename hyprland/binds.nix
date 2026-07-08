@@ -1,5 +1,4 @@
 {
-  applicationLauncher,
   terminal,
   ...
 }:
@@ -9,7 +8,6 @@
   "SUPER, V, togglefloating"
 
   "SUPER, Q, exec, ${terminal}"
-  "SUPER, SPACE, exec, ${applicationLauncher}"
 
   "SUPER, 1, workspace, 1"
   "SUPER, 2, workspace, 2"
