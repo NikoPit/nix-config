@@ -31,10 +31,6 @@ in
 
     base16Scheme = colorscheme;
 
-    image = pkgs.fetchurl {
-      url = "https://w.wallhaven.cc/full/e7/wallhaven-e76wvl.jpg";
-      hash = "sha256-vAJ7dApaEIdoNf0vHfQ/+Kq/Ll0VbxMyv6xZyyW0w/s=";
-    };
     polarity = "light";
     cursor = {
       name = "Bibata-Modern-Classic";

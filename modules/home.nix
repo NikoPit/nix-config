@@ -20,6 +20,7 @@
 
     ./screenshot.nix
     ./app-launcher.nix
+    ./wallpaper.nix
     ./file-manager.nix
     ./terminal.nix
 
