@@ -58,7 +58,13 @@
           specialArgs = { inherit hostname settings; };
 
           modules = [
-            ./os-bundle.nix
+            ./hyprland/os.nix
+            ./nixvim
+
+            ./hosts/${hostname}
+            ./system
+
+            ./modules/os.nix
 
             home-manager.nixosModules.home-manager
             {
@@ -70,7 +76,12 @@
               home-manager.users.${settings.user.name} = {
                 imports = [
                   sops-nix.homeManagerModules.sops
-                  ./home-bundle.nix
+
+                  ./hyprland/home.nix
+                  ./modules/home.nix
+                  ./music
+
+                  ./system/secret.nix
                 ];
               };
             }
