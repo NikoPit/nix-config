@@ -1,4 +1,9 @@
-{ pkgs, settings, ... }:
+{
+  pkgs,
+  settings,
+  config,
+  ...
+}:
 
 let
   proxySettings = settings.proxy;
@@ -9,6 +14,9 @@ let
     "1.1.1.1"
     "8.8.8.8"
   ];
+
+  airportToken = config.sops.placeholder.airport-token;
+  subscriptionUrl = "https://0b96e976-9ec3-44c0-aa2b-30bf8b0792ea.com/sabusuku?token=${airportToken}";
 
   mihomoConfig = yaml.generate "mihomo-config.yaml" {
     mode = "rule";
@@ -34,7 +42,7 @@ let
     proxy-providers = {
       airport = {
         type = "http";
-        url = proxySettings.subscription.url;
+        url = subscriptionUrl;
         path = "./providers/airport.yaml";
         interval = proxySettings.subscription.updateInterval;
         proxy = "DIRECT";
@@ -74,9 +82,25 @@ let
   };
 in
 {
+  sops = {
+    secrets.airport-token = {
+      owner = "root";
+      group = "root";
+      mode = "0400";
+    };
+
+    templates.mihomoConfig = {
+      content = builtins.readFile mihomoConfig;
+      owner = "root";
+      group = "root";
+      mode = "0400";
+      restartUnits = [ "mihomo.service" ];
+    };
+  };
+
   services.mihomo = {
     enable = true;
-    configFile = mihomoConfig;
+    configFile = config.sops.templates.mihomoConfig.path;
     tunMode = true;
   };
 
