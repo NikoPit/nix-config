@@ -1,9 +1,11 @@
+{ settings, ... }:
+
 {
   sops = {
     defaultSopsFile = ../secrets.yaml;
 
     age = {
-      keyFile = "/var/lib/sops-nix/key.txt";
+      keyFile = "/home/${settings.user.name}/.key.txt";
       generateKey = true;
     };
   };
