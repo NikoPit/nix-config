@@ -1,10 +1,32 @@
 { settings, ... }:
 let
   styleSettings = settings.style;
+
+  colorscheme = {
+    base00 = "f7f2ee"; # main background
+    base01 = "efe6df"; # lighter panel background
+    base02 = "e3d7cf"; # selection / subtle borders
+    base03 = "b7aaa1"; # comments / disabled
+    base04 = "8c8079"; # muted foreground
+    base05 = "5e5652"; # main foreground
+    base06 = "4d4643"; # stronger foreground
+    base07 = "3c3735"; # highest contrast text
+
+    base08 = "c46a55"; # red / coral
+    base09 = "d88d6d"; # orange / warm accent
+    base0A = "d9c27a"; # yellow / soft gold
+    base0B = "a7b97d"; # green / sage
+    base0C = "8fbfbc"; # cyan / pale mint
+    base0D = "7d88b5"; # blue / dusty periwinkle
+    base0E = "b48db6"; # purple / mauve
+    base0F = "c89d8f"; # extra accent / blush brown
+  };
 in
 {
   stylix = {
     enable = true;
+
+    base16Scheme = colorscheme;
 
     image = styleSettings.wallpaper;
     polarity = styleSettings.polarity;
