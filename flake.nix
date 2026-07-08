@@ -67,7 +67,12 @@
               home-manager.useGlobalPkgs = true;
               home-manager.useUserPackages = true;
 
-              home-manager.users.${settings.user.name} = import ./home-bundle.nix;
+              home-manager.users.${settings.user.name} = {
+                imports = [
+                  sops-nix.homeManagerModules.sops
+                  ./home-bundle.nix
+                ];
+              };
             }
 
             nixvim.nixosModules.nixvim
