@@ -1,5 +1,8 @@
+{ pkgs, ... }:
+
 let
-  exec = "rofi -show drun";
+  rofi = "${pkgs.rofi}/bin/rofi";
+  exec = "${rofi} -show drun";
   bind = "SUPER, SPACE, exec, ${exec}";
 in
 {

@@ -1,6 +1,8 @@
+{ pkgs, ... }:
+
 let
-  exec = "ghostty";
-  bind = "SUPER, Q, exec, ${exec}";
+  ghostty = "${pkgs.ghostty}/bin/ghostty";
+  bind = "SUPER, Q, exec, ${ghostty}";
 in
 {
   programs.ghostty = {
