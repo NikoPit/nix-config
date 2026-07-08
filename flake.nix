@@ -58,13 +58,12 @@
           specialArgs = { inherit hostname settings; };
 
           modules = [
-            ./hyprland/os.nix
-            ./nixvim
-
             ./hosts/${hostname}
-            ./system
 
+            ./hyprland/os.nix
             ./modules/os.nix
+            ./nixvim
+            ./system
 
             home-manager.nixosModules.home-manager
             {
