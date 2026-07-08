@@ -16,6 +16,12 @@ let
       hash = "sha256-6TUFn2sRaDLy3YITXOTk/aXUOdr57cW7FN17kGG8Lmo=";
       inherit audioFormat;
     };
+
+    "Made of Light (Original Mix)" = fetchMusic {
+      url = "https://www.youtube.com/watch?v=ZtxmZleZ25c&list=RDwq7BdtAFU5w&index=13";
+      hash = "sha256-KWPAKWr65mf2Wwn5TuY00xR/NqM85Z9kj5woAcioYOo=";
+      inherit audioFormat;
+    };
   };
 in
 
