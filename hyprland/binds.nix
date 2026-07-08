@@ -1,15 +1,12 @@
 {
   applicationLauncher,
   terminal,
-  screenshot,
   ...
 }:
 
 [
   "SUPER, C, killactive"
   "SUPER, V, togglefloating"
-
-  ", Print, exec, ${screenshot}"
 
   "SUPER, Q, exec, ${terminal}"
   "SUPER, SPACE, exec, ${applicationLauncher}"

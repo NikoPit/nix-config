@@ -8,7 +8,10 @@ let
   command = "${grim} -g \"$(${slurp})\" - | ${wl-copy}";
 
   wrapper = pkgs.writeShellScriptBin "screenshot" command;
+  exec = "${wrapper}/bin/screenshot";
+
+  bind = ", Print, exec, ${exec}";
 in
 {
-  _module.args.screenshot = "${wrapper}/bin/screenshot";
+  wayland.windowManager.hyprland.settings.bind = [ bind ];
 }

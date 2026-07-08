@@ -1,7 +1,6 @@
 {
   applicationLauncher,
   terminal,
-  screenshot,
   ...
 }:
 
@@ -11,7 +10,7 @@
     configType = "hyprlang";
 
     settings = {
-      bind = import ./binds.nix { inherit applicationLauncher terminal screenshot; };
+      bind = import ./binds.nix { inherit applicationLauncher terminal; };
       animation = import ./animation.nix;
       decoration = import ./decoration.nix;
       general = import ./general.nix;
