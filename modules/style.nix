@@ -32,8 +32,8 @@ in
     base16Scheme = colorscheme;
 
     image = pkgs.fetchurl {
-      url = "https://w.wallhaven.cc/full/x6/wallhaven-x6vlw3.jpg";
-      hash = "sha256-mfnEiKK7vE4jQrNOnzsZYVsrYPHLmBHNURJDPkfLsQ0=";
+      url = "https://w.wallhaven.cc/full/e7/wallhaven-e76wvl.jpg";
+      hash = "sha256-vAJ7dApaEIdoNf0vHfQ/+Kq/Ll0VbxMyv6xZyyW0w/s=";
     };
     polarity = "light";
     cursor = {
