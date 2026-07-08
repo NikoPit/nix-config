@@ -14,9 +14,7 @@ let
   };
 in
 {
-  sops.secrets.github-token = {
-    mode = "0400";
-  };
+  sops.secrets.github-token.mode = "0400";
 
   programs.git = {
     enable = true;
