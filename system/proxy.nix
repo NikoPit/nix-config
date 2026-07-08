@@ -8,7 +8,6 @@ let
     "119.29.29.29"
     "1.1.1.1"
     "8.8.8.8"
-
   ];
 
   mihomoConfig = yaml.generate "mihomo-config.yaml" {
