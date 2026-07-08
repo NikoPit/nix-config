@@ -24,8 +24,8 @@ let
     };
 
     "STYX HELIX" = fetchMusic {
-      url = "https://www.youtube.com/watch?v=e9EqU9y69vU&list=RDwq7BdtAFU5w&index=16";
-      hash = "sha256-ARPGlpE0JBFgViDYvP24E5TrSMh//vS5MGMh9Wkyx5A=";
+      url = "https://youtu.be/tIhL2KHVdgE?si=EHhDSxJvVYDNqVw3";
+      hash = "sha256-wwdws/gdRExA1y0zBiKmMyBkI0HeBrq19P9hvffMF1g=";
       inherit audioFormat;
     };
   };
