@@ -2,6 +2,11 @@
   "SUPER, C, killactive"
   "SUPER, V, togglefloating"
 
+  "SUPER, H, movefocus, l"
+  "SUPER, L, movefocus, r"
+  "SUPER, K, movefocus, u"
+  "SUPER, J, movefocus, d"
+
   "SUPER, 1, workspace, 1"
   "SUPER, 2, workspace, 2"
   "SUPER, 3, workspace, 3"
