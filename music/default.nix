@@ -13,4 +13,8 @@ in
   services.mpdris2-rs.enable = true;
 
   home.packages = [ pkgs.mpc ];
+
+  imports = [
+    ./effect.nix
+  ];
 }
