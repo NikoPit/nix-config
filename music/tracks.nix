@@ -28,6 +28,12 @@ let
       hash = "sha256-wwdws/gdRExA1y0zBiKmMyBkI0HeBrq19P9hvffMF1g=";
       inherit audioFormat;
     };
+
+    "I really wanna stay at your house" = fetchMusic {
+      url = "https://www.youtube.com/watch?v=KvMY1uzSC1E&list=RDKvMY1uzSC1E&start_radio=1";
+      hash = "sha256-eLRnUV/wD8ZatPciM+8EfVcwoLNK+eDpQmMiOTNuOYs=";
+      inherit audioFormat;
+    };
   };
 in
 
