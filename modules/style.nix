@@ -1,23 +1,23 @@
 { pkgs, ... }:
 let
   colorscheme = {
-    base00 = "f7f2ee"; # main background
-    base01 = "efe6df"; # lighter panel background
-    base02 = "e3d7cf"; # selection / subtle borders
-    base03 = "b7aaa1"; # comments / disabled
-    base04 = "8c8079"; # muted foreground
-    base05 = "5e5652"; # main foreground
-    base06 = "4d4643"; # stronger foreground
-    base07 = "3c3735"; # highest contrast text
+    base00 = "09111d";
+    base01 = "111d31";
+    base02 = "1a2a42";
+    base03 = "4b5d78";
+    base04 = "8392ab";
+    base05 = "d8dbe3";
+    base06 = "eceaf2";
+    base07 = "faf6f0";
 
-    base08 = "c46a55"; # red / coral
-    base09 = "d88d6d"; # orange / warm accent
-    base0A = "d9c27a"; # yellow / soft gold
-    base0B = "a7b97d"; # green / sage
-    base0C = "8fbfbc"; # cyan / pale mint
-    base0D = "7d88b5"; # blue / dusty periwinkle
-    base0E = "b48db6"; # purple / mauve
-    base0F = "c89d8f"; # extra accent / blush brown
+    base08 = "c97a72";
+    base09 = "d8a25f";
+    base0A = "e7cf84";
+    base0B = "5d8f78";
+    base0C = "5e9ea8";
+    base0D = "6484e0";
+    base0E = "8a78f0";
+    base0F = "8a6a58";
   };
 
   font = {
