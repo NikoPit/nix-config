@@ -34,6 +34,18 @@ let
       hash = "sha256-eLRnUV/wD8ZatPciM+8EfVcwoLNK+eDpQmMiOTNuOYs=";
       inherit audioFormat;
     };
+
+    "Starfall" = fetchMusic {
+      url = "https://youtu.be/CKerqp5yOGo?si=yiA-1UyMRx6jsK3K";
+      hash = "sha256-ekLe5muQg7SG1io3PxlkdQG00viVnfDREzcfIQwYveM=";
+      inherit audioFormat;
+    };
+
+    "Da Capo" = fetchMusic {
+      url = "https://www.youtube.com/watch?v=9iFDPYubUbE&list=RDHQnC1UHBvWA&index=15";
+      hash = "sha256-KZQkQiJF6lHwlU7RODQibZd2crXfXHDjwTBcCaq2Row=";
+      inherit audioFormat;
+    };
   };
 in
 
