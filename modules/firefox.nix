@@ -33,6 +33,12 @@
         install_url = "https://addons.mozilla.org/firefox/downloads/file/4854040/privacy_badger17-2026.6.16.xpi";
         installation_mode = "force_installed";
       };
+
+      # Dark reader
+      "addon@darkreader.org" = {
+        install_url = "https://addons.mozilla.org/firefox/downloads/file/4859299/darkreader-4.9.128.xpi";
+        installation_mode = "force_installed";
+      };
     };
   };
 }
