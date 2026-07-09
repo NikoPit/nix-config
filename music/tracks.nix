@@ -46,6 +46,12 @@ let
       hash = "sha256-KZQkQiJF6lHwlU7RODQibZd2crXfXHDjwTBcCaq2Row=";
       inherit audioFormat;
     };
+
+    "Shelter" = fetchMusic {
+      url = "https://youtu.be/HQnC1UHBvWA?si=kXCL9sFpbb6xEEcH";
+      hash = "sha256-Do4La5NZpfX+xUTTRhHiAfeRZZB8/955Rw0SsFjl314=";
+      inherit audioFormat;
+    };
   };
 in
 
