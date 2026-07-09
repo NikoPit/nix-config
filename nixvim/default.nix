@@ -17,4 +17,6 @@
       ./auto-format.nix
     ];
   };
+
+  imports = [ ./style.nix ];
 }
