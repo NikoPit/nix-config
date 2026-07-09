@@ -12,6 +12,7 @@
       ./misc.nix
       ./completion.nix
       ./diagnostic.nix
+      ./treesitter.nix
       ./telescope.nix
       ./auto-format.nix
     ];
