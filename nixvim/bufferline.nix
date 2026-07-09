@@ -16,5 +16,10 @@ in
       command = "bnext";
       key = "<tab>";
     })
+
+    (utils.makeShortcut {
+      command = "bd";
+      key = "<space>x";
+    })
   ];
 }
