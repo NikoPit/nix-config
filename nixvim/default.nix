@@ -12,7 +12,6 @@
       ./misc.nix
       ./completion.nix
       ./diagnostic.nix
-      ./transparent.nix
       ./telescope.nix
       ./auto-format.nix
     ];
