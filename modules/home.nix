@@ -17,6 +17,7 @@
     ./mcp.nix
     ./codex.nix
     ./wayle.nix
+    ./fish-home.nix
 
     ./screenshot.nix
     ./app-launcher.nix
