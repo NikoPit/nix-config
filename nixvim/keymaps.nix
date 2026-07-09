@@ -1,13 +1,6 @@
 {
   keymaps = [
     {
-      action = "<cmd>bnext<cr>";
-      key = "<tab>";
-      options = {
-        silent = true;
-      };
-    }
-    {
       action = "<cmd>Yazi<cr>";
       key = "<space>-";
       options.silent = true;
