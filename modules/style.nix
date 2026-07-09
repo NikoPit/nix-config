@@ -1,23 +1,25 @@
-{ pkgs, ... }:
+{ pkgs, settings, ... }:
 let
-  colorscheme = {
-    base00 = "09111d";
-    base01 = "111d31";
-    base02 = "1a2a42";
-    base03 = "4b5d78";
-    base04 = "8392ab";
-    base05 = "d8dbe3";
-    base06 = "eceaf2";
-    base07 = "faf6f0";
+  palette = settings.palette;
 
-    base08 = "c97a72";
-    base09 = "d8a25f";
-    base0A = "e7cf84";
-    base0B = "5d8f78";
-    base0C = "5e9ea8";
-    base0D = "6484e0";
-    base0E = "8a78f0";
-    base0F = "8a6a58";
+  colorscheme = {
+    base00 = palette.bg0;
+    base01 = palette.bg1;
+    base02 = palette.bg2;
+    base03 = palette.bg3;
+    base04 = palette.fg0;
+    base05 = palette.fg1;
+    base06 = palette.fg2;
+    base07 = palette.fg3;
+
+    base08 = palette.red0;
+    base09 = palette.gold0;
+    base0A = palette.gold1;
+    base0B = palette.green0;
+    base0C = palette.teal0;
+    base0D = palette.blue0;
+    base0E = palette.violet0;
+    base0F = palette.brown0;
   };
 
   font = {
