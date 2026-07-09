@@ -15,7 +15,10 @@ in
           processing = false;
         };
 
-        extraOptions = [ "--disable-particles" ];
+        extraOptions = [
+          "--disable-particles"
+          "--no-fullscreen-pause"
+        ];
 
         inherit wallpaperId;
       }
