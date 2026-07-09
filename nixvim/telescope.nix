@@ -1,4 +1,8 @@
 { pkgs, ... }:
+
+let
+  utils = import ./utils.nix;
+in
 {
   plugins.telescope = {
     enable = true;
@@ -8,9 +12,9 @@
   extraPackages = [ pkgs.ripgrep ];
 
   keymaps = [
-    {
-      action = "<cmd>Telescope live_grep<cr>";
+    (utils.makeShortcut {
+      command = "Telescope live_grep";
       key = "<space>lg";
-    }
+    })
   ];
 }
