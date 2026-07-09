@@ -16,5 +16,10 @@ in
       command = "Telescope live_grep";
       key = "<space>lg";
     })
+
+    (utils.makeShortcut {
+      command = "Telescope find_files";
+      key = "<space>ff";
+    })
   ];
 }
