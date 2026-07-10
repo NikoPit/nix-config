@@ -32,8 +32,8 @@ in
     enable = true;
 
     base16Scheme = colorscheme;
-
     polarity = "dark";
+
     cursor = {
       name = "Bibata-Modern-Ice";
       package = pkgs.bibata-cursors;
