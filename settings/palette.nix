@@ -15,6 +15,7 @@
   green0 = "5d8f78";
   teal0 = "5e9ea8";
   blue0 = "6484e0";
+  blue1 = "7aa2ff";
   violet0 = "8a78f0";
   brown0 = "8a6a58";
 }
