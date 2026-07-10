@@ -9,6 +9,7 @@
       ./bufferline.nix
       ./keymaps.nix
       ./lsp.nix
+      ./terminal.nix
       ./misc.nix
       ./completion.nix
       ./diagnostic.nix
