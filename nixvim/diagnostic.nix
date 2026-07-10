@@ -1,11 +1,7 @@
 {
   diagnostic.settings = {
     underline = true;
-    virtual_text = {
-        spacing = 2;
-        prefix = "●";
-    };
-    update_in_insert = false;
+    virtual_text = true;
     severity_sort = true;
     float = { border = "rounded"; };
   };
