@@ -14,6 +14,8 @@
       isDefault = true;
       path = "iuhwjerr.default";
 
+      search.default = "perplexity";
+
       extensions = {
         force = true;
         packages = with firefox-addons.packages.${pkgs.stdenv.hostPlatform.system}; [
