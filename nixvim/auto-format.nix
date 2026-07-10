@@ -8,7 +8,6 @@
         sh = [ "shfmt" ];
         bash = [ "shfmt" ];
         rust = [ "rustfmt" ];
-        nix = [ "nixfmt" ];
       };
 
       format_on_save = {
