@@ -6,15 +6,6 @@
       options.silent = true;
     }
     {
-      action = "<cmd>Lspsaga term_toggle<cr>";
-      key = "<A-x>";
-      options.silent = true;
-      mode = [
-        "n"
-        "t"
-      ];
-    }
-    {
       action = "<cmd>LazyGit<cr>";
       key = "<space>g";
       options.silent = true;
