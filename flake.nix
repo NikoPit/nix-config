@@ -33,6 +33,11 @@
       url = "github:Mic92/sops-nix";
       inputs.nixpkgs.follows = "nixpkgs";
     };
+
+    firefox-addons = {
+      url = "gitlab:rycee/nur-expressions?dir=pkgs/firefox-addons";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
   };
 
   outputs =
@@ -44,6 +49,7 @@
       nixvim,
       nixos-hardware,
       sops-nix,
+      firefox-addons,
       ...
     }:
     let
@@ -67,7 +73,7 @@
 
             home-manager.nixosModules.home-manager
             {
-              home-manager.extraSpecialArgs = { inherit hostname settings; };
+              home-manager.extraSpecialArgs = { inherit hostname settings firefox-addons; };
 
               home-manager.useGlobalPkgs = true;
               home-manager.useUserPackages = true;
