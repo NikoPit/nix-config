@@ -75,21 +75,23 @@
 
             home-manager.nixosModules.home-manager
             {
-              home-manager.extraSpecialArgs = { inherit hostname settings firefox-addons; };
+              home-manager = {
+                extraSpecialArgs = { inherit hostname settings firefox-addons; };
 
-              home-manager.useGlobalPkgs = true;
-              home-manager.useUserPackages = true;
+                useGlobalPkgs = true;
+                useUserPackages = true;
 
-              home-manager.users.${settings.user.name} = {
-                imports = [
-                  sops-nix.homeManagerModules.sops
+                users.${settings.user.name} = {
+                  imports = [
+                    sops-nix.homeManagerModules.sops
 
-                  ./hyprland/home.nix
-                  ./modules/home.nix
-                  ./music
+                    ./hyprland/home.nix
+                    ./modules/home.nix
+                    ./music
 
-                  ./secret/home.nix
-                ];
+                    ./secret/home.nix
+                  ];
+                };
               };
             }
 
