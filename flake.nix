@@ -71,6 +71,8 @@
             ./nixvim
             ./system
 
+            ./secret/os.nix
+
             home-manager.nixosModules.home-manager
             {
               home-manager.extraSpecialArgs = { inherit hostname settings firefox-addons; };
@@ -86,7 +88,7 @@
                   ./modules/home.nix
                   ./music
 
-                  ./system/secret.nix
+                  ./secret/home.nix
                 ];
               };
             }
