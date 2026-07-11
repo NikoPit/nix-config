@@ -21,16 +21,13 @@
         "media.videocontrols.picture-in-picture.enabled" = false;
       };
 
-      extensions = {
-        force = true;
-        packages = with firefox-addons.packages.${pkgs.stdenv.hostPlatform.system}; [
-          ublock-origin
-          return-youtube-dislikes
-          dont-track-me-google1
-          privacy-badger
-          vimium
-        ];
-      };
+      extensions.packages = with firefox-addons.packages.${pkgs.stdenv.hostPlatform.system}; [
+        ublock-origin
+        return-youtube-dislikes
+        dont-track-me-google1
+        privacy-badger
+        vimium
+      ];
     };
   };
 }
