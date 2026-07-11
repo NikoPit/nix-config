@@ -1,9 +1,10 @@
-{ pkgs, ... }:
+{ pkgs, pkgs-master, ... }:
 
 {
   programs.codex = {
     enable = true;
     enableMcpIntegration = true;
+    package = pkgs-master.codex;
 
     settings = {
       model = "gpt-5.4";

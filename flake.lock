@@ -259,6 +259,23 @@
         "url": "https://mirrors.nju.edu.cn/git/nixpkgs.git"
       }
     },
+    "nixpkgs-master": {
+      "locked": {
+        "lastModified": 1783687119,
+        "narHash": "sha256-UsCTZIw2zRrH5uY3aKc5e/ilTJxmOuJ6b4jJViQuijM=",
+        "ref": "master",
+        "rev": "2e657a0bd8d4a2448dc0ee28155cd3bb5a3dd4b4",
+        "shallow": true,
+        "type": "git",
+        "url": "https://mirrors.nju.edu.cn/git/nixpkgs.git"
+      },
+      "original": {
+        "ref": "master",
+        "shallow": true,
+        "type": "git",
+        "url": "https://mirrors.nju.edu.cn/git/nixpkgs.git"
+      }
+    },
     "nixvim": {
       "inputs": {
         "flake-parts": "flake-parts",
@@ -313,6 +330,7 @@
         "home-manager": "home-manager",
         "nixos-hardware": "nixos-hardware",
         "nixpkgs": "nixpkgs",
+        "nixpkgs-master": "nixpkgs-master",
         "nixvim": "nixvim",
         "sops-nix": "sops-nix",
         "stylix": "stylix"

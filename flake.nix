@@ -3,6 +3,7 @@
 
   inputs = {
     nixpkgs.url = "git+https://mirrors.nju.edu.cn/git/nixpkgs.git?ref=nixos-unstable&shallow=1";
+    nixpkgs-master.url = "git+https://mirrors.nju.edu.cn/git/nixpkgs.git?ref=master&shallow=1";
 
     home-manager = {
       url = "github:nix-community/home-manager";
@@ -43,6 +44,7 @@
   outputs =
     {
       nixpkgs,
+      nixpkgs-master,
       disko,
       stylix,
       home-manager,
@@ -53,15 +55,20 @@
       ...
     }:
     let
-      pkgs = import nixpkgs { system = "x86_64-linux"; };
+      system = "x86_64-linux";
+
+      pkgs = import nixpkgs { inherit system; };
+      pkgs-master = import nixpkgs-master { inherit system; };
+
       settings = import ./settings { inherit pkgs; };
+
       makeSystem =
         {
           hostname,
           hardware-module ? null,
         }:
         nixpkgs.lib.nixosSystem {
-          specialArgs = { inherit hostname settings; };
+          specialArgs = { inherit hostname settings pkgs-master; };
 
           modules = [
             ./hosts/${hostname}
@@ -76,7 +83,14 @@
             home-manager.nixosModules.home-manager
             {
               home-manager = {
-                extraSpecialArgs = { inherit hostname settings firefox-addons; };
+                extraSpecialArgs = {
+                  inherit
+                    hostname
+                    settings
+                    firefox-addons
+                    pkgs-master
+                    ;
+                };
 
                 useGlobalPkgs = true;
                 useUserPackages = true;
