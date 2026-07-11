@@ -1,4 +1,4 @@
-{ config, ... }:
+{ config, pkgs, ... }:
 
 {
   plugins = {
@@ -8,4 +8,6 @@
 
     conform-nvim.settings.formatters_by_ft.nix = [ "nixfmt" ];
   };
+
+  extraPackages = [ pkgs.nixfmt ];
 }
