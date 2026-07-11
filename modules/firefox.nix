@@ -16,6 +16,10 @@
 
       search.default = "perplexity";
 
+      settings = {
+        "browser.display.use_document_fonts" = 0;
+      };
+
       extensions = {
         force = true;
         packages = with firefox-addons.packages.${pkgs.stdenv.hostPlatform.system}; [
