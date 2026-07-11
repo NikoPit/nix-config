@@ -9,7 +9,10 @@ in
   };
 
   # Installs ripgrep for telescope's live_grep
-  extraPackages = [ pkgs.ripgrep ];
+  extraPackages = with pkgs; [
+    ripgrep
+    fd
+  ];
 
   keymaps = [
     (utils.makeShortcut {
