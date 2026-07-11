@@ -23,6 +23,7 @@
           return-youtube-dislikes
           dont-track-me-google1
           privacy-badger
+          vimium
         ];
       };
     };
