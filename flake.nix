@@ -81,6 +81,9 @@
                 useGlobalPkgs = true;
                 useUserPackages = true;
 
+                backupFileExtension = "bak";
+                overwriteBackup = true;
+
                 users.${settings.user.name} = {
                   imports = [
                     sops-nix.homeManagerModules.sops
