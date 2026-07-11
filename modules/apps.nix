@@ -5,5 +5,6 @@
     qq
     nixfmt
     killall
+    ripgrep
   ];
 }
