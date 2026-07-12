@@ -1,12 +1,19 @@
-{ greeterSession, settings, ... }:
+{ greeterSession, settings, pkgs, ... }:
 
 {
   services.greetd = {
     enable = true;
 
-    settings.initial_session = {
-      command = greeterSession;
-      user = settings.user.name;
+    settings = {
+      default_session = {
+        command = "${pkgs.tuigreet}/bin/tuigreet --time --remember --cmd ${greeterSession}";
+        user = "greeter";
+      };
+
+      initial_session = {
+        command = greeterSession;
+        user = settings.user.name;
+      };
     };
   };
 }
