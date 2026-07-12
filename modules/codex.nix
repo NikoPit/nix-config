@@ -12,6 +12,7 @@
 
       sandbox_mode = "danger-full-access";
       approval_policy = "never";
+      dangerously_bypass_hook_trust = true;
       projects."/".trust_level = "trusted";
 
       model_providers.e-flowcode = {
