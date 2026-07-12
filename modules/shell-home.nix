@@ -1,9 +1,11 @@
 {
-  programs.fish = {
-    enable = true;
+  programs = {
+    fish = {
+      enable = true;
 
-    functions.fish_user_key_bindings = "fish_vi_key_bindings";
+      functions.fish_user_key_bindings = "fish_vi_key_bindings";
+    };
+
+    ghostty.enableFishIntegration = true;
   };
-
-  programs.ghostty.enableFishIntegration = true;
 }
