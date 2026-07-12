@@ -16,6 +16,7 @@
 
       enableFishIntegration = true;
       enableInteractive = true;
+      enableTransience = true;
     };
   };
 }
