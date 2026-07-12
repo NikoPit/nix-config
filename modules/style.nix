@@ -34,6 +34,11 @@ in
     base16Scheme = colorscheme;
     polarity = "dark";
 
+    image = pkgs.fetchurl {
+      url = "https://raw.githubusercontent.com/NikoPit/misc-resources/main/wallpaper_roxy.png";
+      hash = "sha256-D1eOlqI8Yv+BkrwnNj7kd7gEvGGpfFGl663DbNi4or4=";
+    };
+
     cursor = {
       name = "Bibata-Modern-Ice";
       package = pkgs.bibata-cursors;
