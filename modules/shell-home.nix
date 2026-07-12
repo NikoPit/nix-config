@@ -7,5 +7,9 @@
     };
 
     ghostty.enableFishIntegration = true;
+
+    starship = {
+      enable = true;
+    };
   };
 }
