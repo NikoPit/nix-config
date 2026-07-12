@@ -1,3 +1,5 @@
+{ pkgs, ... }:
+
 {
   programs.hyprland = {
     enable = true;
@@ -5,5 +7,5 @@
     xwayland.enable = true;
   };
 
-  _module.args.greeterSession = "uwsm start hyprland";
+  _module.args.greeterSession = "${pkgs.uwsm}/bin/uwsm start hyprland";
 }
