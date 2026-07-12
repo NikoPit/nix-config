@@ -4,7 +4,7 @@
   imports = [
     ./greeter.nix
 
-    ./fish-os.nix
+    ./shell-os.nix
     ./style.nix
     ./steam.nix
   ];
