@@ -10,6 +10,8 @@
 
     starship = {
       enable = true;
+
+      enableFishIntegration = true;
     };
   };
 }
