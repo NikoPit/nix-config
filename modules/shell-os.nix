@@ -6,7 +6,11 @@
       enable = true;
 
       interactiveOnly = true;
-      transientPrompt.enable = true;
+
+      transientPrompt = {
+        enable = true;
+        left = "starship module character";
+      };
     };
   };
 }
