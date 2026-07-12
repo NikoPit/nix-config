@@ -7,4 +7,7 @@
     crates.enable = true;
     noice.enable = true;
   };
+
+  # Disable statusline
+  opts.laststatus = 0;
 }
