@@ -1,5 +1,3 @@
-{ pkgs, ... }:
-
 let
   wallpaperId = "2687871416";
 in
