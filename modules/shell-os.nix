@@ -9,7 +9,10 @@
 
       transientPrompt = {
         enable = true;
-        left = "starship module character";
+        left = ''
+          printf " "
+          starship module character
+        '';
       };
 
       settings = {
