@@ -7,6 +7,10 @@
 
       display = {
         separator = " ";
+
+        color = {
+          keys = "bright_blue";
+        };
       };
 
       modules = [
