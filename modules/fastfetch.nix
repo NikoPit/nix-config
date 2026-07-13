@@ -11,6 +11,8 @@
         color = {
           keys = "bright_blue";
         };
+
+        key.type = "both";
       };
 
       modules = [
