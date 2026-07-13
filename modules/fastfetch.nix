@@ -10,6 +10,7 @@
 
         color = {
           keys = "bright_blue";
+          output = "bright_white";
         };
 
         key.type = "both";
