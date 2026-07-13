@@ -3,6 +3,8 @@
     enable = true;
 
     settings = {
+      logo.type = "small";
+
       modules = [
         "os"
         "kernel"
