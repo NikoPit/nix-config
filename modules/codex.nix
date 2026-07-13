@@ -14,6 +14,7 @@
       approval_policy = "never";
       dangerously_bypass_hook_trust = true;
       projects."/".trust_level = "trusted";
+      tui.vim_mode_default = true;
 
       model_providers.e-flowcode = {
         name = "e-flowcode";
