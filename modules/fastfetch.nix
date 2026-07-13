@@ -18,13 +18,19 @@
       modules = [
         "os"
         "kernel"
+
+        "break"
+
         "cpu"
         "gpu"
         "memory"
+        "disk"
+
+        "break"
+
         "shell"
         "terminal"
         "wm"
-        "disk"
       ];
     };
   };
