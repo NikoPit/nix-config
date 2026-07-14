@@ -1,9 +1,15 @@
+{ config, ... }:
+
 {
+  sops.secrets.mc-refresh-token = { };
+
   nixcraft = {
     enable = true;
 
     client = {
-      shared = { };
+      shared = {
+        account.refreshTokenPath = config.sops.secrets.mc-refresh-token.path;
+      };
 
       instances = {
         latest = {
