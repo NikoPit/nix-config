@@ -20,6 +20,7 @@ let
 
   mihomoConfig = yaml.generate "mihomo-config.yaml" {
     mode = "rule";
+    external-controller = "127.0.0.1:9090";
 
     dns = {
       enable = true;
