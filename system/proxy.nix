@@ -8,11 +8,14 @@
 let
   proxySettings = settings.proxy;
   yaml = pkgs.formats.yaml { };
-  nameserver = [
+  domesticNameserver = [
     "223.5.5.5"
     "119.29.29.29"
-    "1.1.1.1"
-    "8.8.8.8"
+  ];
+
+  fallbackNameserver = [
+    "https://1.1.1.1/dns-query"
+    "https://dns.google/dns-query"
   ];
 
   airportToken = config.sops.placeholder.airport-token;
@@ -25,11 +28,19 @@ let
     dns = {
       enable = true;
       listen = "0.0.0.0:1053";
-      enhanced-mode = "fake-ip";
+      enhanced-mode = "redir-host";
 
-      default-nameserver = nameserver;
-      proxy-server-nameserver = nameserver;
-      nameserver = nameserver;
+      default-nameserver = domesticNameserver;
+      proxy-server-nameserver = domesticNameserver;
+      nameserver = [
+        "https://dns.alidns.com/dns-query"
+        "https://doh.pub/dns-query"
+      ];
+      fallback = fallbackNameserver;
+      fallback-filter = {
+        geoip = true;
+        geoip-code = "CN";
+      };
     };
 
     tun = {
