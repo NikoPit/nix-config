@@ -1,3 +1,5 @@
+{ pkgs, lib, ... }:
+
 {
   nixcraft = {
     enable = true;
@@ -10,6 +12,7 @@
 
       enableFastAssetDownload = true;
 
+      files."options.txt".source = import ./options.nix { inherit pkgs lib; };
     };
   };
 
