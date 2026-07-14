@@ -12,7 +12,7 @@
       };
 
       instances = {
-        latest = {
+        "1.21.1" = {
           enable = true;
           version = "1.21.1";
           desktopEntry.enable = true;
