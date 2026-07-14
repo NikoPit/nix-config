@@ -9,6 +9,7 @@
     client = {
       shared = {
         account.refreshTokenPath = config.sops.secrets.mc-refresh-token.path;
+        binEntry.enable = true;
       };
 
       instances = {
