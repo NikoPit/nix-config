@@ -1,8 +1,4 @@
-{ config, ... }:
-
 {
-  sops.secrets.mc-refresh-token = { };
-
   nixcraft = {
     enable = true;
 
