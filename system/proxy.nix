@@ -88,6 +88,8 @@ let
     ];
 
     rules = [
+      "DOMAIN-SUFFIX,fishonmc.net,DIRECT"
+
       "GEOIP,CN,DIRECT"
       "MATCH,FINAL"
     ];
