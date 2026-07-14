@@ -5,5 +5,6 @@
     qq
     killall
     ripgrep
+    modrinth-app
   ];
 }
