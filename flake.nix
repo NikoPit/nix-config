@@ -39,6 +39,11 @@
       url = "gitlab:rycee/nur-expressions?dir=pkgs/firefox-addons";
       inputs.nixpkgs.follows = "nixpkgs";
     };
+
+    nixcraft = {
+      url = "github:NikoPit/nixcraft";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
   };
 
   outputs =
@@ -52,6 +57,7 @@
       nixos-hardware,
       sops-nix,
       firefox-addons,
+      nixcraft,
       ...
     }:
     let
@@ -101,6 +107,7 @@
                 users.${settings.user.name} = {
                   imports = [
                     sops-nix.homeManagerModules.sops
+                    nixcraft.homeModules.default
 
                     ./hyprland/home.nix
                     ./modules/home.nix
