@@ -5,6 +5,5 @@
     qq
     killall
     ripgrep
-    hmcl
   ];
 }
