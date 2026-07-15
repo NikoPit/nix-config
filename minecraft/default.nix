@@ -12,7 +12,7 @@
 
       enableFastAssetDownload = true;
 
-      files."options.txt".source = import ./options.nix { inherit pkgs lib; };
+      gameOptions = import ./options.nix;
     };
   };
 
