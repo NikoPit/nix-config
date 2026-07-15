@@ -250,11 +250,11 @@
         ]
       },
       "locked": {
-        "lastModified": 1784113091,
-        "narHash": "sha256-XH/g5FeFLVisFGYFRN4sGUAMy2Y5qJ6PQl2w/X4ItyM=",
+        "lastModified": 1784121847,
+        "narHash": "sha256-nYvBxvwtIJIkvtNetgFL0t0dpgHThSISKWTz/6wA4Ao=",
         "owner": "NikoPit",
         "repo": "nixcraft",
-        "rev": "d892ab1609ade517232bd9ce4c82fdee3799a892",
+        "rev": "1485e399061be5acc5187799c9e8d8afe7cd9577",
         "type": "github"
       },
       "original": {
