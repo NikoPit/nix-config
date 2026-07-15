@@ -7,7 +7,7 @@
     package = pkgs-master.codex;
 
     settings = {
-      model = "gpt-5.4";
+      model = "gpt-5.6-sol";
       model_provider = "e-flowcode";
 
       sandbox_mode = "danger-full-access";
