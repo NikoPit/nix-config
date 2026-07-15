@@ -5,6 +5,9 @@
   "SUPER, equal, resizeactive, 100 0"
   "SUPER, minus, resizeactive, -100 0"
 
+  "SUPER Alt, J, movetoworkspace, +1"
+  "SUPER Alt, K, movetoworkspace, -1"
+
   "SUPER, H, movefocus, l"
   "SUPER, L, movefocus, r"
   "SUPER, K, movefocus, u"
