@@ -17,6 +17,6 @@
   };
 
   imports = [
-    ./instances.nix
+    ./instances
   ];
 }
