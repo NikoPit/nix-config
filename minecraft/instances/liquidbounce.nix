@@ -58,5 +58,8 @@ in
     wayland
   ];
 
-  envVars.PROVIDED_JCEF_PATH = "${jcef}";
+  envVars = {
+    PROVIDED_JCEF_PATH = "${jcef}";
+    WEBKIT_DISABLE_DMABUF_RENDERER = "1";
+  };
 }
