@@ -29,6 +29,11 @@ in
       url = "https://cdn.modrinth.com/data/Ha28R6CL/versions/Pd0xrHCw/fabric-language-kotlin-1.13.12%2Bkotlin.2.4.0.jar?mr_download_reason=standalone&mr_game_version=26.1.2&mr_loader=fabric";
       hash = "sha256-NsXdi3KONHDSiCrmMRm5OiBQD8Dqb1yUXBK/ZbWrGDI=";
     };
+
+    via-fabric-plus = pkgs.fetchurl {
+      url = "https://cdn.modrinth.com/data/rIC2XJV4/versions/qzwoPtFn/ViaFabricPlus-4.5.5.jar?mr_download_reason=standalone&mr_game_version=26.1.2&mr_loader=fabric";
+      hash = "sha256-RzGBUXVLU1uy3vrIAsNDbHzGFSWiLwa62FJBtI/r0jc=";
+    };
   };
 
   runtimeLibs = with pkgs; [
