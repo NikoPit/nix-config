@@ -90,6 +90,7 @@ let
     rules = [
       "DOMAIN-SUFFIX,fishonmc.net,DIRECT"
       "DOMAIN-SUFFIX,e-flowcode.cc,DIRECT"
+      "DOMAIN-SUFFIX,harrys.gg,DIRECT"
 
       "GEOIP,CN,DIRECT"
       "MATCH,FINAL"
