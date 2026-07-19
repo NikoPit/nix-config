@@ -91,6 +91,7 @@ let
       "DOMAIN-SUFFIX,fishonmc.net,DIRECT"
       "DOMAIN-SUFFIX,e-flowcode.cc,DIRECT"
       "DOMAIN-SUFFIX,harrys.gg,DIRECT"
+      "DOMAIN-SUFFIX,aliyun.com,DIRECT"
 
       "GEOIP,CN,DIRECT"
       "MATCH,FINAL"
