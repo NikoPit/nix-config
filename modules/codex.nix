@@ -8,7 +8,7 @@
 
     settings = {
       model = "gpt-5.6-sol";
-      model_reasoning_effort = "high";
+      model_reasoning_effort = "low";
       model_provider = "e-flowcode";
 
       sandbox_mode = "danger-full-access";
