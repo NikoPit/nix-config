@@ -6,6 +6,5 @@
     killall
     lazygit
     ripgrep
-    bolt-launcher
   ];
 }
