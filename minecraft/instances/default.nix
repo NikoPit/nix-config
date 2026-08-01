@@ -21,6 +21,6 @@
     };
 
     "LiquidBounce" = import ./liquidbounce.nix { inherit pkgs; };
-    "Skyblock" = import ./skyblock.nix;
+    "Skyblock" = import ./skyblock.nix { inherit pkgs; };
   };
 }
