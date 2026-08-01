@@ -5,7 +5,7 @@
     enable = true;
 
     client.shared = {
-      account.refreshTokenPath = "/home/elysia/.tmp/refreshtoken";
+      account.refreshTokenPath = lib.mkDefault "/home/elysia/.tmp/refreshtoken";
 
       binEntry.enable = true;
       desktopEntry.enable = true;
