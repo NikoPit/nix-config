@@ -64,7 +64,10 @@
       system = "x86_64-linux";
 
       pkgs = import nixpkgs { inherit system; };
-      pkgs-master = import nixpkgs-master { inherit system; };
+      pkgs-master = import nixpkgs-master {
+        inherit system;
+        config.allowUnfree = true;
+      };
 
       settings = import ./settings { inherit pkgs; };
 
