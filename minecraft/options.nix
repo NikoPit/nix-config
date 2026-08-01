@@ -1,5 +1,5 @@
 {
-  fov = 90;
+  fov = 0.9;
   maxFps = 240;
   lang = "en_us";
   toggleSprint = true;
