@@ -69,7 +69,7 @@ let
 
     proxy-groups = [
       {
-        name = "PROXY";
+        name = "AUTO";
         type = "url-test";
         use = [ "airport" ];
         url = "https://cp.cloudflare.com";
@@ -78,10 +78,21 @@ let
       }
 
       {
+        name = "MANUAL";
+        type = "select";
+        use = [ "airport" ];
+        proxies = [
+          "AUTO"
+          "DIRECT"
+        ];
+      }
+
+      {
         name = "FINAL";
         type = "select";
         proxies = [
-          "PROXY"
+          "MANUAL"
+          "AUTO"
           "DIRECT"
         ];
       }
