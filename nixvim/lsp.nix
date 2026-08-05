@@ -5,7 +5,6 @@
       bashls.enable = true;
       jdtls.enable = true;
       nixd.enable = true;
-      clangd.enable = true;
     };
   };
 }
