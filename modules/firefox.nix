@@ -20,6 +20,7 @@
         "browser.display.use_document_fonts" = 0;
         "media.videocontrols.picture-in-picture.enabled" = false;
         "browser.tabs.allowTabDetach" = false;
+        "ui.key.menuAccessKeyFocuses" = false;
       };
 
       extensions.packages = with firefox-addons.packages.${pkgs.stdenv.hostPlatform.system}; [
