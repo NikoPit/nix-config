@@ -7,5 +7,5 @@
     xwayland.enable = true;
   };
 
-  _module.args.greeterSession = "${pkgs.uwsm}/bin/uwsm start hyprland";
+  _module.args.greeterSession = "${pkgs.hyprland}/bin/start-hyprland";
 }
