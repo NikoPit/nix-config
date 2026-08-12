@@ -7,6 +7,7 @@
     package = pkgs-master.codex;
 
     context = ./AGENTS.md;
+    skills = ./skills;
     settings = import ./settings.nix;
   };
 }
