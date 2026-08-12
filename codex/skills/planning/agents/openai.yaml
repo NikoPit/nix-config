@@ -1,0 +1,4 @@
+interface:
+  display_name: "Planning"
+  short_description: "Create detailed, stable implementation plans"
+  default_prompt: "Use $planning to create or revise an implementation-ready plan."
