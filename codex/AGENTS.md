@@ -29,6 +29,8 @@
 
 ## Working practices
 
+- By default, treat the conversation as discussion rather than authorization to act. Do not interpret ordinary feedback, design exploration, preferences, corrections, or statements of future intent as a request to implement them.
+- Perform state-changing actions only when the user gives an explicit instruction to implement, modify, create, delete, run, or otherwise execute something, or explicitly confirms a proposed action. Read-only inspection is allowed when needed to support the discussion.
 - Use English for code, comments, identifiers, commit messages, and technical documentation unless the project specifies otherwise.
 - Always communicate with the user in Chinese.
 
