@@ -20,6 +20,13 @@
 - Prefer `nix develop` as the documented way to enter the development environment.
 - Also add `use flake` in `.envrc` for `direnv` users.
 
+## Code organization
+
+- Do not concentrate unrelated responsibilities or a disproportionate amount of implementation in a single source file. Split a file when distinct behaviors or ownership boundaries can be named clearly.
+- Organize files and modules by domain responsibility or behavior, such as `game`, `event_loop`, `renderer`, or `session`, rather than by generic implementation categories such as `types`, `state`, `utils`, `common`, or `helpers`.
+- Define data types alongside the behavior or domain that owns them instead of collecting unrelated types in a catch-all module.
+- Do not split cohesive code solely to reduce line count. Every extracted module must have a clear purpose and boundary.
+
 ## Working practices
 
 - Use English for code, comments, identifiers, commit messages, and technical documentation unless the project specifies otherwise.
