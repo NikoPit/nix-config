@@ -1,0 +1,4 @@
+interface:
+  display_name: "Rust Engineering"
+  short_description: "Apply preferred Rust engineering practices"
+  default_prompt: "Use $rust to design or implement this Rust change."
