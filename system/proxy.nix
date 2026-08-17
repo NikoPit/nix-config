@@ -19,7 +19,7 @@ let
   ];
 
   airportToken = config.sops.placeholder.airport-token;
-  subscriptionUrl = "https://0b96e976-9ec3-44c0-aa2b-30bf8b0792ea.com/sabusuku?token=${airportToken}";
+  subscriptionUrl = "https://sub1.smallstrawberry.com/api/v1/client/subscribe?token=${airportToken}";
 
   mihomoConfig = yaml.generate "mihomo-config.yaml" {
     mode = "rule";
