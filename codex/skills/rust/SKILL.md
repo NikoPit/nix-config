@@ -75,6 +75,7 @@ Inspect the repository and follow its established Rust conventions before applyi
 
 - Prefer direct code and explicit invariants over clever compression, deeply nested control flow, or implicit conventions.
 - Use names that express domain meaning. Avoid vague names such as `data`, `info`, `manager`, `handler`, or `process` when a more precise role is available.
+- Do not use `#[allow(...)]` to suppress compiler warnings or lints by default. Fix the underlying issue instead; when suppression has a concrete, valid reason, scope it as narrowly as possible and document the reason next to the attribute.
 - Use comments for rationale, invariants, ownership, lifecycle, and safety obligations. Do not restate obvious code.
 - Keep macros small and narrowly scoped. Do not use them to conceal important control flow, unsafe operations, allocation, locking, or I/O.
 - Add abstractions only for concrete reuse, a clear invariant, or a real boundary. Do not generalize for hypothetical future callers.
