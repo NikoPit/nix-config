@@ -15,16 +15,19 @@ Include the following when applicable:
 
 1. State the scope, relevant existing behavior, assumptions, and explicit non-goals.
 2. Show the proposed file structure. Identify files or directories to add, modify, move, or delete and state the responsibility of each affected component.
-3. Describe architectural boundaries, ownership, dependencies, and communication between components.
-4. Specify public API changes with relevant function, method, type, trait, endpoint, command, event, or configuration signatures.
-5. Explain important data flow, control flow, lifecycle, concurrency, persistence, and error handling.
-6. Include concise pseudocode and draft structs, types, traits, or interfaces when they clarify a substantial design.
-7. Order implementation steps by dependency and identify migration or compatibility work.
-8. Define verification through focused tests, integration checks, and manual validation where appropriate.
+3. For every proposed code addition or modification, name the exact target file.
+4. Describe architectural boundaries, ownership, dependencies, and communication between components.
+5. Specify public API changes with relevant function, method, type, trait, endpoint, command, event, or configuration signatures.
+6. Explain important data flow, control flow, lifecycle, concurrency, persistence, and error handling.
+7. Include concise pseudocode and draft structs, types, traits, or interfaces when they clarify a substantial design.
+8. Order implementation steps by dependency and identify migration or compatibility work.
+9. Define verification through focused tests, integration checks, and manual validation where appropriate, naming the test files to add or modify.
 
 Do not use vague placeholders such as "handle as needed", "wire everything up", or "add appropriate error handling" for decisions that can be resolved during planning.
 
 Do not add artificial sections, abstractions, pseudocode, or type definitions to a small and local change. A short plan is acceptable when it still identifies the exact files, behavior, and verification involved.
+
+When a new file's final name cannot be known until implementation, give the intended concrete path and explicitly mark the unresolved portion. Do not use this exception when the repository structure already makes the path determinable.
 
 ## File structure
 
