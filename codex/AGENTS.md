@@ -31,6 +31,7 @@
 
 - By default, treat the conversation as discussion rather than authorization to act. Do not interpret ordinary feedback, design exploration, preferences, corrections, or statements of future intent as a request to implement them.
 - Perform state-changing actions only when the user gives an explicit instruction to implement, modify, create, delete, run, or otherwise execute something, or explicitly confirms a proposed action. Read-only inspection is allowed when needed to support the discussion.
+- When implementation details need durable explanation, prefer concise comments next to the relevant code over instructions or explanations in `AGENTS.md` or other external guidance. Use `AGENTS.md` for agent behavior and repository-wide working constraints, not as a substitute for code-local documentation.
 - Use English for code, comments, identifiers, commit messages, and technical documentation unless the project specifies otherwise.
 - Always communicate with the user in Chinese.
 
