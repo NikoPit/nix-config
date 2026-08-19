@@ -14,7 +14,7 @@ Scale the detail to the task, but make the plan sufficient for implementation wi
 Include the following when applicable:
 
 1. State the scope, relevant existing behavior, assumptions, and explicit non-goals.
-2. Show the proposed file structure. Identify files or directories to add, modify, move, or delete and state the responsibility of each affected component.
+2. Show the proposed file structure and provide an affected-files entry for every file to add, modify, move, rename, or delete.
 3. For every proposed code addition or modification, name the exact target file.
 4. Describe architectural boundaries, ownership, dependencies, and communication between components.
 5. Specify public API changes with relevant function, method, type, trait, endpoint, command, event, or configuration signatures.
@@ -40,6 +40,21 @@ project/
 └── component-b/
     └── src/...
 ```
+
+The tree is a structural summary. It does not replace the individual file entries described below.
+
+## Affected files
+
+Include one entry for every file that will be added, modified, moved, renamed, or deleted, including source, test, configuration, documentation, and migration files.
+
+Each file entry must state:
+
+1. The file's responsibility and why the change belongs there.
+2. The concrete symbols, behavior, configuration, documentation, or test coverage that will change.
+3. Its relevant dependencies, callers, consumers, or data flow.
+4. Error handling, compatibility, migration, and verification details when applicable.
+
+Keep entries proportional to the change. Do not add empty fields or `N/A` placeholders when an item is irrelevant. Do not use generic descriptions such as "update logic", "add tests", or "make supporting changes".
 
 ## Public API
 
