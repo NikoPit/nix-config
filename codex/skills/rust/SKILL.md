@@ -18,6 +18,7 @@ Inspect the repository and follow its established Rust conventions before applyi
 
 ## Cargo workspace layout
 
+- Prefer a multi-crate workspace when the project has clear responsibility or dependency boundaries. Keep a single crate when splitting would materially increase dependency management, build, release, or maintenance complexity without providing a meaningful architectural boundary.
 - For a new multi-crate project, place crates directly under the project root by default:
 
   ```text
