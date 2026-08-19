@@ -1,6 +1,6 @@
 ---
 name: rust
-description: Apply the user's Rust engineering preferences when designing, implementing, refactoring, reviewing, or planning Rust code and Cargo projects. Covers module and workspace organization, dependencies, API and type design, ownership, concurrency, error handling, unsafe code, tests, and Cargo verification. Use for tasks involving Rust source, Cargo manifests, Rust crates, or Rust workspaces.
+description: Apply the user's Rust engineering preferences to any project that uses or plans to use Rust. Use for early planning, architecture and technical design, project or workspace structure, crate and module boundaries, dependency choices, implementation, refactoring, debugging, and code review, even when the request does not yet name Rust files or Cargo manifests. Also use for Rust APIs and types, ownership, concurrency, error handling, unsafe code, FFI, tests, and Cargo tooling or verification.
 ---
 
 # Rust Engineering
