@@ -116,7 +116,7 @@
                     ./modules/home.nix
                     ./music
                     ./minecraft
-                    ./codex
+                    ./agent
 
                     ./secret/home.nix
                   ];
