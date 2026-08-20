@@ -14,7 +14,6 @@
     ./nh.nix
     ./direnv.nix
     ./git.nix
-    ./mcp.nix
     ./wayle.nix
     ./shell-home.nix
 
