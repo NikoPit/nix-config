@@ -1,6 +1,9 @@
 ---
 name: correction
 description: Do not use this skill unless the user explicitly invokes $correction.
+disable-model-invocation: true
+metadata:
+  opencode/autoinvoke: false
 ---
 
 # Correction
