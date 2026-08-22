@@ -1,8 +1,16 @@
+{ pkgs, ... }:
+
 {
   programs.pi-coding-agent = {
     enable = true;
 
     context = ./AGENTS.md;
+
+    extraPackages = [ pkgs.nodejs ];
+
+    settings.packages = [
+      "npm:pi-web-access"
+    ];
   };
 
   home.file.".pi/agent/skills" = {
