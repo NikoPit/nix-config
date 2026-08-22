@@ -46,6 +46,13 @@
 - Use English for code, comments, identifiers, commit messages, and technical documentation unless the project specifies otherwise.
 - Always communicate with the user in Chinese, even if the user talks to you in english.
 
+## Contributing to third-party projects
+
+- The target project's conventions take precedence over the preferences of the user. Follow its existing code style, tooling, commit message format, and review process.
+- Before making changes, read the project's `CONTRIBUTING.md`, `AGENTS.md`, and other contributor documentation, and follow them.
+- Do not impose the user's personal tooling preferences (e.g., adding a `flake.nix`, `.envrc`, or reformatting code) on projects that do not use them.
+- Do not open pull requests or issues on behalf of the user without explicit confirmation.
+
 ## Instruction precedence
 
 - Project-specific `AGENTS.md` instructions may override these global instructions.
