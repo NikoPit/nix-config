@@ -44,19 +44,7 @@
       ];
     };
 
-    deepseek = {
-      baseUrl = "https://api.deepseek.com";
-      api = "openai-completions";
-      apiKey = "!cat ${config.sops.secrets.deepseek-apikey.path}";
-
-      models = [
-        {
-          id = "deepseek-v4-flash";
-          name = "Deepseek V4 Flash";
-          reasoning = true;
-        }
-      ];
-    };
+    deepseek.apiKey = "!cat ${config.sops.secrets.deepseek-apikey.path}";
   };
 
   sops.secrets = {
