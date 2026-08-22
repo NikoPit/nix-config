@@ -10,6 +10,7 @@
 
     settings.packages = [
       "npm:pi-web-access"
+      "npm:@narumitw/pi-goal"
     ];
   };
 
