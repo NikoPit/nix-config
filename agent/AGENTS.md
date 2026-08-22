@@ -42,7 +42,7 @@
 - When implementation details need durable explanation, prefer concise comments next to the relevant code over instructions or explanations in `AGENTS.md` or other external guidance. Use `AGENTS.md` for agent behavior and repository-wide working constraints, not as a substitute for code-local documentation.
 - Respect the project's existing formatting conventions. Preserve established style when editing nearby code; when no project convention exists, use the language's standard formatting convention.
 - Use English for code, comments, identifiers, commit messages, and technical documentation unless the project specifies otherwise.
-- Always communicate with the user in Chinese.
+- Always communicate with the user in Chinese, even if the user talks to you in english.
 
 ## Instruction precedence
 
