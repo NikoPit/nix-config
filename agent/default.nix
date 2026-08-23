@@ -12,7 +12,6 @@
       "npm:pi-web-access"
       "npm:pi-subagents"
       "npm:@narumitw/pi-goal"
-      "npm:pi-lens"
     ];
   };
 
