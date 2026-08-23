@@ -16,9 +16,15 @@
     ];
   };
 
-  home.file.".pi/agent/skills" = {
-    source = ./skills;
-    recursive = true;
+  home.file = {
+    ".pi/agent/skills" = {
+      source = ./skills;
+      recursive = true;
+    };
+
+    ".pi/web-search.json".text = builtins.toJSON {
+      workflow = "auto-summary";
+    };
   };
 
   imports = [
