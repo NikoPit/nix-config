@@ -84,7 +84,6 @@
 
             ./hyprland/os.nix
             ./modules/os.nix
-            ./nixvim
             ./system
 
             ./secret/os.nix
@@ -111,7 +110,9 @@
                   imports = [
                     sops-nix.homeManagerModules.sops
                     nixcraft.homeModules.default
+                    nixvim.homeManagerModules.nixvim
 
+                    ./nixvim
                     ./hyprland/home.nix
                     ./modules/home.nix
                     ./music
@@ -124,7 +125,6 @@
               };
             }
 
-            nixvim.nixosModules.nixvim
             stylix.nixosModules.stylix
             disko.nixosModules.disko
             sops-nix.nixosModules.sops
