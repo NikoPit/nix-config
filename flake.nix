@@ -15,10 +15,7 @@
       inputs.nixpkgs.follows = "nixpkgs";
     };
 
-    nixvim = {
-      url = "github:nix-community/nixvim";
-      inputs.nixpkgs.follows = "nixpkgs";
-    };
+    nixvim.url = "github:nix-community/nixvim";
 
     nixos-hardware = {
       url = "github:NixOS/nixos-hardware/master";
@@ -71,7 +68,34 @@
 
       settings = import ./settings { inherit pkgs; };
 
-      makeSystem =
+      mkHome =
+        {
+          settings,
+          homeDirectory,
+          extraImports,
+        }:
+        {
+          home = {
+            username = settings.user.name;
+            inherit homeDirectory;
+            stateVersion = "25.05";
+          };
+
+          imports = [
+            ./lib/keybinds.nix
+
+            sops-nix.homeManagerModules.sops
+            nixcraft.homeModules.default
+            nixvim.homeModules.nixvim
+            stylix.homeModules.stylix
+
+            ./shared
+            ./generic
+          ]
+          ++ extraImports;
+        };
+
+      mkLinux =
         {
           hostname,
           hardware-module ? null,
@@ -82,11 +106,9 @@
           modules = [
             ./hosts/${hostname}
 
-            ./hyprland/os.nix
-            ./modules/os.nix
-            ./system
+            ./linux/os.nix
 
-            ./secret/os.nix
+            ./shared
 
             home-manager.nixosModules.home-manager
             {
@@ -106,26 +128,20 @@
                 backupFileExtension = "bak";
                 overwriteBackup = true;
 
-                users.${settings.user.name} = {
-                  imports = [
-                    sops-nix.homeManagerModules.sops
-                    nixcraft.homeModules.default
-                    nixvim.homeManagerModules.nixvim
+                users.${settings.user.name} = mkHome {
+                  inherit settings;
 
-                    ./nixvim
-                    ./hyprland/home.nix
-                    ./modules/home.nix
-                    ./music
-                    ./minecraft
-                    ./agent
+                  homeDirectory = "/home/${settings.user.name}";
 
-                    ./secret/home.nix
-                  ];
+                  extraImports = [ ./linux/home.nix ];
                 };
               };
             }
 
             stylix.nixosModules.stylix
+            {
+              stylix.homeManagerIntegration.autoImport = false;
+            }
             disko.nixosModules.disko
             sops-nix.nixosModules.sops
 
@@ -135,14 +151,12 @@
           ]
           ++ (if hardware-module != null then [ hardware-module ] else [ ]);
         };
-
     in
     {
-      # System configuration
-      nixosConfigurations.elysiapc = makeSystem {
+      nixosConfigurations.elysiapc = mkLinux {
         hostname = "elysiapc";
       };
-      nixosConfigurations.surface = makeSystem {
+      nixosConfigurations.surface = mkLinux {
         hostname = "surface";
       };
     };

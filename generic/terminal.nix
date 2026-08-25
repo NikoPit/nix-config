@@ -1,14 +1,16 @@
-{
-  pkgs,
-  settings,
-  ...
-}:
+{ pkgs, settings, ... }:
 
 let
   ghostty = "${pkgs.ghostty}/bin/ghostty";
-  bind = "SUPER, Q, exec, ${ghostty}";
 in
 {
+  keybinds = [
+    {
+      combo = { mods = [ "SUPER" ]; key = "Q"; };
+      action.exec = ghostty;
+    }
+  ];
+
   programs.ghostty = {
     enable = true;
 
@@ -20,6 +22,4 @@ in
       window-padding-y = 5;
     };
   };
-
-  wayland.windowManager.hyprland.settings.bind = [ bind ];
 }

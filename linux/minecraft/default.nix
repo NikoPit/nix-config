@@ -1,11 +1,11 @@
-{ pkgs, lib, ... }:
+{ pkgs, lib, config, ... }:
 
 {
   nixcraft = {
     enable = true;
 
     client.shared = {
-      account.refreshTokenPath = lib.mkDefault "/home/elysia/.tmp/refreshtoken";
+      account.refreshTokenPath = lib.mkDefault "${config.home.homeDirectory}/.tmp/refreshtoken";
 
       binEntry.enable = true;
       desktopEntry.enable = true;

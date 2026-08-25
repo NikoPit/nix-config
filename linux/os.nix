@@ -1,11 +1,11 @@
-{ hostname, ... }:
-
 {
   imports = [
-    ./greeter.nix
+    ./hyprland/os.nix
+    ./system
+    ./secret-os.nix
 
+    ./greeter.nix
     ./shell-os.nix
-    ./style.nix
     ./steam.nix
     ./runescape.nix
   ];

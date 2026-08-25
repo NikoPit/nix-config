@@ -1,4 +1,4 @@
-{ pkgs, ... }:
+{ pkgs, config, ... }:
 
 let
   skyblocker = pkgs.fetchurl {
@@ -16,5 +16,5 @@ in
     file = skyblocker;
   };
 
-  account.refreshTokenPath = "/home/elysia/.tmp/skyblocktoken";
+  account.refreshTokenPath = "${config.home.homeDirectory}/.tmp/skyblocktoken";
 }

@@ -5,7 +5,4 @@ rec {
   user = import ./user.nix;
   localization = import ./localization.nix;
   palette = import ./palette.nix;
-
-  # Path to the nix system configuration
-  configPath = /home/${user.name}/nix;
 }

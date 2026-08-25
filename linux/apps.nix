@@ -4,7 +4,5 @@
   home.packages = with pkgs; [
     qq
     killall
-    lazygit
-    ripgrep
   ];
 }
