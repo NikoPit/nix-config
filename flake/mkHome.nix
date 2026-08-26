@@ -1,13 +1,18 @@
-inputs: { homeDirectory, extraImports }:
+inputs:
+{
+  username,
+  homeDirectory,
+  extraImports,
+}:
 let
   settings = import ../settings;
+  lib = inputs.nixpkgs.lib;
 in
 {
-  home = {
-    username = settings.user.name;
-    inherit homeDirectory;
-    stateVersion = "25.05";
-  };
+  home =
+    { stateVersion = "25.05"; }
+    // lib.optionalAttrs (username != null) { inherit username; }
+    // lib.optionalAttrs (homeDirectory != null) { inherit homeDirectory; };
 
   imports = [
     ../lib/keybinds.nix

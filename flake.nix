@@ -40,11 +40,18 @@
       url = "github:NikoPit/nixcraft";
       inputs.nixpkgs.follows = "nixpkgs";
     };
+
+    nixOnDroid = {
+      url = "github:nix-community/nix-on-droid";
+      inputs.nixpkgs.follows = "nixpkgs";
+      inputs.home-manager.follows = "homeManager";
+    };
   };
 
   outputs = { ... }@inputs:
     let
       mkLinux = import ./flake/mkLinux.nix inputs;
+      mkNixOnDroid = import ./flake/mkNixOnDroid.nix inputs;
     in
     {
       nixosConfigurations.elysiapc = mkLinux {
@@ -53,5 +60,7 @@
       nixosConfigurations.surface = mkLinux {
         hostname = "surface";
       };
+
+      nixOnDroidConfigurations.default = mkNixOnDroid;
     };
 }
