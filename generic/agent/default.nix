@@ -30,6 +30,11 @@
       recursive = true;
     };
 
+    ".pi/agent/extensions" = {
+      source = ./extensions;
+      recursive = true;
+    };
+
     ".pi/web-search.json".text = builtins.toJSON {
       workflow = "auto-summary";
     };
