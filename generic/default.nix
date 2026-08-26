@@ -4,6 +4,7 @@
     ./fastfetch.nix
     ./direnv.nix
     ./shell.nix
+    ./nh.nix
 
     ./apps.nix
 
