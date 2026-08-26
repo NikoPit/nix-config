@@ -12,7 +12,7 @@ inputs.nixpkgs.lib.nixosSystem {
   specialArgs = { inherit hostname settings; };
 
   modules = [
-    ../hosts/linux/${hostname}
+    ../hosts/linux/${hostname}/system.nix
 
     ../linux/os.nix
 
@@ -40,7 +40,7 @@ inputs.nixpkgs.lib.nixosSystem {
           username = settings.user.name;
           homeDirectory = "/home/${settings.user.name}";
 
-          extraImports = [ ../linux/home.nix ];
+          extraImports = [ ../linux/home.nix ../hosts/linux/${hostname}/home.nix ];
         };
       };
     }
