@@ -1,12 +1,5 @@
 inputs:
 let
-  system = "x86_64-linux";
-
-  pkgs-master = import inputs.nixpkgsMaster {
-    inherit system;
-    config.allowUnfree = true;
-  };
-
   settings = import ../settings;
 
   mkHome = import ./mkHome.nix inputs;
@@ -16,7 +9,7 @@ in
   hardware-module ? null,
 }:
 inputs.nixpkgs.lib.nixosSystem {
-  specialArgs = { inherit hostname settings pkgs-master; };
+  specialArgs = { inherit hostname settings; };
 
   modules = [
     ../hosts/${hostname}
@@ -32,7 +25,6 @@ inputs.nixpkgs.lib.nixosSystem {
           inherit
             hostname
             settings
-            pkgs-master
             ;
 
           firefoxAddons = inputs.firefoxAddons;

@@ -303,23 +303,6 @@
         "url": "https://mirrors.nju.edu.cn/git/nixpkgs.git"
       }
     },
-    "nixpkgsMaster": {
-      "locked": {
-        "lastModified": 1786878464,
-        "narHash": "sha256-wQjeYdA1HnbsVNwwS2IRnLDvZfnI7TvewVpG91W/Z7c=",
-        "ref": "master",
-        "rev": "a7d470f6db1bf9bdf51c6499472b329ae5c25a62",
-        "shallow": true,
-        "type": "git",
-        "url": "https://mirrors.nju.edu.cn/git/nixpkgs.git"
-      },
-      "original": {
-        "ref": "master",
-        "shallow": true,
-        "type": "git",
-        "url": "https://mirrors.nju.edu.cn/git/nixpkgs.git"
-      }
-    },
     "nixpkgs_2": {
       "locked": {
         "lastModified": 1787424095,
@@ -389,7 +372,6 @@
         "nixcraft": "nixcraft",
         "nixosHardware": "nixosHardware",
         "nixpkgs": "nixpkgs",
-        "nixpkgsMaster": "nixpkgsMaster",
         "nixvim": "nixvim",
         "sopsNix": "sopsNix",
         "stylix": "stylix"
