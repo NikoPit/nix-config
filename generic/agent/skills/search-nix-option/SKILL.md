@@ -32,6 +32,7 @@ Examples:
 HOSTNAME="$(hostname)" KW=openssh nix eval --impure --raw --expr 'import ~/.pi/agent/skills/search-nix-option/search.nix { }'
 HOSTNAME="$(hostname)" KW=services.openssh.ports nix eval --impure --raw --expr 'import ~/.pi/agent/skills/search-nix-option/search.nix { exact = true; }'
 HOSTNAME="$(hostname)" KW=stylix nix eval --impure --raw --expr 'import ~/.pi/agent/skills/search-nix-option/search.nix { }'
+HOSTNAME="$(hostname)" KW=programs.nixvim.keymaps nix eval --impure --raw --expr 'import ~/.pi/agent/skills/search-nix-option/search.nix { exact = true; }'
 ```
 
 Output is grouped by source (`NixOS (host)` / `Home Manager`). Each hit shows
@@ -46,7 +47,8 @@ Optional tuning parameters (all have defaults):
 - `depth` (default `3`): how many submodule boundaries keyword search descends
   through. `programs.nixvim.keymaps` needs 1, `...plugins.<plugin>.settings.<x>`
   needs 2-3. Don't raise it far: depth 4 over the nixvim plugin tree slows
-  evaluation to minutes.
+  evaluation to minutes. For paths beyond the limit, use `exact = true`
+  (`exactDepth` is much larger) instead of raising `depth`.
 - `exactDepth` (default `8`): submodule descent limit for exact search. Exact
   search follows a single path, so it is cheap and can go deeper.
 - `maxResults` (default `200`): keyword search truncates each section to this
@@ -68,7 +70,14 @@ Optional tuning parameters (all have defaults):
 - With `exact = true`, a hit may be a **leaf option** (shows `type`/`default`)
   or a **namespace** (a container like `services.openssh`, shown with its
   option count). A namespace is not itself settable — set one of its
-  sub-options instead.
+  sub-options instead. Keyword search returns leaf options only; namespace
+  containers are never shown by keyword search.
+- Keyword search skips names starting with `_` (module-system internals such
+  as `_module`). Exact search does not skip them.
+- The `NixOS (host)` section also contains home-manager options nested under
+  `home-manager.users.<user>.*` (plus `specialisation` variants), so a given
+  option may appear there and again in the `Home Manager` section. That is
+  expected, not a duplicate bug.
 - The same concept may live under different names in NixOS vs Home Manager.
   For example SSH is `services.openssh.*` in NixOS but `programs.ssh.*` in
   Home Manager — search the keyword and check both groups.
