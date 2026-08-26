@@ -37,8 +37,6 @@ inputs.nixpkgs.lib.nixosSystem {
         overwriteBackup = true;
 
         users.${settings.user.name} = mkHome {
-          inherit settings;
-
           homeDirectory = "/home/${settings.user.name}";
 
           extraImports = [ ../linux/home.nix ];

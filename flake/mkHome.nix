@@ -1,8 +1,8 @@
-inputs: {
-  settings,
-  homeDirectory,
-  extraImports,
-}: {
+inputs: { homeDirectory, extraImports }:
+let
+  settings = import ../settings;
+in
+{
   home = {
     username = settings.user.name;
     inherit homeDirectory;
