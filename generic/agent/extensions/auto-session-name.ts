@@ -107,9 +107,16 @@ async function generateTitle(
 }
 
 export default function (pi: ExtensionAPI) {
+	// Tracks a background naming attempt so rapid successive messages don't
+	// each spawn another LLM call before the first one settles.
+	let namingInFlight = false;
+
 	// Auto-name the current session from its opening messages + current prompt.
-	pi.on("before_agent_start", async (event, ctx) => {
-		if (pi.getSessionName()) return;
+	// Runs in the background so the first message isn't delayed waiting on the
+	// LLM; the name is applied when the call completes.
+	pi.on("before_agent_start", (event, ctx) => {
+		if (pi.getSessionName() || namingInFlight) return;
+		namingInFlight = true;
 
 		const history = ctx.sessionManager.buildSessionContext().messages;
 		const excerpt = [
@@ -117,17 +124,17 @@ export default function (pi: ExtensionAPI) {
 			{ role: "user", content: event.prompt },
 		];
 
-		// Bound the wait so a hung provider doesn't stall the first message.
+		// Bound the wait so a hung provider doesn't leak the background task.
 		const controller = new AbortController();
 		const timer = setTimeout(() => controller.abort(), TITLE_TIMEOUT_MS);
-		try {
-			const title = await generateTitle(ctx, excerpt, controller.signal);
+
+		void generateTitle(ctx, excerpt, controller.signal).then((title) => {
+			clearTimeout(timer);
+			namingInFlight = false;
 			// On failure: skip silently; the session stays unnamed and is
 			// retried on a later message or via /name-all-sessions.
 			if (title) pi.setSessionName(title);
-		} finally {
-			clearTimeout(timer);
-		}
+		});
 	});
 
 	// Name all sessions that don't have a display name yet.
