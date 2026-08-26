@@ -12,7 +12,7 @@ inputs.nixpkgs.lib.nixosSystem {
   specialArgs = { inherit hostname settings; };
 
   modules = [
-    ../hosts/${hostname}
+    ../hosts/linux/${hostname}
 
     ../linux/os.nix
 
