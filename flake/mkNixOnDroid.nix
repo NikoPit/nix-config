@@ -15,6 +15,7 @@ inputs.nixOnDroid.lib.nixOnDroidConfiguration {
   home-manager-path = inputs.homeManager.outPath;
 
   modules = [
+    ../nix-on-droid/system.nix
     ../hosts/nix-on-droid/${deviceName}/system.nix
 
     {
@@ -28,7 +29,7 @@ inputs.nixOnDroid.lib.nixOnDroidConfiguration {
           username = null;
           homeDirectory = null;
 
-          extraImports = [ ../hosts/nix-on-droid/${deviceName}/home.nix ];
+          extraImports = [ ../nix-on-droid/home.nix ../hosts/nix-on-droid/${deviceName}/home.nix ];
         };
       };
     }
