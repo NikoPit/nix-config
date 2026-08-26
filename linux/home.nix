@@ -10,7 +10,7 @@
 
     ./apps.nix
     ./firefox.nix
-    ./nh-os.nix
+    ./ns.nix
 
     ./music
     ./minecraft
