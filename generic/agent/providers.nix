@@ -45,11 +45,13 @@
     };
 
     deepseek.apiKey = "!cat ${config.sops.secrets.deepseek-apikey.path}";
+    openrouter.apiKey = "!cat ${config.sops.secrets.openrouter-apikey.path}";
   };
 
   sops.secrets = {
     e-flowcode-gpt-apikey = { };
     e-flowcode-cn-apikey = { };
     deepseek-apikey = { };
+    openrouter-apikey = { };
   };
 }
