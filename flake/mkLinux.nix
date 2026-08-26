@@ -20,7 +20,7 @@ inputs.nixpkgs.lib.nixosSystem {
 
     inputs.homeManager.nixosModules.home-manager
     {
-      homeManager = {
+      home-manager = {
         extraSpecialArgs = {
           inherit
             hostname
