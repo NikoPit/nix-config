@@ -3,9 +3,9 @@
 
   inputs = {
     nixpkgs.url = "git+https://mirrors.nju.edu.cn/git/nixpkgs.git?ref=nixos-unstable&shallow=1";
-    nixpkgs-master.url = "git+https://mirrors.nju.edu.cn/git/nixpkgs.git?ref=master&shallow=1";
+    nixpkgsMaster.url = "git+https://mirrors.nju.edu.cn/git/nixpkgs.git?ref=master&shallow=1";
 
-    home-manager = {
+    homeManager = {
       url = "github:nix-community/home-manager";
       inputs.nixpkgs.follows = "nixpkgs";
     };
@@ -17,7 +17,7 @@
 
     nixvim.url = "github:nix-community/nixvim";
 
-    nixos-hardware = {
+    nixosHardware = {
       url = "github:NixOS/nixos-hardware/master";
       inputs.nixpkgs.follows = "nixpkgs";
     };
@@ -27,12 +27,12 @@
       inputs.nixpkgs.follows = "nixpkgs";
     };
 
-    sops-nix = {
+    sopsNix = {
       url = "github:Mic92/sops-nix";
       inputs.nixpkgs.follows = "nixpkgs";
     };
 
-    firefox-addons = {
+    firefoxAddons = {
       url = "gitlab:rycee/nur-expressions?dir=pkgs/firefox-addons";
       inputs.nixpkgs.follows = "nixpkgs";
     };
@@ -43,25 +43,12 @@
     };
   };
 
-  outputs =
-    {
-      nixpkgs,
-      nixpkgs-master,
-      disko,
-      stylix,
-      home-manager,
-      nixvim,
-      nixos-hardware,
-      sops-nix,
-      firefox-addons,
-      nixcraft,
-      ...
-    }:
+  outputs = { ... }@inputs:
     let
       system = "x86_64-linux";
 
-      pkgs = import nixpkgs { inherit system; };
-      pkgs-master = import nixpkgs-master {
+      pkgs = import inputs.nixpkgs { inherit system; };
+      pkgs-master = import inputs.nixpkgsMaster {
         inherit system;
         config.allowUnfree = true;
       };
@@ -84,10 +71,10 @@
           imports = [
             ./lib/keybinds.nix
 
-            sops-nix.homeManagerModules.sops
-            nixcraft.homeModules.default
-            nixvim.homeModules.nixvim
-            stylix.homeModules.stylix
+            inputs.sopsNix.homeManagerModules.sops
+            inputs.nixcraft.homeModules.default
+            inputs.nixvim.homeModules.nixvim
+            inputs.stylix.homeModules.stylix
 
             ./shared
             ./generic
@@ -100,7 +87,7 @@
           hostname,
           hardware-module ? null,
         }:
-        nixpkgs.lib.nixosSystem {
+        inputs.nixpkgs.lib.nixosSystem {
           specialArgs = { inherit hostname settings pkgs-master; };
 
           modules = [
@@ -110,16 +97,17 @@
 
             ./shared
 
-            home-manager.nixosModules.home-manager
+            inputs.homeManager.nixosModules.home-manager
             {
-              home-manager = {
+              homeManager = {
                 extraSpecialArgs = {
                   inherit
                     hostname
                     settings
-                    firefox-addons
                     pkgs-master
                     ;
+
+                  firefoxAddons = inputs.firefoxAddons;
                 };
 
                 useGlobalPkgs = true;
@@ -138,12 +126,12 @@
               };
             }
 
-            stylix.nixosModules.stylix
+            inputs.stylix.nixosModules.stylix
             {
               stylix.homeManagerIntegration.autoImport = false;
             }
-            disko.nixosModules.disko
-            sops-nix.nixosModules.sops
+            inputs.disko.nixosModules.disko
+            inputs.sopsNix.nixosModules.sops
 
             {
               networking.hostName = hostname;

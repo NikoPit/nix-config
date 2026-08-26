@@ -88,7 +88,7 @@
         "type": "github"
       }
     },
-    "firefox-addons": {
+    "firefoxAddons": {
       "inputs": {
         "nixpkgs": [
           "nixpkgs"
@@ -224,7 +224,7 @@
         "type": "gitlab"
       }
     },
-    "home-manager": {
+    "homeManager": {
       "inputs": {
         "nixpkgs": [
           "nixpkgs"
@@ -265,7 +265,7 @@
         "type": "github"
       }
     },
-    "nixos-hardware": {
+    "nixosHardware": {
       "inputs": {
         "nixpkgs": [
           "nixpkgs"
@@ -303,7 +303,7 @@
         "url": "https://mirrors.nju.edu.cn/git/nixpkgs.git"
       }
     },
-    "nixpkgs-master": {
+    "nixpkgsMaster": {
       "locked": {
         "lastModified": 1786878464,
         "narHash": "sha256-wQjeYdA1HnbsVNwwS2IRnLDvZfnI7TvewVpG91W/Z7c=",
@@ -384,18 +384,18 @@
     "root": {
       "inputs": {
         "disko": "disko",
-        "firefox-addons": "firefox-addons",
-        "home-manager": "home-manager",
+        "firefoxAddons": "firefoxAddons",
+        "homeManager": "homeManager",
         "nixcraft": "nixcraft",
-        "nixos-hardware": "nixos-hardware",
+        "nixosHardware": "nixosHardware",
         "nixpkgs": "nixpkgs",
-        "nixpkgs-master": "nixpkgs-master",
+        "nixpkgsMaster": "nixpkgsMaster",
         "nixvim": "nixvim",
-        "sops-nix": "sops-nix",
+        "sopsNix": "sopsNix",
         "stylix": "stylix"
       }
     },
-    "sops-nix": {
+    "sopsNix": {
       "inputs": {
         "nixpkgs": [
           "nixpkgs"
