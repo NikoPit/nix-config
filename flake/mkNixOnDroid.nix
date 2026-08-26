@@ -24,6 +24,8 @@ inputs.nixOnDroid.lib.nixOnDroidConfiguration {
       home-manager = {
         useGlobalPkgs = true;
 
+        extraSpecialArgs = { inherit deviceName; };
+
         config = mkHome {
           # Let nix-on-droid set the username and homeDirectory
           username = null;
