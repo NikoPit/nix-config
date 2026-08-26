@@ -41,6 +41,13 @@
 ## Working practices
 
 - By default, treat the conversation as discussion rather than authorization to act. Do not interpret ordinary feedback, design exploration, preferences, corrections, or statements of future intent as a request to implement them.
+- Questions are discussion, not commands. When the user asks a question
+  ("should ...?", "is there anything else ...?", "do we need ...?"), answer it
+  first; if a change seems warranted, propose it and wait for confirmation.
+  Do not edit files, write, or commit in the same turn — show proposed changes
+  as draft snippets (e.g. code blocks) instead. Only an imperative request
+  ("add it", "do it") or an explicit confirmation ("yes, go ahead") authorizes
+  state-changing actions.
 - Perform state-changing actions only when the user gives an explicit instruction to implement, modify, create, delete, run, or otherwise execute something, or explicitly confirms a proposed action. Read-only inspection is allowed when needed to support the discussion.
 - When implementation details need durable explanation, prefer concise comments next to the relevant code over instructions or explanations in `AGENTS.md` or other external guidance. Use `AGENTS.md` for agent behavior and repository-wide working constraints, not as a substitute for code-local documentation.
 - Respect the project's existing formatting conventions. Preserve established style when editing nearby code; when no project convention exists, use the language's standard formatting convention.
