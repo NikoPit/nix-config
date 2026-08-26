@@ -3,6 +3,9 @@
   exact ? false,
   nixDir ? "/home/elysia/nix",
   host ? (builtins.getEnv "HOSTNAME"),
+  depth ? 3,
+  exactDepth ? 8,
+  maxResults ? 200,
 }:
 
 let
@@ -12,6 +15,20 @@ let
   pkgs = nixpkgs.legacyPackages.x86_64-linux;
   hmLib = import "${homeManager}/modules/lib/stdlib-extended.nix" nixpkgs.lib;
   settings = import "${nixDir}/settings";
+
+  jsonSafe =
+    v: d:
+    if d <= 0 then
+      false
+    else if builtins.isString v || builtins.isBool v || builtins.isInt v
+      || builtins.isFloat v || builtins.isPath v || builtins.isNull v then
+      true
+    else if builtins.isList v then
+      builtins.all (x: jsonSafe x (d - 1)) v
+    else if builtins.isAttrs v then
+      builtins.all (n: jsonSafe v.${n} (d - 1)) (builtins.attrNames v)
+    else
+      false;
 
   toStr =
     v:
@@ -32,15 +49,28 @@ let
       "[" + (builtins.concatStringsSep ", " (builtins.map toStr r.value)) + "]"
     else if builtins.isAttrs r.value then
       let
-        j = builtins.tryEval (builtins.toJSON r.value);
+        j =
+          if jsonSafe r.value 32 then
+            builtins.tryEval (builtins.toJSON r.value)
+          else
+            { success = false; value = null; };
       in
       if j.success then j.value else "<set>"
     else
       "<" + (builtins.typeOf r.value) + ">";
 
-  # A namespace node has no `type`; a leaf option does.
+  subOptionsOf =
+    o: prefix:
+    if o ? type && o.type ? getSubOptions then
+      let
+        r = builtins.tryEval (o.type.getSubOptions prefix);
+      in
+      if r.success && builtins.isAttrs r.value then r.value else null
+    else
+      null;
+
   flatten =
-    prefix: node:
+    prefix: node: maxDepth:
     builtins.concatLists (
       builtins.map (
         name:
@@ -48,10 +78,21 @@ let
           o = node.${name};
           path = prefix ++ [ name ];
         in
-        if o ? type then
+        if builtins.substring 0 1 name == "_" then
+          [ ]
+        else if o ? type then
           [ { inherit path o; } ]
+          ++ (
+            if maxDepth > 0 then
+              let
+                sub = subOptionsOf o path;
+              in
+              if sub != null then flatten path sub (maxDepth - 1) else [ ]
+            else
+              [ ]
+          )
         else if builtins.isAttrs o then
-          flatten path o
+          flatten path o maxDepth
         else
           [ ]
       ) (builtins.attrNames node)
@@ -63,7 +104,7 @@ let
       [ ]
     else
       let
-        leaves = flatten [ ] opts;
+        leaves = flatten [ ] opts depth;
         match = o: builtins.match (".*" + kw + ".*") o != null;
       in
       builtins.filter (l: match (builtins.concatStringsSep "." l.path)) leaves;
@@ -76,30 +117,48 @@ let
       let
         parts = builtins.filter (s: s != "") (nixpkgs.lib.splitString "." kw);
         go =
-          node: parts':
+          node: parts': prefix': remaining:
           if parts' == [ ] then
             if node ? type then
               [
                 {
-                  path = parts;
+                  path = prefix';
                   o = node;
                 }
-              ] # leaf option
+              ]
             else if builtins.isAttrs node then
               [
                 {
-                  path = parts;
+                  path = prefix';
                   ns = node;
                 }
-              ] # namespace
+              ]
             else
               [ ]
-          else if !(builtins.hasAttr (builtins.head parts') node) then
+          else if remaining <= 0 then
             [ ]
+          else if !(node ? type) && builtins.isAttrs node && builtins.hasAttr (builtins.head parts') node then
+            go
+              node.${builtins.head parts'}
+              (builtins.tail parts')
+              (prefix' ++ [ (builtins.head parts') ])
+              remaining
+          else if node ? type then
+            let
+              sub = subOptionsOf node prefix';
+            in
+            if sub != null && builtins.hasAttr (builtins.head parts') sub then
+              go
+                sub.${builtins.head parts'}
+                (builtins.tail parts')
+                (prefix' ++ [ (builtins.head parts') ])
+                (remaining - 1)
+            else
+              [ ]
           else
-            go node.${builtins.head parts'} (builtins.tail parts');
+            [ ];
       in
-      go opts parts;
+      go opts parts [ ] exactDepth;
 
   nsCount = node: builtins.length (builtins.filter (n: node.${n} ? type) (builtins.attrNames node));
 
@@ -142,20 +201,28 @@ let
     if hits == [ ] then
       ""
     else
+      let
+        n = builtins.length hits;
+        shown = nixpkgs.lib.take maxResults hits;
+      in
       "==== "
       + title
       + " ("
-      + builtins.toString (builtins.length hits)
+      + builtins.toString n
       + ") ====\n"
-      + (builtins.concatStringsSep "\n\n" (builtins.map fmtLeaf hits))
+      + (builtins.concatStringsSep "\n\n" (builtins.map fmtLeaf shown))
+      + (
+        if n > maxResults then
+          "\n... (" + builtins.toString (n - maxResults) + " more matches not shown)"
+        else
+          ""
+      )
       + "\n";
 
-  # --- NixOS options from the real host configuration --------------------
   nixosOpts = nix.nixosConfigurations.${host}.options;
   nixosHits = search nixosOpts;
   nixosExactHits = exactIn nixosOpts;
 
-  # --- Home Manager options from the real user configuration -------------
   mkHome = import "${nixDir}/flake/mkHome.nix" nix.inputs;
   hmCfg = mkHome {
     username = settings.user.name;
