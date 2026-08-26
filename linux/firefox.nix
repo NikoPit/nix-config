@@ -1,6 +1,6 @@
 {
   config,
-  firefox-addons,
+  firefoxAddons,
   pkgs,
   ...
 }:
@@ -23,7 +23,7 @@
         "ui.key.menuAccessKeyFocuses" = false;
       };
 
-      extensions.packages = with firefox-addons.packages.${pkgs.stdenv.hostPlatform.system}; [
+      extensions.packages = with firefoxAddons.packages.${pkgs.stdenv.hostPlatform.system}; [
         ublock-origin
         return-youtube-dislikes
         dont-track-me-google1

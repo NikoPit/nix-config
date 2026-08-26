@@ -9,6 +9,7 @@
     ./wayle.nix
 
     ./apps.nix
+    ./firefox.nix
     ./nh-os.nix
 
     ./music

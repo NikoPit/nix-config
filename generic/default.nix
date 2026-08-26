@@ -6,7 +6,6 @@
     ./shell.nix
 
     ./apps.nix
-    ./firefox.nix
 
     ./file-manager.nix
 
