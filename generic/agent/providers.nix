@@ -45,7 +45,17 @@
     };
 
     deepseek.apiKey = "!cat ${config.sops.secrets.deepseek-apikey.path}";
-    openrouter.apiKey = "!cat ${config.sops.secrets.openrouter-apikey.path}";
+
+    openrouter = {
+      apiKey = "!cat ${config.sops.secrets.openrouter-apikey.path}";
+
+      modelOverrides = {
+        "deepseek/deepseek-v4-flash-0731".compat.openRouterRouting = {
+          only = [ "coreweave/fp8" ];
+          allow_fallbacks = false;
+        };
+      };
+    };
   };
 
   sops.secrets = {
