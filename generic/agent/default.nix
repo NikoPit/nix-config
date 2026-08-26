@@ -21,6 +21,11 @@
       recursive = true;
     };
 
+    ".pi/agent/prompts" = {
+      source = ./prompts;
+      recursive = true;
+    };
+
     ".pi/web-search.json".text = builtins.toJSON {
       workflow = "auto-summary";
     };
