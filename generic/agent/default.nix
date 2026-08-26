@@ -8,11 +8,15 @@
 
     extraPackages = [ pkgs.nodejs ];
 
-    settings.packages = [
-      "npm:pi-web-access"
-      "npm:pi-subagents"
-      "npm:@narumitw/pi-goal"
-    ];
+    settings = {
+      packages = [
+        "npm:pi-web-access"
+        "npm:pi-subagents"
+        "npm:@narumitw/pi-goal"
+      ];
+
+      hideThinkingBlock = true;
+    };
   };
 
   home.file = {
