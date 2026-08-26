@@ -17,6 +17,7 @@
 - Never present editing a generated config file (e.g. under `~/.config`, `~/.pi`, or any file that is a symlink into the nix store) as the primary answer. If a generated file must be mentioned, say explicitly that it is generated and the change belongs in `~/nix`.
 - When the user asks whether software can be configured by NixOS, they mean whether NixOS or Home Manager provides configuration options for that software, not whether the software can be installed on NixOS.
 - If official NixOS or Home Manager lacks an option or feature, third-party tools or flakes are acceptable.
+- Never run `nixos-rebuild` (or `home-manager switch`) yourself to apply Nix config changes. Only edit the config files under `~/nix`; leave applying the changes to the user, who will rebuild when ready.
 
 ## Network
 
