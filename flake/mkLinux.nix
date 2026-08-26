@@ -2,13 +2,12 @@ inputs:
 let
   system = "x86_64-linux";
 
-  pkgs = import inputs.nixpkgs { inherit system; };
   pkgs-master = import inputs.nixpkgsMaster {
     inherit system;
     config.allowUnfree = true;
   };
 
-  settings = import ../settings { inherit pkgs; };
+  settings = import ../settings;
 
   mkHome = import ./mkHome.nix inputs;
 in

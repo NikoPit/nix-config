@@ -1,4 +1,3 @@
-{ pkgs, ... }:
 rec {
   proxy = import ./proxy.nix;
   misc = import ./misc.nix;
