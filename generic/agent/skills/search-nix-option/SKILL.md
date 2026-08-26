@@ -37,6 +37,22 @@ HOSTNAME="$(hostname)" KW=stylix nix eval --impure --raw --expr 'import ~/.pi/ag
 Output is grouped by source (`NixOS (host)` / `Home Manager`). Each hit shows
 the full dotted path, `type`, `default`, and `desc`.
 
+Both modes descend into submodule-typed options, so nested paths like
+`programs.nixvim.keymaps` or `programs.nixvim.plugins.telescope.enable` are
+searchable even though `programs.nixvim` itself is a single submodule option.
+
+Optional tuning parameters (all have defaults):
+
+- `depth` (default `3`): how many submodule boundaries keyword search descends
+  through. `programs.nixvim.keymaps` needs 1, `...plugins.<plugin>.settings.<x>`
+  needs 2-3. Don't raise it far: depth 4 over the nixvim plugin tree slows
+  evaluation to minutes.
+- `exactDepth` (default `8`): submodule descent limit for exact search. Exact
+  search follows a single path, so it is cheap and can go deeper.
+- `maxResults` (default `200`): keyword search truncates each section to this
+  many hits and prints `... (N more matches not shown)`. Raise it to see more,
+  or use `exact = true` for a precise check.
+
 ## When to use which mode
 
 - **Keyword search** (`exact` omitted): use when the exact option name isn't
@@ -63,7 +79,8 @@ default is a structured value.
   `stylix.fonts.*`, `disko.devices`, `sops.age.*` (NixOS) and
   `programs.nixvim.*`, `stylix.targets.*` (Home Manager).
 - The first search after a config change can take ~30s (cold evaluation of the
-  full option trees); subsequent searches are fast (~1-3s).
+  full option trees); subsequent searches are fast (~8s, longer for broad
+  keywords that expand many submodules).
 - If the searched host doesn't exist (e.g. `HOSTNAME` doesn't match any
   `nixosConfigurations` key in `~/nix/flake.nix`), `search.nix` errors out.
   Fix by passing the right `host` argument. If `HOSTNAME` is empty, it prints
