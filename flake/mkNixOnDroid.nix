@@ -1,4 +1,4 @@
-inputs:
+inputs: deviceName:
 let
   settings = import ../settings;
 
@@ -15,6 +15,8 @@ inputs.nixOnDroid.lib.nixOnDroidConfiguration {
   home-manager-path = inputs.homeManager.outPath;
 
   modules = [
+    ../hosts/nix-on-droid/${deviceName}/system.nix
+
     {
       user.userName = settings.user.name;
 
@@ -26,7 +28,7 @@ inputs.nixOnDroid.lib.nixOnDroidConfiguration {
           username = null;
           homeDirectory = null;
 
-          extraImports = [ ];
+          extraImports = [ ../hosts/nix-on-droid/${deviceName}/home.nix ];
         };
       };
     }

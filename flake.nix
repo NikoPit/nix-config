@@ -61,6 +61,6 @@
         hostname = "surface";
       };
 
-      nixOnDroidConfigurations.default = mkNixOnDroid;
+      nixOnDroidConfigurations.huaweiPad = mkNixOnDroid "huaweiPad";
     };
 }
