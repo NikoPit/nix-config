@@ -13,9 +13,13 @@ let
     "119.29.29.29"
   ];
 
+  # Use domestically reachable DoH as fallback: the previous 1.1.1.1/dns.google
+  # DoH are unreachable from mainland China, so any non-CN IP resolved by the
+  # primary nameserver (e.g. subscription domain behind Cloudflare) triggered
+  # the fallback-filter and failed, breaking proxy-provider pulls.
   fallbackNameserver = [
-    "https://1.1.1.1/dns-query"
-    "https://dns.google/dns-query"
+    "https://doh.pub/dns-query"
+    "https://dns.alidns.com/dns-query"
   ];
 
   airportToken = config.sops.placeholder.airport-token;
