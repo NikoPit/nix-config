@@ -20,8 +20,8 @@
 
       hideThinkingBlock = true;
 
-      defaultProvider = "openrouter";
-      defaultModel = "deepseek/deepseek-v4-flash-0731";
+      defaultProvider = "deepseek";
+      defaultModel = "deepseek-v4-flash";
     };
   };
 
