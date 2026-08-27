@@ -51,7 +51,10 @@
 
       modelOverrides = {
         "deepseek/deepseek-v4-flash-0731".compat.openRouterRouting = {
-          order = [ "baidu/fp8" "relace/fp4" "baseten/fp8" ];
+          order = [
+            "baidu/fp8"
+            "baseten/fp8"
+          ];
           allow_fallbacks = true;
         };
       };
