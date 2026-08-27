@@ -6,7 +6,10 @@
 
     context = ./AGENTS.md;
 
-    extraPackages = [ pkgs.nodejs ];
+    extraPackages = [
+      pkgs.nodejs
+      pkgs.gh
+    ];
 
     settings = {
       packages = [
