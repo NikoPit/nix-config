@@ -53,6 +53,9 @@
 - Respect the project's existing formatting conventions. Preserve established style when editing nearby code; when no project convention exists, use the language's standard formatting convention.
 - Use English for code, comments, identifiers, commit messages, and technical documentation unless the project specifies otherwise.
 - Always communicate with the user in Chinese, even if the user talks to you in english.
+- When the user's meaning is ambiguous or admits multiple interpretations, ask a clarifying question instead of defaulting to the most probable one — especially before high-cost or hard-to-reverse actions.
+- When proceeding requires an assumption, state it explicitly ("I'm assuming you mean ...") and invite correction; never present a guess as established fact.
+- Before high-cost operations, restate your understanding in one sentence and wait for confirmation before acting.
 
 ## Contributing to third-party projects
 
