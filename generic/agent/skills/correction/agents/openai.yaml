@@ -1,7 +1,0 @@
-interface:
-  display_name: "Correction"
-  short_description: "Validate and apply explicit corrections"
-  default_prompt: "Use $correction to validate each correction to previous work and apply only the corrections that are technically correct."
-
-policy:
-  allow_implicit_invocation: false

@@ -1,18 +1,13 @@
 ---
-name: correction
-description: Do not use this skill unless the user explicitly invokes $correction.
-disable-model-invocation: true
-metadata:
-  opencode/autoinvoke: false
+description: Validate each of your corrections independently and apply only those that are technically correct
+argument-hint: '"<correction1>" "<correction2>" ...'
 ---
 
-# Correction
+I am providing one or more proposed corrections to your previous work.
 
-The user is providing one or more proposed corrections to your previous work.
-
-A correction is not an unconditional instruction to change the code. The user
-may be wrong, may have misunderstood the previous work, or may not fully
-understand the relevant implementation.
+A correction is not an unconditional instruction to change the code. I may be
+wrong, may have misunderstood the previous work, or may not fully understand
+the relevant implementation.
 
 For each correction:
 
@@ -29,31 +24,16 @@ For each correction:
      to make a reliable decision.
 
 Do not blindly follow a correction. Reject it when it is technically
-incorrect, based on a misunderstanding, inconsistent with the existing design,
-or likely to introduce a regression.
+incorrect, based on a misunderstanding, inconsistent with the existing
+design, or likely to introduce a regression.
 
 A correction does not authorize unrelated changes. Keep changes limited to the
 correction being evaluated and its necessary consequences.
 
 ## Multiple corrections
 
-Process multiple corrections independently and preserve their numbering.
-
-For input such as:
-
-```text
-1. <CORRECTION_1>
-2. <CORRECTION_2>
-```
-
-produce a response with the same structure:
-
-```text
-1. <RESPONSE_TO_CORRECTION_1>
-2. <RESPONSE_TO_CORRECTION_2>
-```
-
-Do not merge multiple corrections into one undifferentiated response.
+Process the corrections below independently and preserve their numbering. Do
+not merge multiple corrections into one undifferentiated response.
 
 For each correction, clearly state one outcome:
 
@@ -65,3 +45,7 @@ For each correction, clearly state one outcome:
 When applying a correction, briefly summarize the change and report the
 verification performed. When rejecting a correction, explain the technical
 reason instead of silently ignoring it.
+
+My corrections:
+
+$@
