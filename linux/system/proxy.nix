@@ -22,8 +22,8 @@ let
     "https://dns.alidns.com/dns-query"
   ];
 
-  airportToken = config.sops.placeholder.airport-token;
-  subscriptionUrl = "https://sub1.smallstrawberry.com/api/v1/client/subscribe?token=${airportToken}";
+  yyjcToken = config.sops.placeholder.yyjc-token;
+  yyjcSubUrl = "https://sub1.smallstrawberry.com/api/v1/client/subscribe?token=${yyjcToken}";
 
   mihomoConfig = yaml.generate "mihomo-config.yaml" {
     mode = "rule";
@@ -56,10 +56,10 @@ let
     };
 
     proxy-providers = {
-      airport = {
+      yyjc = {
         type = "http";
-        url = subscriptionUrl;
-        path = "./providers/airport.yaml";
+        url = yyjcSubUrl;
+        path = "./providers/yyjc.yaml";
         interval = proxySettings.subscription.updateInterval;
         proxy = "DIRECT";
 
@@ -75,7 +75,7 @@ let
       {
         name = "AUTO";
         type = "url-test";
-        use = [ "airport" ];
+        use = [ "yyjc" ];
         url = "https://cp.cloudflare.com";
         interval = proxySettings.urlTest.interval;
         tolerance = proxySettings.urlTest.tolerance;
@@ -84,7 +84,7 @@ let
       {
         name = "MANUAL";
         type = "select";
-        use = [ "airport" ];
+        use = [ "yyjc" ];
         proxies = [
           "AUTO"
           "DIRECT"
@@ -115,7 +115,7 @@ let
 in
 {
   sops = {
-    secrets.airport-token = { };
+    secrets.yyjc-token = { };
 
     templates.mihomoConfig = {
       content = builtins.readFile mihomoConfig;
