@@ -19,8 +19,6 @@
         "npm:@narumitw/pi-goal"
       ];
 
-      hideThinkingBlock = true;
-
       defaultProvider = "deepseek";
       defaultModel = "deepseek-v4-flash";
     };
