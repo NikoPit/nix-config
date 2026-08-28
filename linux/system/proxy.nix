@@ -25,6 +25,23 @@ let
   yyjcToken = config.sops.placeholder.yyjc-token;
   yyjcSubUrl = "https://sub1.smallstrawberry.com/api/v1/client/subscribe?token=${yyjcToken}";
 
+  sakuracatToken = config.sops.placeholder.sakuracat-token;
+  sakuracatSubUrl = "https://cat.cn-ping.com/sabusuku?token=${sakuracatToken}";
+
+  mkProvider = name: url: {
+    type = "http";
+    inherit url;
+    path = "./providers/${name}.yaml";
+    interval = proxySettings.subscription.updateInterval;
+    proxy = "DIRECT";
+
+    health-check = {
+      enable = true;
+      url = "https://cp.cloudflare.com";
+      interval = proxySettings.subscription.healthCheckInterval;
+    };
+  };
+
   mihomoConfig = yaml.generate "mihomo-config.yaml" {
     mode = "rule";
     external-controller = "127.0.0.1:9090";
@@ -56,26 +73,18 @@ let
     };
 
     proxy-providers = {
-      yyjc = {
-        type = "http";
-        url = yyjcSubUrl;
-        path = "./providers/yyjc.yaml";
-        interval = proxySettings.subscription.updateInterval;
-        proxy = "DIRECT";
-
-        health-check = {
-          enable = true;
-          url = "https://cp.cloudflare.com";
-          interval = proxySettings.subscription.healthCheckInterval;
-        };
-      };
+      yyjc = mkProvider "yyjc" yyjcSubUrl;
+      sakuracat = mkProvider "sakuracat" sakuracatSubUrl;
     };
 
     proxy-groups = [
       {
         name = "AUTO";
         type = "url-test";
-        use = [ "yyjc" ];
+        use = [
+          "yyjc"
+          "sakuracat"
+        ];
         url = "https://cp.cloudflare.com";
         interval = proxySettings.urlTest.interval;
         tolerance = proxySettings.urlTest.tolerance;
@@ -84,7 +93,10 @@ let
       {
         name = "MANUAL";
         type = "select";
-        use = [ "yyjc" ];
+        use = [
+          "yyjc"
+          "sakuracat"
+        ];
         proxies = [
           "AUTO"
           "DIRECT"
@@ -115,7 +127,10 @@ let
 in
 {
   sops = {
-    secrets.yyjc-token = { };
+    secrets = {
+      yyjc-token = { };
+      sakuracat-token = { };
+    };
 
     templates.mihomoConfig = {
       content = builtins.readFile mihomoConfig;
