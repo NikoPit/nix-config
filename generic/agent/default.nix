@@ -9,6 +9,7 @@
     extraPackages = with pkgs; [
       nodejs
       gh
+      wl-clipboard
     ];
 
     settings = {
