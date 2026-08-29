@@ -107,6 +107,44 @@
       ];
     };
 
+    e-flowcode-gemini = {
+      headers.User-Agent = "codex_cli_rs/0.77.0 (Windows 10.0.26100; x86_64) WindowsTerminal";
+      baseUrl = "https://e-flowcode.cc/v1";
+      api = "openai-completions";
+      apiKey = "!cat ${config.sops.secrets.e-flowcode-gemini-apikey.path}";
+
+      models = [
+        {
+          id = "gemini-3.7-flash";
+          name = "Gemini 3.7 Flash";
+          reasoning = true;
+          input = [
+            "text"
+            "image"
+          ];
+          contextWindow = 1048576;
+          maxTokens = 65536;
+
+          thinkingLevelMap = {
+            off = null;
+            minimal = null;
+            low = "low";
+            medium = "medium";
+            high = "high";
+            xhigh = null;
+            max = null;
+          };
+
+          cost = {
+            input = 0.375;
+            output = 1.875;
+            cacheRead = 0.0375;
+            cacheWrite = 0.020833;
+          };
+        }
+      ];
+    };
+
     deepseek.apiKey = "!cat ${config.sops.secrets.deepseek-apikey.path}";
 
     openrouter = {
@@ -127,6 +165,7 @@
   sops.secrets = {
     e-flowcode-gpt-apikey = { };
     e-flowcode-cn-apikey = { };
+    e-flowcode-gemini-apikey = { };
     deepseek-apikey = { };
     openrouter-apikey = { };
   };
