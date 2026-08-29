@@ -97,6 +97,32 @@
           id = "deepseek-v4-flash";
           name = "Deepseek V4 Flash";
           reasoning = true;
+          input = [ "text" ];
+          contextWindow = 1048576;
+          maxTokens = 384000;
+
+          thinkingLevelMap = {
+            minimal = null;
+            low = "low";
+            medium = null;
+            high = "high";
+            max = "max";
+          };
+
+          cost = {
+            input = 0.07;
+            output = 0.14;
+            cacheRead = 0.014;
+            cacheWrite = 0;
+          };
+
+          compat = {
+            supportsStore = false;
+            supportsDeveloperRole = false;
+            maxTokensField = "max_tokens";
+            requiresReasoningContentOnAssistantMessages = true;
+            thinkingFormat = "deepseek";
+          };
         }
 
         {
