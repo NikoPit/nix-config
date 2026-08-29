@@ -63,6 +63,37 @@
         }
 
         {
+          id = "glm-5.3-flash";
+          name = "GLM-5.3-Flash";
+          reasoning = true;
+          input = [
+            "text"
+            "image"
+          ];
+          contextWindow = 1048576;
+          maxTokens = 131072;
+
+          thinkingLevelMap = {
+            off = null;
+            minimal = null;
+            low = "low";
+            medium = null;
+            high = "high";
+            xhigh = null;
+            max = "max";
+          };
+
+          # data reused from pi's fetched openrouter metadata (z-ai/glm-5.3-flash):
+          # contextWindow 1M, maxTokens 131072, text+image input, USD per 1M tokens
+          cost = {
+            input = 0.075;
+            output = 0.25;
+            cacheRead = 0.015;
+            cacheWrite = 0;
+          };
+        }
+
+        {
           id = "deepseek-v4-flash";
           name = "Deepseek V4 Flash";
           reasoning = true;
