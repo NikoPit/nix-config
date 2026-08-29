@@ -19,7 +19,7 @@
         "npm:@narumitw/pi-goal"
       ];
 
-      defaultProvider = "deepseek";
+      defaultProvider = "e-flowcode-cn";
       defaultModel = "deepseek-v4-flash";
     };
   };
