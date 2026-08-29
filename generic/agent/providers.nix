@@ -103,6 +103,29 @@
           id = "kimi-k3";
           name = "Kimi K3";
           reasoning = true;
+          input = [
+            "text"
+            "image"
+          ];
+          contextWindow = 1048576;
+          maxTokens = 131072;
+
+          thinkingLevelMap = {
+            off = "none";
+            minimal = null;
+            low = "low";
+            medium = null;
+            high = "high";
+            xhigh = null;
+            max = "max";
+          };
+
+          cost = {
+            input = 3;
+            output = 15;
+            cacheRead = 0.3;
+            cacheWrite = 0;
+          };
         }
       ];
     };
