@@ -17,6 +17,7 @@
         "npm:pi-web-access"
         "npm:pi-subagents"
         "npm:@narumitw/pi-goal"
+        "npm:@narumitw/pi-btw"
       ];
 
       defaultProvider = "e-flowcode-cn";
