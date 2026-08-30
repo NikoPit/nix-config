@@ -34,6 +34,8 @@ Inspect the repository and follow its established Rust conventions before applyi
 - Keep shared package metadata, lints, profiles, and dependencies in the root workspace manifest when multiple members use them.
 - Declare shared dependencies in `[workspace.dependencies]` and inherit them from member crates with `dependency.workspace = true` rather than repeating versions and paths.
 - Before implementing general-purpose functionality, check whether a maintained crate already provides it. Evaluate API fit, maintenance, soundness, licensing, target support, and `no_std` support when relevant.
+- Keep manifest version requirements broad when compatible releases are acceptable, for example `clap = "4"`; rely on `Cargo.lock` for reproducible exact resolution.
+- Document why each non-obvious dependency was chosen; a short rationale next to the dependency or in the crate docs is enough.
 
 ## API and type design
 
@@ -63,6 +65,7 @@ Inspect the repository and follow its established Rust conventions before applyi
 - Do not silently ignore errors, report success for incomplete behavior, or conceal missing functionality behind a fallback.
 - Complete refactors across all callers and remove obsolete paths. Keep old and new implementations in parallel only under an explicit migration plan.
 - Mark intentional incomplete work with a specific `TODO` or `FIXME` that states what remains and, when useful, when it can be removed.
+- Remove temporary instrumentation, debugging paths, and experimental workarounds before completing a change.
 
 ## Unsafe and FFI
 
