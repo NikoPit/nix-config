@@ -207,6 +207,17 @@
           ];
           allow_fallbacks = true;
         };
+
+        # 强制 openai/gpt-oss-120b 走 cerebras 的 fp16 路由
+        "openai/gpt-oss-120b".compat.openRouterRouting = {
+          only = [
+            "cerebras"
+          ];
+          quantizations = [
+            "fp16"
+          ];
+          allow_fallbacks = false;
+        };
       };
     };
   };
