@@ -208,6 +208,17 @@
           allow_fallbacks = true;
         };
 
+        # 强制 z-ai/glm-5.3-flash 走 baseten 的 fp8 路由
+        "z-ai/glm-5.3-flash".compat.openRouterRouting = {
+          only = [
+            "baseten"
+          ];
+          quantizations = [
+            "fp8"
+          ];
+          allow_fallbacks = false;
+        };
+
         # 强制 openai/gpt-oss-120b 走 cerebras 的 fp16 路由
         "openai/gpt-oss-120b".compat.openRouterRouting = {
           only = [
