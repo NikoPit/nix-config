@@ -7,13 +7,13 @@ description: Generate images by calling an OpenAI-compatible image API (/v1/imag
 
 ## Setup
 
-Requires env vars (set via the nix dev shell or direnv):
+Requires env vars:
 
 - `IMG_API_URL` — API base, e.g. `https://api.siliconflow.cn/v1`
 - `IMG_API_KEY` — API key
 - `IMG_MODEL` — model id, e.g. `black-forest-labs/FLUX.1-schnell`
 
-The script requires `jq` and `curl` (both available in the nix dev shell).
+The script requires `jq` and `curl`.
 
 ## Usage
 
