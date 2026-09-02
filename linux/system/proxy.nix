@@ -72,6 +72,11 @@ let
       dns-hijack = [ "any:53" ];
     };
 
+    # Sniff the target from TLS ClientHello so TUN (IP-based) traffic is
+    # matched by the DOMAIN-SUFFIX rules above instead of falling through to
+    # MATCH/FINAL. Without it, e-flowcode.cc (a Cloudflare IP) is proxied.
+    sniffing = true;
+
     proxy-providers = {
       yyjc = mkProvider "yyjc" yyjcSubUrl;
       sakuracat = mkProvider "sakuracat" sakuracatSubUrl;
