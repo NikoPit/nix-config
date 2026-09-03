@@ -26,7 +26,14 @@ main() {
 
   local prompt="$1"
   local out="$2"
-  local size="${3:-1024x1024}"
+  local size="1024x1024"
+
+  # Handle optional --size flag
+  if [ "$#" -ge 4 ] && [ "$3" = "--size" ]; then
+    size="$4"
+  elif [ "$#" -ge 3 ] && [ "$3" != "--size" ]; then
+    size="$3"
+  fi
 
   if [ -z "$prompt" ]; then
     echo "[generate-image] prompt must not be empty" >&2
