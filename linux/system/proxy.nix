@@ -22,11 +22,8 @@ let
     "https://dns.alidns.com/dns-query"
   ];
 
-  yyjcToken = config.sops.placeholder.yyjc-token;
-  yyjcSubUrl = "https://sub1.smallstrawberry.com/api/v1/client/subscribe?token=${yyjcToken}";
-
-  sakuracatToken = config.sops.placeholder.sakuracat-token;
-  sakuracatSubUrl = "https://cat.cn-ping.com/sabusuku?token=${sakuracatToken}";
+  dengtaToken = config.sops.placeholder.dengta-token;
+  dengtaUrl = "https://sub.uw23.online/kuaishou/${dengtaToken}";
 
   mkProvider = name: url: {
     type = "http";
@@ -78,8 +75,7 @@ let
     sniffing = true;
 
     proxy-providers = {
-      yyjc = mkProvider "yyjc" yyjcSubUrl;
-      sakuracat = mkProvider "sakuracat" sakuracatSubUrl;
+      dengta = mkProvider "dengta" dengtaUrl;
     };
 
     proxy-groups = [
@@ -87,8 +83,7 @@ let
         name = "AUTO";
         type = "url-test";
         use = [
-          "yyjc"
-          "sakuracat"
+          "dengta"
         ];
         url = "https://cp.cloudflare.com";
         interval = proxySettings.urlTest.interval;
@@ -99,8 +94,7 @@ let
         name = "MANUAL";
         type = "select";
         use = [
-          "yyjc"
-          "sakuracat"
+          "dengta"
         ];
         proxies = [
           "AUTO"
@@ -133,8 +127,7 @@ in
 {
   sops = {
     secrets = {
-      yyjc-token = { };
-      sakuracat-token = { };
+      dengta-token = { };
     };
 
     templates.mihomoConfig = {
