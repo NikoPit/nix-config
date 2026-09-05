@@ -167,6 +167,41 @@
         }
 
         {
+          id = "deepseek-v4-pro";
+          name = "Deepseek V4 Pro";
+          reasoning = true;
+          input = [ "text" ];
+          contextWindow = 1048576;
+          maxTokens = 384000;
+
+          thinkingLevelMap = {
+            minimal = null;
+            low = "low";
+            medium = null;
+            high = "high";
+            max = "max";
+          };
+
+          # DeepSeek official pricing (peak/standard), USD per 1M tokens:
+          # input (cache miss) 1.32, cache hit 0.044, output 3.96.
+          # DeepSeek caching is automatic so there is no cache-write charge.
+          cost = {
+            input = 1.32;
+            output = 3.96;
+            cacheRead = 0.044;
+            cacheWrite = 0;
+          };
+
+          compat = {
+            supportsStore = false;
+            supportsDeveloperRole = false;
+            maxTokensField = "max_tokens";
+            requiresReasoningContentOnAssistantMessages = true;
+            thinkingFormat = "deepseek";
+          };
+        }
+
+        {
           id = "kimi-k3";
           name = "Kimi K3";
           reasoning = true;
