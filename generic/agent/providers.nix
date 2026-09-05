@@ -46,6 +46,47 @@
             ];
           };
         }
+
+        {
+          id = "gpt-6-astra";
+          name = "GPT-6 Astra";
+          reasoning = true;
+          input = [
+            "text"
+            "image"
+          ];
+          contextWindow = 1050000; # OpenAI official: 1.05M context / 128K max output
+          maxTokens = 128000;
+
+          thinkingLevelMap = {
+            off = "none";
+            minimal = null;
+            low = "low";
+            medium = "medium";
+            high = "high";
+            xhigh = "xhigh";
+            max = "max";
+          };
+
+          # OpenAI official pricing (Standard):
+          # <=272K: input 10, cacheRead 1, cacheWrite 12.5, output 50
+          #  >272K: input 20, cacheRead 2, cacheWrite 25,  output 75
+          cost = {
+            input = 10;
+            output = 50;
+            cacheRead = 1;
+            cacheWrite = 12.5;
+            tiers = [
+              {
+                inputTokensAbove = 272000;
+                input = 20;
+                output = 75;
+                cacheRead = 2;
+                cacheWrite = 25;
+              }
+            ];
+          };
+        }
       ];
     };
 
