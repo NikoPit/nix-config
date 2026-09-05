@@ -8,6 +8,10 @@
 - Prefer packages from Nixpkgs over language-specific global package installations.
 - Do not modify the user's system-wide Nix configuration unless explicitly requested.
 
+## Skills
+
+- Load every skill whose description matches the work — both at task start and again whenever a subtask or source lookup matches one — and follow its workflow.
+
 ## User Nix Configuration
 
 - The user's NixOS configuration is located at `~/nix`.
