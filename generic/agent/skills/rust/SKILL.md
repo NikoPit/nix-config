@@ -15,6 +15,8 @@ Inspect the repository and follow its established Rust conventions before applyi
 - When a module needs child files, prefer `foo/mod.rs` with children under `foo/`; do not place `foo.rs` beside a `foo/` directory.
 - Keep `lib.rs` focused on the crate boundary: crate documentation, module declarations, intentional public re-exports, and small composition logic.
 - Keep unit tests near the code they cover. Use integration tests for public or cross-crate behavior. Do not create a separate test-only module merely to hide an oversized production module.
+- Name module files by the responsibility they hold, not by a category or kind. Do not reach for generic catch-all names (`types`, `utils`, `common`, `helpers`, `state`, `tests`). Put a type or function next to the module that owns its behavior; if only a category name fits, the grouping is wrong — redistribute.
+- Keep unit tests in the module that covers the code being tested, as a focused `mod <aspect>` block (e.g. under `cfg(test)`). Do not aggregate all tests into a single `tests.rs` submodule; that both obscures ownership and reintroduces a generic name.
 
 ## Cargo workspace layout
 
