@@ -55,6 +55,7 @@
   state-changing actions.
 - Perform state-changing actions only when the user gives an explicit instruction to implement, modify, create, delete, run, or otherwise execute something, or explicitly confirms a proposed action. Read-only inspection is allowed when needed to support the discussion.
 - When implementation details need durable explanation, prefer concise comments next to the relevant code over instructions or explanations in `AGENTS.md` or other external guidance. Use `AGENTS.md` for agent behavior and repository-wide working constraints, not as a substitute for code-local documentation.
+- Document each function or type by its own contract — what it computes, its inputs, outputs, invariants, and guarantees — in the terms of its own module. Do not justify it by naming its higher-layer callers (e.g. `used by X to ...`); if an upstream caller's need motivates a behavior, keep that rationale in the caller's documentation and let the callee stand on its own contract.
 - Respect the project's existing formatting conventions. Preserve established style when editing nearby code; when no project convention exists, use the language's standard formatting convention.
 - Use English for code, comments, identifiers, commit messages, and technical documentation unless the project specifies otherwise.
 - Always communicate with the user in Chinese, even if the user talks to you in english.
