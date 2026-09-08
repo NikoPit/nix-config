@@ -270,6 +270,42 @@
       ];
     };
 
+    e-flowcode-claude-free = {
+      headers.User-Agent = "codex_cli_rs/0.77.0 (Windows 10.0.26100; x86_64) WindowsTerminal";
+      baseUrl = "https://e-flowcode.cc/v1";
+      api = "openai-completions";
+      apiKey = "!cat ${config.sops.secrets.e-flowcode-claude-free-apikey.path}";
+
+      models = [
+        {
+          id = "claude-opus-5";
+          name = "Claude Opus 5";
+          reasoning = true;
+        }
+      ];
+    };
+
+    e-flowcode-claude-vip = {
+      headers.User-Agent = "codex_cli_rs/0.77.0 (Windows 10.0.26100; x86_64) WindowsTerminal";
+      baseUrl = "https://e-flowcode.cc/v1";
+      api = "openai-completions";
+      apiKey = "!cat ${config.sops.secrets.e-flowcode-claude-vip-apikey.path}";
+
+      models = [
+        {
+          id = "claude-opus-5";
+          name = "Claude Opus 5";
+          reasoning = true;
+        }
+
+        {
+          id = "claude-fable-5-1";
+          name = "Claude Fable 5.1";
+          reasoning = true;
+        }
+      ];
+    };
+
     deepseek.apiKey = "!cat ${config.sops.secrets.deepseek-apikey.path}";
 
     openrouter = {
@@ -313,6 +349,8 @@
     e-flowcode-gpt-apikey = { };
     e-flowcode-cn-apikey = { };
     e-flowcode-gemini-apikey = { };
+    e-flowcode-claude-free-apikey = { };
+    e-flowcode-claude-vip-apikey = { };
     deepseek-apikey = { };
     openrouter-apikey = { };
   };
