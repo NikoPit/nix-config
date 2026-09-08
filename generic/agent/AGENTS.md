@@ -45,6 +45,9 @@
 
 ## Working practices
 
+- Don't fix the symptom and leave the root cause broken: when a value, path, or behavior
+  is wrong, fix the root cause instead of doing a workaround. If you must work around an unfixable producer, say so, leave
+  a `TODO`, and disclose the tradeoff.
 - When a builtin tool call can accomplish an operation (e.g., `read` to inspect a file), use the builtin tool instead of a shell command (e.g., `cat ... | head`) to accomplish it.
 - By default, treat the conversation as discussion rather than authorization to act. Do not interpret ordinary feedback, design exploration, preferences, corrections, or statements of future intent as a request to implement them.
 - A project may have multiple agents working on it at the same time, so some files may be modified and the git status changed by other agents at any moment.
