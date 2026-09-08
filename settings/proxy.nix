@@ -1,7 +1,7 @@
 {
   urlTest = {
-    interval = 1;
-    tolerance = 30;
+    interval = 20;
+    tolerance = 100;
   };
 
   subscription = {
