@@ -25,6 +25,12 @@ let
   dengtaToken = config.sops.placeholder.dengta-token;
   dengtaUrl = "https://sub.uw23.online/kuaishou/${dengtaToken}";
 
+  sakuracatToken = config.sops.placeholder.sakuracat-token;
+  sakuracatUrl = "https://c7a91e3b-84d2-4c6f-9b71-2e8d4a6f3c11.com/sabusuku?token=${sakuracatToken}";
+
+  yyjcToken = config.sops.placeholder.yyjc-token;
+  yyjcUrl = "https://sub1.smallstrawberry.com/api/v1/client/subscribe?token=${yyjcToken}";
+
   mkProvider = name: url: {
     type = "http";
     inherit url;
@@ -76,6 +82,8 @@ let
 
     proxy-providers = {
       dengta = mkProvider "dengta" dengtaUrl;
+      sakuracat = mkProvider "sakuracat" sakuracatUrl;
+      yyjc = mkProvider "yyjc" yyjcUrl;
     };
 
     proxy-groups = [
@@ -84,6 +92,8 @@ let
         type = "url-test";
         use = [
           "dengta"
+          "sakuracat"
+          "yyjc"
         ];
         url = "https://cp.cloudflare.com";
         interval = proxySettings.urlTest.interval;
@@ -95,6 +105,8 @@ let
         type = "select";
         use = [
           "dengta"
+          "sakuracat"
+          "yyjc"
         ];
         proxies = [
           "AUTO"
@@ -128,6 +140,8 @@ in
   sops = {
     secrets = {
       dengta-token = { };
+      sakuracat-token = { };
+      yyjc-token = { };
     };
 
     templates.mihomoConfig = {
