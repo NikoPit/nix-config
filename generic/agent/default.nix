@@ -18,6 +18,7 @@
         "npm:pi-subagents"
         "npm:@narumitw/pi-goal"
         "npm:@narumitw/pi-btw"
+        "pm:@juicesharp/rpiv-ask-user-question"
       ];
 
       defaultProvider = "e-flowcode-cn";
