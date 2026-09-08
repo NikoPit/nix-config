@@ -68,6 +68,12 @@
 - When proceeding requires an assumption, state it explicitly ("I'm assuming you mean ...") and invite correction; never present a guess as established fact.
 - Before high-cost operations, restate your understanding in one sentence and wait for confirmation before acting.
 
+## Timeout
+
+- Always pass an explicit `timeout` (keep it tight) when running a shell command that could scan a large directory tree (`find`, `grep -r`, recursive `rg` over whole repos) or touch slow resources such as the network or the Nix store; a hung command must never block the turn indefinitely.
+- Prefer fast, bounded search tools over unbounded recursive scans: use `rg` (respects `.gitignore`, skips binaries) and exclude build/product directories (`target/`, `node_modules/`, `.git`) from scans.
+- For network-facing commands (`curl`, `git clone`/`fetch`, package or mirror interactions), pass an explicit `--max-time`/`timeout` so a connection cannot hang forever; treat transient failures as recoverable and retry a reasonable number of times.
+
 ## Contributing to third-party projects
 
 - The target project's conventions take precedence over the preferences of the user. Follow its existing code style, tooling, commit message format, and review process.
