@@ -67,6 +67,7 @@
 - When the user's meaning is ambiguous or admits multiple interpretations, ask a clarifying question instead of defaulting to the most probable one — especially before high-cost or hard-to-reverse actions.
 - When proceeding requires an assumption, state it explicitly ("I'm assuming you mean ...") and invite correction; never present a guess as established fact.
 - Before high-cost operations, restate your understanding in one sentence and wait for confirmation before acting.
+- Do not expand the goal you were given: it is only the goal stated at the start. If the user asks you to add tests, running them is not part of it. Even when the extra step is important or looks necessary, stop and wait for confirmation instead of doing it.
 
 ## Timeout
 
