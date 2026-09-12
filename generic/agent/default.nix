@@ -22,7 +22,8 @@
       ];
 
       defaultProvider = "e-flowcode-cn";
-      defaultModel = "deepseek-v4-flash";
+      defaultModel = "deepseek-v4.1-flash";
+      defaultThinkingLevel = "low";
     };
   };
 

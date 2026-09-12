@@ -202,6 +202,43 @@
         }
 
         {
+          # metadata copied from the built-in `deepseek` provider's `deepseek-flash`:
+          # 1M context, 384K max output, text+image input, USD per 1M tokens
+          id = "deepseek-v4.1-flash";
+          name = "DeepSeek V4.1 Flash";
+          reasoning = true;
+          input = [
+            "text"
+            "image"
+          ];
+          contextWindow = 1000000;
+          maxTokens = 384000;
+
+          thinkingLevelMap = {
+            minimal = null;
+            low = "low";
+            medium = null;
+            high = "high";
+            max = "max";
+          };
+
+          cost = {
+            input = 0.3;
+            output = 1.2;
+            cacheRead = 0.006;
+            cacheWrite = 0;
+          };
+
+          compat = {
+            supportsStore = false;
+            supportsDeveloperRole = false;
+            maxTokensField = "max_tokens";
+            requiresReasoningContentOnAssistantMessages = true;
+            thinkingFormat = "deepseek";
+          };
+        }
+
+        {
           id = "kimi-k3";
           name = "Kimi K3";
           reasoning = true;
