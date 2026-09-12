@@ -69,6 +69,12 @@
 - Before high-cost operations, restate your understanding in one sentence and wait for confirmation before acting.
 - Do not expand the goal you were given: it is only the goal stated at the start. If the user asks you to add tests, running them is not part of it. Even when the extra step is important or looks necessary, stop and wait for confirmation instead of doing it.
 
+## Commits
+
+- Every commit must be self-consistent: everything it touches has to agree with itself at that
+  commit, so that checking it out or landing on it in a bisect never produces a tree whose parts
+  contradict each other.
+
 ## Timeout
 
 - Always pass an explicit `timeout` (keep it tight) when running a shell command that could scan a large directory tree (`find`, `grep -r`, recursive `rg` over whole repos) or touch slow resources such as the network or the Nix store; a hung command must never block the turn indefinitely.
