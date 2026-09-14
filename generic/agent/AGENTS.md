@@ -77,7 +77,7 @@
 
 ## Timeout
 
-- Always pass an explicit `timeout` (keep it tight) when running a shell command that could scan a large directory tree (`find`, `grep -r`, recursive `rg` over whole repos) or touch slow resources such as the network or the Nix store; a hung command must never block the turn indefinitely.
+- Always pass an explicit `timeout` — 5 seconds by default — when running `find`, `grep`, `rg`, or any other shell command that could scan a large directory tree or touch slow resources such as the network or the Nix store; raise it only when a longer run is justified, and never leave a command unbounded, since a hung command must never block the turn indefinitely.
 - Prefer fast, bounded search tools over unbounded recursive scans: use `rg` (respects `.gitignore`, skips binaries) and exclude build/product directories (`target/`, `node_modules/`, `.git`) from scans.
 - For network-facing commands (`curl`, `git clone`/`fetch`, package or mirror interactions), pass an explicit `--max-time`/`timeout` so a connection cannot hang forever; treat transient failures as recoverable and retry a reasonable number of times.
 
