@@ -4,14 +4,14 @@ in
 {
   services.linux-wallpaperengine = {
     enable = true;
+    audio = {
+      silent = true;
+      processing = false;
+    };
 
     wallpapers = [
       {
         monitor = "DP-3";
-        audio = {
-          silent = true;
-          processing = false;
-        };
 
         extraOptions = [
           "--disable-particles"
