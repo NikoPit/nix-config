@@ -24,14 +24,17 @@ inputs.nixOnDroid.lib.nixOnDroidConfiguration {
       home-manager = {
         useGlobalPkgs = true;
 
-        extraSpecialArgs = { inherit deviceName; };
+        extraSpecialArgs = { inherit deviceName settings; };
 
         config = mkHome {
           # Let nix-on-droid set the username and homeDirectory
           username = null;
           homeDirectory = null;
 
-          extraImports = [ ../nix-on-droid/home.nix ../hosts/nix-on-droid/${deviceName}/home.nix ];
+          extraImports = [
+            ../nix-on-droid/home.nix
+            ../hosts/nix-on-droid/${deviceName}/home.nix
+          ];
         };
       };
     }
