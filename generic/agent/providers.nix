@@ -91,7 +91,7 @@
     };
 
     e-flowcode-cn = {
-      headers.User-Agent = "codex_cli_rs/0.77.0 (Windows 10.0.26100; x86_64) WindowsTerminal";
+      headers.User-Agent = "claude-cli/2.0.76 (external, cli)";
       baseUrl = "https://e-flowcode.cc";
       api = "anthropic-messages";
       apiKey = "!cat ${config.sops.secrets.e-flowcode-cn-apikey.path}";
