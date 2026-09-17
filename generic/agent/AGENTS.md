@@ -49,6 +49,7 @@
   is wrong, fix the root cause instead of doing a workaround. If you must work around an unfixable producer, say so, leave
   a `TODO`, and disclose the tradeoff.
 - When a builtin tool call can accomplish an operation (e.g., `read` to inspect a file), use the builtin tool instead of a shell command (e.g., `cat ... | head`) to accomplish it.
+- Edit files with builtin tools. Use `sed`, `perl`, `awk`, or similar stream-editing tools to modify files only for large batches of 5 or more changes; for anything smaller, apply the edits directly with builtin tools.
 - By default, treat the conversation as discussion rather than authorization to act. Do not interpret ordinary feedback, design exploration, preferences, corrections, or statements of future intent as a request to implement them.
 - A project may have multiple agents working on it at the same time, so some files may be modified and the git status changed by other agents at any moment.
 - Questions are discussion, not commands. When the user asks a question
