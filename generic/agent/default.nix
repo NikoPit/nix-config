@@ -10,6 +10,7 @@
       nodejs
       gh
       wl-clipboard
+      python3
     ];
 
     settings = {
