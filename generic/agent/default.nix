@@ -20,6 +20,7 @@
         "npm:@narumitw/pi-btw"
         "npm:@juicesharp/rpiv-ask-user-question"
         "npm:pi-vim"
+        "npm:pi-collapse-tools"
       ];
 
       defaultProvider = "e-flowcode-cn";
