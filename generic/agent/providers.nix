@@ -93,6 +93,15 @@ in
       models = e-flowcode-gpt-models;
     };
 
+    e-flowcode-gpt-smart = {
+      headers.User-Agent = "codex_cli_rs/0.77.0 (Windows 10.0.26100; x86_64) WindowsTerminal";
+      baseUrl = "https://e-flowcode.cc/v1";
+      api = "openai-completions";
+      apiKey = "!cat ${config.sops.secrets.e-flowcode-gpt-smart-apikey.path}";
+
+      models = e-flowcode-gpt-models;
+    };
+
     e-flowcode-cn = {
       headers.User-Agent = "claude-cli/2.0.76 (external, cli)";
       baseUrl = "https://e-flowcode.cc";
@@ -320,6 +329,7 @@ in
 
   sops.secrets = {
     e-flowcode-gpt-apikey = { };
+    e-flowcode-gpt-smart-apikey = { };
     e-flowcode-cn-apikey = { };
     e-flowcode-gemini-apikey = { };
     e-flowcode-claude-free-apikey = { };
