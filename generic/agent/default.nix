@@ -19,6 +19,7 @@
         "npm:@narumitw/pi-goal"
         "npm:@narumitw/pi-btw"
         "npm:@juicesharp/rpiv-ask-user-question"
+        "npm:pi-vim"
       ];
 
       defaultProvider = "e-flowcode-cn";
