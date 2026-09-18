@@ -1,8 +1,28 @@
 { pkgs, ... }:
 
+let
+  piMainSrc = pkgs.fetchFromGitHub {
+    owner = "earendil-works";
+    repo = "pi";
+    rev = "661619e87277d92caa2af71960112d9d92c13a5c";
+    hash = "sha256-SetIfyIebHfLPS+0QAhqGhxtRdKFgnwwFxMwTsiYAgA=";
+  };
+
+  # Package targeting the `main` branch of pi, having the latest changes.
+  piMain = pkgs.pi-coding-agent.overrideAttrs {
+    src = piMainSrc;
+    npmDeps = pkgs.fetchNpmDeps {
+      name = "pi-coding-agent-master-npm-deps";
+      hash = "sha256-3ds7N8i1fopSsxCW/MKY6WEaV644qjxkJYRsq0BgWes=";
+
+      src = piMainSrc;
+    };
+  };
+in
 {
   programs.pi-coding-agent = {
     enable = true;
+    package = piMain;
 
     context = ./AGENTS.md;
 
