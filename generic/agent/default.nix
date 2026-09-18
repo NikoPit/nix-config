@@ -47,6 +47,13 @@ in
       defaultProvider = "e-flowcode-cn";
       defaultModel = "deepseek-v4.1-flash";
       defaultThinkingLevel = "low";
+
+      retry = {
+        enabled = true;
+        baseDelayMs = 3000;
+        maxAgentDelayMs = 3000;
+        maxRetries = 1.0e308; # Basically infinite retries
+      };
     };
   };
 
