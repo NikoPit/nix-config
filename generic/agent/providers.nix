@@ -87,7 +87,7 @@ in
     e-flowcode-gpt = {
       headers.User-Agent = "codex_cli_rs/0.77.0 (Windows 10.0.26100; x86_64) WindowsTerminal";
       baseUrl = "https://e-flowcode.cc/v1";
-      api = "openai-completions";
+      api = "openai-responses";
       apiKey = "!cat ${config.sops.secrets.e-flowcode-gpt-apikey.path}";
 
       models = e-flowcode-gpt-models;
@@ -96,7 +96,7 @@ in
     e-flowcode-gpt-smart = {
       headers.User-Agent = "codex_cli_rs/0.77.0 (Windows 10.0.26100; x86_64) WindowsTerminal";
       baseUrl = "https://e-flowcode.cc/v1";
-      api = "openai-completions";
+      api = "openai-responses";
       apiKey = "!cat ${config.sops.secrets.e-flowcode-gpt-smart-apikey.path}";
 
       models = e-flowcode-gpt-models;
