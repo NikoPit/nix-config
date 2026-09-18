@@ -43,16 +43,9 @@
 - Define data types alongside the behavior or domain that owns them instead of collecting unrelated types in a catch-all module.
 - Do not split cohesive code solely to reduce line count. Every extracted module must have a clear purpose and boundary.
 
-## Working practices
+## Interaction and authorization
 
-- Don't fix the symptom and leave the root cause broken: when a value, path, or behavior
-  is wrong, fix the root cause instead of doing a workaround. If you must work around an unfixable producer, say so, leave
-  a `TODO`, and disclose the tradeoff.
-- When a builtin tool call can accomplish an operation (e.g., `read` to inspect a file), use the builtin tool instead of a shell command (e.g., `cat ... | head`) to accomplish it.
-- Edit files with builtin tools. Use `sed`, `perl`, `awk`, or similar stream-editing tools to modify files only for large batches of 5 or more changes; for anything smaller, apply the edits directly with builtin tools.
-- Gather all context needed for a task in one pass; combine multiple `edit`, `read`, or `bash` commands into a single pass instead of doing them one by one.
 - By default, treat the conversation as discussion rather than authorization to act. Do not interpret ordinary feedback, design exploration, preferences, corrections, or statements of future intent as a request to implement them.
-- A project may have multiple agents working on it at the same time, so some files may be modified and the git status changed by other agents at any moment.
 - Questions are discussion, not commands. When the user asks a question
   ("should ...?", "is there anything else ...?", "do we need ...?"), answer it
   first; if a change seems warranted, propose it and wait for confirmation.
@@ -61,15 +54,34 @@
   ("add it", "do it") or an explicit confirmation ("yes, go ahead") authorizes
   state-changing actions.
 - Perform state-changing actions only when the user gives an explicit instruction to implement, modify, create, delete, run, or otherwise execute something, or explicitly confirms a proposed action. Read-only inspection is allowed when needed to support the discussion.
-- When implementation details need durable explanation, prefer concise comments next to the relevant code over instructions or explanations in `AGENTS.md` or other external guidance. Use `AGENTS.md` for agent behavior and repository-wide working constraints, not as a substitute for code-local documentation.
-- Document each function or type by its own contract — what it computes, its inputs, outputs, invariants, and guarantees — in the terms of its own module. Do not justify it by naming its higher-layer callers (e.g. `used by X to ...`); if an upstream caller's need motivates a behavior, keep that rationale in the caller's documentation and let the callee stand on its own contract.
-- Respect the project's existing formatting conventions. Preserve established style when editing nearby code; when no project convention exists, use the language's standard formatting convention.
-- Use English for code, comments, identifiers, commit messages, and technical documentation unless the project specifies otherwise.
-- Always communicate with the user in Chinese, even if the user talks to you in english.
 - When the user's meaning is ambiguous or admits multiple interpretations, ask a clarifying question instead of defaulting to the most probable one — especially before high-cost or hard-to-reverse actions.
 - When proceeding requires an assumption, state it explicitly ("I'm assuming you mean ...") and invite correction; never present a guess as established fact.
 - Before high-cost operations, restate your understanding in one sentence and wait for confirmation before acting.
+
+## Scope and collaboration
+
+- A project may have multiple agents working on it at the same time, so some files may be modified and the git status changed by other agents at any moment.
 - Do not expand the goal you were given: it is only the goal stated at the start. If the user asks you to add tests, running them is not part of it. Even when the extra step is important or looks necessary, stop and wait for confirmation instead of doing it.
+
+## Tool and file operations
+
+- When a builtin tool call can accomplish an operation (e.g., `read` to inspect a file), use the builtin tool instead of a shell command (e.g., `cat ... | head`) to accomplish it.
+- Edit files with builtin tools. Use `sed`, `perl`, `awk`, or similar stream-editing tools to modify files only for large batches of 5 or more changes; for anything smaller, apply the edits directly with builtin tools.
+- Gather all context needed for a task in one pass; combine multiple `edit`, `read`, or `bash` commands into a single pass instead of doing them one by one.
+
+## Engineering quality
+
+- Don't fix the symptom and leave the root cause broken: when a value, path, or behavior
+  is wrong, fix the root cause instead of doing a workaround. If you must work around an unfixable producer, say so, leave
+  a `TODO`, and disclose the tradeoff.
+- Respect the project's existing formatting conventions. Preserve established style when editing nearby code; when no project convention exists, use the language's standard formatting convention.
+
+## Documentation and language
+
+- When implementation details need durable explanation, prefer concise comments next to the relevant code over instructions or explanations in `AGENTS.md` or other external guidance. Use `AGENTS.md` for agent behavior and repository-wide working constraints, not as a substitute for code-local documentation.
+- Document each function or type by its own contract — what it computes, its inputs, outputs, invariants, and guarantees — in the terms of its own module. Do not justify it by naming its higher-layer callers (e.g. `used by X to ...`); if an upstream caller's need motivates a behavior, keep that rationale in the caller's documentation and let the callee stand on its own contract.
+- Use English for code, comments, identifiers, commit messages, and technical documentation unless the project specifies otherwise.
+- Always communicate with the user in Chinese, even if the user talks to you in english.
 
 ## Commits
 
