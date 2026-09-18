@@ -13,6 +13,7 @@
     # https://github.com/NVIDIA/open-gpu-kernel-modules#compatible-gpus 
     # Only available from driver 515.43.04+
     open = true;
+    powerManagement.enable = true;
 
     # Enable the Nvidia settings menu,
     # accessible via `nvidia-settings`.
