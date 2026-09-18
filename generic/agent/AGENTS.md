@@ -63,6 +63,15 @@
 - A project may have multiple agents working on it at the same time, so some files may be modified and the git status changed by other agents at any moment.
 - Do not expand the goal you were given: it is only the goal stated at the start. If the user asks you to add tests, running them is not part of it. Even when the extra step is important or looks necessary, stop and wait for confirmation instead of doing it.
 
+## Concurrent edits
+
+- The user may edit the same files while you are working. Treat the user as the
+  primary owner of every file: your changes are additive, and the user's changes win.
+- Never overwrite or revert the user's lines.
+- When the user's edit conflicts with your intended change semantically — they
+  replaced the code you were modifying, or both changes cannot hold — stop and ask
+  which one to keep instead of silently choosing.
+
 ## Tool and file operations
 
 - When a builtin tool call can accomplish an operation (e.g., `read` to inspect a file), use the builtin tool instead of a shell command (e.g., `cat ... | head`) to accomplish it.
