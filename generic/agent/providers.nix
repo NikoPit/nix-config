@@ -1,6 +1,8 @@
 { config, ... }:
 
 let
+  userAgent = "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36";
+
   e-flowcode-gpt-models = [
     {
       id = "gpt-5.6-sol";
@@ -85,7 +87,7 @@ in
 {
   programs.pi-coding-agent.models.providers = {
     e-flowcode-gpt = {
-      headers.User-Agent = "codex_cli_rs/0.77.0 (Windows 10.0.26100; x86_64) WindowsTerminal";
+      headers.User-Agent = userAgent;
       baseUrl = "https://e-flowcode.cc/v1";
       api = "openai-responses";
       apiKey = "!cat ${config.sops.secrets.e-flowcode-gpt-apikey.path}";
@@ -94,7 +96,7 @@ in
     };
 
     e-flowcode-gpt-smart = {
-      headers.User-Agent = "codex_cli_rs/0.77.0 (Windows 10.0.26100; x86_64) WindowsTerminal";
+      headers.User-Agent = userAgent;
       baseUrl = "https://e-flowcode.cc/v1";
       api = "openai-responses";
       apiKey = "!cat ${config.sops.secrets.e-flowcode-gpt-smart-apikey.path}";
@@ -103,7 +105,7 @@ in
     };
 
     e-flowcode-cn = {
-      headers.User-Agent = "claude-cli/2.0.76 (external, cli)";
+      headers.User-Agent = userAgent;
       baseUrl = "https://e-flowcode.cc";
       api = "anthropic-messages";
       apiKey = "!cat ${config.sops.secrets.e-flowcode-cn-apikey.path}";
@@ -215,7 +217,7 @@ in
     };
 
     e-flowcode-gemini = {
-      headers.User-Agent = "codex_cli_rs/0.77.0 (Windows 10.0.26100; x86_64) WindowsTerminal";
+      headers.User-Agent = userAgent;
       baseUrl = "https://e-flowcode.cc/v1";
       api = "openai-completions";
       apiKey = "!cat ${config.sops.secrets.e-flowcode-gemini-apikey.path}";
@@ -253,7 +255,7 @@ in
     };
 
     e-flowcode-claude-free = {
-      headers.User-Agent = "codex_cli_rs/0.77.0 (Windows 10.0.26100; x86_64) WindowsTerminal";
+      headers.User-Agent = userAgent;
       baseUrl = "https://e-flowcode.cc/v1";
       api = "openai-completions";
       apiKey = "!cat ${config.sops.secrets.e-flowcode-claude-free-apikey.path}";
@@ -268,7 +270,7 @@ in
     };
 
     e-flowcode-claude-vip = {
-      headers.User-Agent = "codex_cli_rs/0.77.0 (Windows 10.0.26100; x86_64) WindowsTerminal";
+      headers.User-Agent = userAgent;
       baseUrl = "https://e-flowcode.cc/v1";
       api = "openai-completions";
       apiKey = "!cat ${config.sops.secrets.e-flowcode-claude-vip-apikey.path}";
