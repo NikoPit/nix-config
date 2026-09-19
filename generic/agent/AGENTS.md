@@ -43,6 +43,13 @@
 - Define data types alongside the behavior or domain that owns them instead of collecting unrelated types in a catch-all module.
 - Do not split cohesive code solely to reduce line count. Every extracted module must have a clear purpose and boundary.
 
+## Communication
+
+- When a request is slightly unclear, state your interpretation ("我理解为: ...")
+  before proceeding. When its seriously unclear, ask for clarification before acting.
+- If you identify a question that requires the user's answer, ask it explicitly
+  rather than merely noting it in your reasoning.
+
 ## Interaction and authorization
 
 - By default, treat the conversation as discussion rather than authorization to act. Do not interpret ordinary feedback, design exploration, preferences, corrections, or statements of future intent as a request to implement them.
@@ -54,7 +61,6 @@
   ("add it", "do it") or an explicit confirmation ("yes, go ahead") authorizes
   state-changing actions.
 - Perform state-changing actions only when the user gives an explicit instruction to implement, modify, create, delete, run, or otherwise execute something, or explicitly confirms a proposed action. Read-only inspection is allowed when needed to support the discussion.
-- When the user's meaning is ambiguous or admits multiple interpretations, ask a clarifying question instead of defaulting to the most probable one — especially before high-cost or hard-to-reverse actions.
 - When proceeding requires an assumption, state it explicitly ("I'm assuming you mean ...") and invite correction; never present a guess as established fact.
 - Before high-cost operations, restate your understanding in one sentence and wait for confirmation before acting.
 
