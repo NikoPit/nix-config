@@ -118,6 +118,40 @@ in
         }
 
         {
+          # metadata from pi's fetched openrouter data (z-ai/glm-5.3):
+          # 1M context, 256K max output, text-only input, reasoning efforts low/high/max
+          # (always on, cannot be disabled), USD per 1M tokens.
+          #
+          # maxTokens must stay at the upstream 128K: the anthropic-messages
+          # adapter asks for model.maxTokens + thinkingBudget, and the relay
+          # rejects anything above 128K (400 请求参数错误).
+          id = "glm-5.3";
+          name = "GLM-5.3";
+          reasoning = true;
+
+          thinkingLevelMap = {
+            off = null;
+            minimal = null;
+            low = "low";
+            medium = null;
+            high = "high";
+            xhigh = null;
+            max = "max";
+          };
+
+          # 1M context / 128K max output per docs.z.ai/guides/llm/glm-5.3
+          contextWindow = 1048576;
+          maxTokens = 131072;
+
+          cost = {
+            input = 1.4;
+            output = 4.4;
+            cacheRead = 0.14;
+            cacheWrite = 0;
+          };
+        }
+
+        {
           id = "glm-5.3-flash";
           name = "GLM-5.3-Flash";
           reasoning = true;
