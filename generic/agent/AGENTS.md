@@ -103,6 +103,12 @@
 - Every commit must be self-consistent: everything it touches has to agree with itself at that
   commit, so that checking it out or landing on it in a bisect never produces a tree whose parts
   contradict each other.
+- Before committing, inspect both the index and worktree with `git status --short` and
+  `git diff --cached --stat`. Treat files already staged before the task as user-owned: do not
+  include them in the commit unless explicitly requested, and do not unstage, reset, or otherwise
+  alter their staged contents. Stage task files by explicit path rather than using `git add -A`
+  or a broad pathspec. After committing, verify the commit contents and restore the pre-existing
+  staged state if the commit operation changed it.
 
 ## Timeout
 
