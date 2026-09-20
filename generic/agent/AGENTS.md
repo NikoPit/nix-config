@@ -103,6 +103,7 @@
 - Every commit must be self-consistent: everything it touches has to agree with itself at that
   commit, so that checking it out or landing on it in a bisect never produces a tree whose parts
   contradict each other.
+- If a commit is later found not to be self-consistent, for example because validation exposes a bug, fix the bug and squash the fix back into the original commit. Do not leave a follow-up fix commit when rewriting the original commit is permitted; re-run the relevant validation and verify the rewritten commit remains self-consistent.
 - Before committing, inspect both the index and worktree with `git status --short` and
   `git diff --cached --stat`. Treat files already staged before the task as user-owned: do not
   include them in the commit unless explicitly requested, and do not unstage, reset, or otherwise
