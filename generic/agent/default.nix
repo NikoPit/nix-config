@@ -48,6 +48,9 @@ in
       defaultModel = "deepseek-v4.1-flash";
       defaultThinkingLevel = "low";
 
+      # Hide tool results in the /tree navigator by default.
+      treeFilterMode = "no-tools";
+
       retry = {
         enabled = true;
         baseDelayMs = 3000;
