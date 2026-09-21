@@ -48,6 +48,9 @@ in
       defaultModel = "deepseek-v4.1-flash";
       defaultThinkingLevel = "low";
 
+      # Hide the startup banner and the loaded-resources listing.
+      quietStartup = true;
+
       # Hide tool results in the /tree navigator by default.
       treeFilterMode = "no-tools";
 
