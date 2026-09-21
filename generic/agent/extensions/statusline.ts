@@ -23,7 +23,6 @@ const PROMPT = `${BOLD_BLUE}\u276f ${RESET}`;
 const PROMPT_WIDTH = 2;
 
 // Nerd Font glyphs, all present in the Maple Mono NF CN terminal font.
-const ICON_DIRECTORY = "\u{f027f}";
 const ICON_MODEL = "\u{f06a9}";
 const ICON_PROVIDER = "\u{f048b}";
 const ICON_THINKING = "\u{f09d1}";
@@ -34,8 +33,6 @@ const ICON_SESSION = "\u{f04fc}";
 const SEGMENT_GAP = "  ";
 /** Minimum gap kept between the left group and the right-aligned group. */
 const GROUP_GAP = 2;
-
-const HOME = process.env.HOME || process.env.USERPROFILE;
 
 type Segment = {
 	icon: string;
@@ -63,14 +60,6 @@ function statusLineState(): StatusLineState {
 	const store = globalThis as unknown as Record<symbol, StatusLineState | undefined>;
 	store[STATE_KEY] ??= { ctx: undefined, footerData: undefined };
 	return store[STATE_KEY];
-}
-
-/** `~/projects/roxy-os`, or the absolute path when the cwd is outside home. */
-function formatCwd(cwd: string): string {
-	if (!HOME) return cwd;
-	const home = HOME.endsWith("/") ? HOME.slice(0, -1) : HOME;
-	if (cwd === home) return "~";
-	return cwd.startsWith(`${home}/`) ? `~${cwd.slice(home.length)}` : cwd;
 }
 
 /** Compact token count, matching the built-in footer's rounding. */
@@ -109,9 +98,9 @@ function collectLeftSegments(ctx: ExtensionContext, theme: Theme): Segment[] {
 	return segments;
 }
 
-/** The right group: working directory, model, provider. */
+/** The right group: model, provider. */
 function collectRightSegments(ctx: ExtensionContext): Segment[] {
-	const segments: Segment[] = [{ icon: ICON_DIRECTORY, text: formatCwd(ctx.cwd) }];
+	const segments: Segment[] = [];
 
 	const model = ctx.model;
 	if (model) {
