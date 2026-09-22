@@ -6,6 +6,7 @@ import type {
 	Theme,
 } from "@earendil-works/pi-coding-agent";
 import { truncateToWidth, visibleWidth } from "@earendil-works/pi-tui";
+import type { TuiMouseEvent, TuiMouseEventResult } from "@earendil-works/pi-tui";
 
 /** `(bold blue)`: the format-level style, and what starship paints `❯` with. */
 const BOLD_BLUE = "\x1b[1;34m";
@@ -198,11 +199,19 @@ function renderStatusesLine(width: number): string {
 
 type EditorInstance = {
 	render(width: number): string[];
+	handleMouse(event: TuiMouseEvent): TuiMouseEventResult | undefined;
 	getPaddingX(): number;
 	setPaddingX(padding: number): void;
 	embedWorkingStatus?: boolean;
 	/** Set when this editor's border row must stay the host's. See `install`. */
 	roxyHostBorder?: boolean;
+	/**
+	 * Editor-private render bookkeeping, read to locate the autocomplete rows.
+	 * Both are optional: when a build does not expose them the dropdown keeps the
+	 * host's position and the host's own mouse mapping stays correct.
+	 */
+	renderedVisibleLineCount?: number;
+	renderedAutocompleteHeight?: number;
 };
 
 type EditorPrototype = EditorInstance & {
@@ -247,13 +256,50 @@ function install(): void {
 			const lines = baseRender.call(this, width);
 			if (lines.length < 2) return lines;
 
-			const row = lines[1]!;
-			if (!row.startsWith(" ".repeat(padding))) return lines;
+			const lead = " ".repeat(padding);
+			const first = lines[1]!;
+			if (first.startsWith(lead)) lines[1] = `${PROMPT}${first.slice(PROMPT_WIDTH)}`;
 
-			lines[1] = `${PROMPT}${row.slice(PROMPT_WIDTH)}`;
+			// The editor renders `[top border, input rows, bottom border, autocomplete
+			// rows]`, so the bottom border row would sit between the prompt and the
+			// dropdown and read as a blank line. Move the dropdown directly under the
+			// input, and strip the left padding it inherits from the prompt gutter so
+			// the two read as one block. `handleMouse` is shifted to match.
+			const content = this.renderedVisibleLineCount;
+			const autocomplete = this.renderedAutocompleteHeight;
+			if (typeof content === "number" && typeof autocomplete === "number" && autocomplete > 0) {
+				const dropdown = lines.splice(content + 2, autocomplete);
+				for (let index = 0; index < dropdown.length; index++) {
+					const line = dropdown[index]!;
+					if (line.startsWith(lead)) dropdown[index] = `${line.slice(padding)}${lead}`;
+				}
+				lines.splice(content + 1, 0, ...dropdown);
+			}
+
 			return lines;
 		};
 		editor.__roxyRenderPatched = true;
+
+		// `handleMouse` maps a click through the position the dropdown had before
+		// the reorder above: its rows start one row lower, and its columns keep the
+		// left padding the reorder strips. Undo both here so the host's own
+		// autocomplete hit-testing sees the coordinates it expects. Rows above the
+		// dropdown are unaffected, and so is every row while it is closed.
+		const baseMouse = editor.handleMouse;
+		editor.handleMouse = function (this: EditorInstance, event: TuiMouseEvent): TuiMouseEventResult | undefined {
+			const content = this.renderedVisibleLineCount;
+			const autocomplete = this.renderedAutocompleteHeight;
+			if (
+				typeof content !== "number" ||
+				typeof autocomplete !== "number" ||
+				autocomplete <= 0 ||
+				event.y <= content
+			) {
+				return baseMouse.call(this, event);
+			}
+			const padding = Math.max(PROMPT_WIDTH, this.getPaddingX());
+			return baseMouse.call(this, { ...event, x: event.x + padding, y: event.y + 1 });
+		};
 	}
 
 	// Patched on `CustomEditor` rather than on the base `Editor` so that the
