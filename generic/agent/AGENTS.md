@@ -63,6 +63,9 @@
 - Perform state-changing actions only when the user gives an explicit instruction to implement, modify, create, delete, run, or otherwise execute something, or explicitly confirms a proposed action. Read-only inspection is allowed when needed to support the discussion.
 - When proceeding requires an assumption, state it explicitly ("I'm assuming you mean ...") and invite correction; never present a guess as established fact.
 - Before high-cost operations, restate your understanding in one sentence and wait for confirmation before acting.
+- Authorization is repository-scoped: permission to commit or push in one repository never covers
+  another. An exemption covers only the command it names — e.g. a skill's standing permission to
+  commit and push one repository does not authorize another repository's commit.
 
 ## Scope and collaboration
 
