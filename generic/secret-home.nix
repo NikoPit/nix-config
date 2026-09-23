@@ -7,6 +7,6 @@ in
   sops.age.keyFile = sopsKeyFile;
   home.packages = [ pkgs.sops ];
 
-  programs.fish.shellAliases.sops = "SOPS_AGE_KEY_FILE=${sopsKeyFile} sops";
+  programs.fish.shellAliases.se = "SOPS_AGE_KEY_FILE=${sopsKeyFile} sops";
 
 }
