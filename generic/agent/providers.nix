@@ -82,6 +82,50 @@ let
         ];
       };
     }
+
+    {
+      # metadata from pi.dev's openai-codex catalog (gpt-6-sol):
+      # 272K context / 128K max output, text+image input,
+      # reasoning efforts none/low/medium/high/xhigh/max.
+      id = "gpt-6-sol";
+      name = "GPT-6 Sol";
+      reasoning = true;
+      input = [
+        "text"
+        "image"
+      ];
+      contextWindow = 272000;
+      maxTokens = 128000;
+
+      thinkingLevelMap = {
+        off = "none";
+        minimal = "low";
+        low = "low";
+        medium = "medium";
+        high = "high";
+        xhigh = "xhigh";
+        max = "max";
+      };
+
+      # pi.dev openai-codex pricing (USD per 1M tokens):
+      # <=272K: input 2, cacheRead 0.2, cacheWrite 2.5, output 10
+      #  >272K: input 4, cacheRead 0.4, cacheWrite 5,   output 15
+      cost = {
+        input = 2;
+        output = 10;
+        cacheRead = 0.2;
+        cacheWrite = 2.5;
+        tiers = [
+          {
+            inputTokensAbove = 272000;
+            input = 4;
+            output = 15;
+            cacheRead = 0.4;
+            cacheWrite = 5;
+          }
+        ];
+      };
+    }
   ];
 in
 {
