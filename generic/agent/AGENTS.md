@@ -71,6 +71,11 @@
 
 - A project may have multiple agents working on it at the same time, so some files may be modified and the git status changed by other agents at any moment.
 - Do not expand the goal you were given: it is only the goal stated at the start. If the user asks you to add tests, running them is not part of it. Even when the extra step is important or looks necessary, stop and wait for confirmation instead of doing it.
+- When a rename, move, or refactor instruction does not settle its own boundary — whether it also
+  covers a sibling symbol, a shared type, or another family — ask as soon as you notice, before
+  editing anything, and name the candidates. Do not resolve the boundary yourself by picking
+  whichever choice is more consistent; "rename X to Y" leaves open whether the shared record X
+  feeds is renamed too.
 
 ## Concurrent edits
 
