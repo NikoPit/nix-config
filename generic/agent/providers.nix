@@ -86,6 +86,57 @@ let
 in
 {
   programs.pi-coding-agent.models.providers = {
+    e-flowcode-grok = {
+      headers.User-Agent = userAgent;
+      baseUrl = "https://e-flowcode.cc/v1";
+      api = "openai-completions";
+      apiKey = "!cat ${config.sops.secrets.e-flowcode-grok-apikey.path}";
+
+      models = [
+        {
+          id = "grok-4.7";
+          name = "Grok 4.7";
+          reasoning = true;
+          input = [
+            "text"
+            "image"
+          ];
+          contextWindow = 500000;
+          maxTokens = 500000;
+
+          thinkingLevelMap = {
+            off = null;
+            minimal = null;
+            low = "low";
+            medium = "medium";
+            high = "high";
+            xhigh = "xhigh";
+            max = null;
+          };
+
+          cost = {
+            input = 2;
+            output = 6;
+            cacheRead = 0.5;
+            cacheWrite = 0;
+            tiers = [
+              {
+                inputTokensAbove = 200000;
+                input = 4;
+                output = 12;
+                cacheRead = 1;
+                cacheWrite = 0;
+              }
+            ];
+          };
+
+          compat = {
+            supportsLongCacheRetention = false;
+          };
+        }
+      ];
+    };
+
     e-flowcode-gpt = {
       headers.User-Agent = userAgent;
       baseUrl = "https://e-flowcode.cc/v1";
@@ -364,6 +415,7 @@ in
   };
 
   sops.secrets = {
+    e-flowcode-grok-apikey = { };
     e-flowcode-gpt-apikey = { };
     e-flowcode-gpt-smart-apikey = { };
     e-flowcode-cn-apikey = { };
