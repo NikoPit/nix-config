@@ -44,9 +44,9 @@ in
         "npm:pi-collapse-tools"
       ];
 
-      defaultProvider = "e-flowcode-cn";
-      defaultModel = "deepseek-v4.1-flash";
-      defaultThinkingLevel = "low";
+      defaultProvider = "e-flowcode-gpt";
+      defaultModel = "gpt-6-sol";
+      defaultThinkingLevel = "high";
 
       # Hide the startup banner and the loaded-resources listing.
       quietStartup = true;
