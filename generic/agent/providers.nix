@@ -199,6 +199,15 @@ in
       models = e-flowcode-gpt-models;
     };
 
+    e-flowcode-gpt-vip = {
+      headers.User-Agent = userAgent;
+      baseUrl = "https://e-flowcode.cc/v1";
+      api = "openai-responses";
+      apiKey = "!cat ${config.sops.secrets.e-flowcode-gpt-vip-apikey.path}";
+
+      models = e-flowcode-gpt-models;
+    };
+
     e-flowcode-cn = {
       headers.User-Agent = userAgent;
       baseUrl = "https://e-flowcode.cc";
@@ -461,6 +470,7 @@ in
   sops.secrets = {
     e-flowcode-grok-apikey = { };
     e-flowcode-gpt-apikey = { };
+    e-flowcode-gpt-vip-apikey = { };
     e-flowcode-gpt-smart-apikey = { };
     e-flowcode-cn-apikey = { };
     e-flowcode-gemini-apikey = { };
