@@ -395,7 +395,7 @@ in
     e-flowcode-claude-free = {
       headers.User-Agent = userAgent;
       baseUrl = "https://e-flowcode.cc/v1";
-      api = "openai-completions";
+      api = "anthropic-messages";
       apiKey = "!cat ${config.sops.secrets.e-flowcode-claude-free-apikey.path}";
 
       models = [
@@ -410,7 +410,7 @@ in
     e-flowcode-claude-vip = {
       headers.User-Agent = userAgent;
       baseUrl = "https://e-flowcode.cc/v1";
-      api = "openai-completions";
+      api = "anthropic-messages";
       apiKey = "!cat ${config.sops.secrets.e-flowcode-claude-vip-apikey.path}";
 
       models = [
