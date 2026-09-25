@@ -394,7 +394,7 @@ in
 
     e-flowcode-claude-free = {
       headers.User-Agent = userAgent;
-      baseUrl = "https://e-flowcode.cc/v1";
+      baseUrl = "https://e-flowcode.cc";
       api = "anthropic-messages";
       apiKey = "!cat ${config.sops.secrets.e-flowcode-claude-free-apikey.path}";
 
@@ -409,7 +409,7 @@ in
 
     e-flowcode-claude-vip = {
       headers.User-Agent = userAgent;
-      baseUrl = "https://e-flowcode.cc/v1";
+      baseUrl = "https://e-flowcode.cc";
       api = "anthropic-messages";
       apiKey = "!cat ${config.sops.secrets.e-flowcode-claude-vip-apikey.path}";
 
