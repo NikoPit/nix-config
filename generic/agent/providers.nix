@@ -404,6 +404,41 @@ in
           name = "Claude Opus 5";
           reasoning = true;
         }
+
+        {
+          id = "claude-opus-5-5";
+          name = "Claude Opus 5.5";
+          reasoning = true;
+          input = [
+            "text"
+            "image"
+          ];
+          thinkingLevelMap = {
+            off = null;
+            minimal = null;
+            low = "low";
+            medium = "medium";
+            high = "high";
+            xhigh = "xhigh";
+            max = "max";
+          };
+          contextWindow = 1000000;
+          maxTokens = 128000;
+          cost = {
+            input = 4;
+            output = 20;
+            cacheRead = 0.2;
+            cacheWrite = 5;
+          };
+          compat = {
+            supportsMidConvoEffort = true;
+            supportsMidConvoSystemMessages = true;
+            supportsMidConvoToolChanges = true;
+            forceAdaptiveThinking = true;
+            supportsTemperature = false;
+            supportsStrictTools = true;
+          };
+        }
       ];
     };
 
