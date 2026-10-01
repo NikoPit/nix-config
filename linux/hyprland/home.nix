@@ -1,15 +1,15 @@
 { config, lib, ... }:
 
 let
-  keyToHyprland = k:
-    if k == "PRINT" then "Print"
-    else k;
+  keyToHyprland = k: if k == "PRINT" then "Print" else k;
 
-  toHyprland = b:
+  toHyprland =
+    b:
     let
       mods = lib.concatStringsSep ", " b.combo.mods;
       key = keyToHyprland b.combo.key;
-    in "${mods}, ${key}, exec, ${b.action.exec}";
+    in
+    "${mods}, ${key}, exec, ${b.action.exec}";
 in
 {
   wayland.windowManager.hyprland = {
@@ -27,6 +27,8 @@ in
         "SUPER, mouse:272, movewindow"
         "SUPER, mouse:273, resizewindow"
       ];
+
+      input.kb_options = "caps:escape";
 
       monitor = [ ",highrr,auto,1" ];
     };
