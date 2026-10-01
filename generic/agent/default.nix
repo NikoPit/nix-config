@@ -45,7 +45,7 @@ in
       ];
 
       defaultProvider = "e-flowcode-gpt";
-      defaultModel = "gpt-6-sol";
+      defaultModel = "gpt-6.1-sol";
       defaultThinkingLevel = "high";
 
       # Hide the startup banner and the loaded-resources listing.
