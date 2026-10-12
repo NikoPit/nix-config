@@ -1,9 +1,9 @@
 { pkgs, ... }:
 
 let
-  skyblocker = pkgs.fetchurl {
-    url = "https://cdn.modrinth.com/data/KmiWHzQ4/versions/Ozl4TOJn/Skyblocker%20Modpack-3.5.28.mrpack?mr_download_reason=standalone&mr_game_version=26.1.2&mr_loader=fabric";
-    hash = "sha256-wW0Ds4f23/KPUg4yr03Xz5h8Tjs/Kpcoj4mhfZn/IGs=";
+  skyblock-enhanced = pkgs.fetchurl {
+    url = "https://cdn.modrinth.com/data/e0oMrxjp/versions/6PJFLL4g/SkyBlock%20Enhanced-5.3.6.mrpack?mr_download_reason=standalone&mr_game_version=26.2&mr_loader=fabric";
+    hash = "sha256-ybJBRhDyn6zRiJFrpPNPLJuQF5+cfzAIBMmgbcpxOHQ=";
   };
 in
 {
@@ -12,6 +12,6 @@ in
 
   mrpack = {
     enable = true;
-    file = skyblocker;
+    file = skyblock-enhanced;
   };
 }
