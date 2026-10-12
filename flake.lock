@@ -305,15 +305,15 @@
         ]
       },
       "locked": {
-        "lastModified": 1784128190,
-        "narHash": "sha256-QwSlmxHw3fotL1AXeu3h5TePlafaZcdvjbcyi09eDDc=",
-        "owner": "NikoPit",
+        "lastModified": 1791775533,
+        "narHash": "sha256-JidMOeFGccCKZOnev7l5zfckyaes8HgJkpngm6MpSHA=",
+        "owner": "loystonpais",
         "repo": "nixcraft",
-        "rev": "ef561df0c6907e5a9d33b4bc79b816c5263043bd",
+        "rev": "0fce4b3d6706c803932f21d914c5601a47837a51",
         "type": "github"
       },
       "original": {
-        "owner": "NikoPit",
+        "owner": "loystonpais",
         "repo": "nixcraft",
         "type": "github"
       }

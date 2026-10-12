@@ -1,18 +1,20 @@
-{ pkgs, lib, config, ... }:
+{ lib, ... }:
 
 {
   nixcraft = {
     enable = true;
 
     client.shared = {
-      account.refreshTokenPath = lib.mkDefault "${config.home.homeDirectory}/.tmp/refreshtoken";
+      account = lib.mkDefault {
+        offline = false;
+        uuid = "0f8fbc078fa34ac498672dbf28ea62b0";
+        username = "_RoxyBestGirl";
+      };
 
       binEntry.enable = true;
       desktopEntry.enable = true;
 
-      enableFastAssetDownload = true;
-
-      gameOptions = import ./options.nix;
+      optionsTxt = import ./options.nix;
     };
   };
 

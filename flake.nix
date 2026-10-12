@@ -37,7 +37,7 @@
     };
 
     nixcraft = {
-      url = "github:NikoPit/nixcraft";
+      url = "github:loystonpais/nixcraft";
       inputs.nixpkgs.follows = "nixpkgs";
     };
 
@@ -48,7 +48,8 @@
     };
   };
 
-  outputs = { ... }@inputs:
+  outputs =
+    { ... }@inputs:
     let
       mkLinux = import ./flake/mkLinux.nix inputs;
       mkNixOnDroid = import ./flake/mkNixOnDroid.nix inputs;

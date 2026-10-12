@@ -9,7 +9,6 @@ in
 {
   enable = true;
   desktopEntry.name = "Wynncraft";
-  assetHash = "sha256-28Z1ps/DChx8mUM3zLNQOTZ9Dqxg3he9hJ3vrn8VtQc=";
 
   mrpack = {
     enable = true;

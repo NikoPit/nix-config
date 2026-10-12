@@ -1,4 +1,4 @@
-{ pkgs, config, ... }:
+{ pkgs, ... }:
 
 let
   skyblocker = pkgs.fetchurl {
@@ -9,12 +9,9 @@ in
 {
   enable = true;
   desktopEntry.name = "Skyblock";
-  assetHash = "sha256-Jblp3zLP6HOphGT2cWTFvuu+EBkdfdWei9CrGP0xaUc=";
 
   mrpack = {
     enable = true;
     file = skyblocker;
   };
-
-  account.refreshTokenPath = "${config.home.homeDirectory}/.tmp/skyblocktoken";
 }
