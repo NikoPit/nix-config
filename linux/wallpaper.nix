@@ -22,4 +22,14 @@ in
       }
     ];
   };
+
+  systemd.user.services.linux-wallpaperengine.Service = {
+    RuntimeMaxSec = "90m";
+    RuntimeRandomizedExtraSec = "10m";
+    RestartSec = "5s";
+
+    MemoryHigh = "5G";
+    MemoryMax = "6G";
+    MemorySwapMax = "0";
+  };
 }
