@@ -21,5 +21,11 @@ in
       hash = "sha256-VNjUcr07KQJCjxRRUNvdcbgDJ9N3UBRlMCBnDjXQJiA=";
       name = "crittermod.jar";
     })
+
+    (pkgs.fetchurl {
+      url = "https://cdn.modrinth.com/data/jrPpQCNN/versions/tTXH7DX6/iconographic-1.0.0-beta.5-26.2%2Bd76258ce.jar?mr_download_reason=standalone&mr_game_version=26.2&mr_loader=fabric";
+      hash = "sha256-W5cG9EIyaZDWb4UIlf35UH63IlNVHLnoWbf6D8kFoyc=";
+      name = "iconographic.jar";
+    })
   ];
 }
