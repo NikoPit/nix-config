@@ -33,5 +33,11 @@ in
       hash = "sha256-kmtee08YPo7E2+Y40FiBw6jX4VOGDcEX1OZcb5w6H3g=";
       name = "soundcontroller.jar";
     })
+
+    (pkgs.fetchurl {
+      url = "https://cdn.modrinth.com/data/XJw2K9ye/versions/BPZgV5q8/rfu-1.19.3%2B26.2.jar?mr_download_reason=standalone&mr_game_version=26.2&mr_loader=fabric";
+      hash = "sha256-PYu/M7Hkj9TdWV8LtqPz+b35nV+F2ZNwLsBTsCub8Aw=";
+      name = "rfu.jar";
+    })
   ];
 }
