@@ -39,5 +39,11 @@ in
       hash = "sha256-PYu/M7Hkj9TdWV8LtqPz+b35nV+F2ZNwLsBTsCub8Aw=";
       name = "rfu.jar";
     })
+
+    (pkgs.fetchurl {
+      url = "https://cdn.modrinth.com/data/65UyswbY/versions/X2VJ6to4/commandkeys-fabric-3.103.2%2B26.2.jar?mr_download_reason=standalone&mr_game_version=26.2&mr_loader=fabric";
+      hash = "sha256-JzWNxWiCvBi33VZ+KHHfjp5pg5VnyKOc/sMQ6vXQZUQ=";
+      name = "commandkeys.jar";
+    })
   ];
 }
