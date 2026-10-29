@@ -5,5 +5,6 @@
     lazygit
     ripgrep
     transmission_4
+    mpv
   ];
 }
