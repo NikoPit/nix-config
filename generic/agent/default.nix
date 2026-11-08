@@ -5,6 +5,7 @@
 
   programs.codex = {
     enable = true;
+    mutableSettings = true;
 
     settings = {
       model_provider = "e-flowcode";
