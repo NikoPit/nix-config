@@ -33,6 +33,10 @@ inputs.nixpkgs.lib.nixosSystem {
         useGlobalPkgs = true;
         useUserPackages = true;
 
+        sharedModules = [
+          { stylix.overlays.enable = false; }
+        ];
+
         backupFileExtension = "bak";
         overwriteBackup = true;
 
