@@ -7,8 +7,8 @@
 
 Follow these when your creating a new project:
 
-- Create a flake.nix that provides the following: A development shell, a package, a `nix run` target.
+- Create a flake.nix that provides the following (if applicable): A development shell, a package, a `nix run` target.
 
 # Misc
 
-- Ask the user before making important desisions.
+- Ask the user before making important desisions, unless the user says otherwise.
