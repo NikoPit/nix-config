@@ -8,6 +8,9 @@
     mutableSettings = true;
 
     settings = {
+      sandbox_mode = "danger-full-access";
+      approval_policy = "never";
+
       model_provider = "e-flowcode";
       model_reasoning_effort = "high";
 
