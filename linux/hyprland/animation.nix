@@ -1,5 +1,23 @@
 [
-  "workspaces, 1, 4, default, slidevert"
-  "workspacesIn, 1, 4, default, slidevert"
-  "workspacesOut, 1, 4, default, slidevert"
+  {
+    leaf = "workspaces";
+    enabled = true;
+    speed = 4;
+    bezier = "default";
+    style = "slidevert";
+  }
+  {
+    leaf = "workspacesIn";
+    enabled = true;
+    speed = 4;
+    bezier = "default";
+    style = "slidevert";
+  }
+  {
+    leaf = "workspacesOut";
+    enabled = true;
+    speed = 4;
+    bezier = "default";
+    style = "slidevert";
+  }
 ]

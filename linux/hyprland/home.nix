@@ -3,34 +3,53 @@
 let
   keyToHyprland = k: if k == "PRINT" then "Print" else k;
 
-  toHyprland =
-    b:
-    let
-      mods = lib.concatStringsSep ", " b.combo.mods;
-      key = keyToHyprland b.combo.key;
-    in
-    "${mods}, ${key}, exec, ${b.action.exec}";
+  toLuaBind = b: {
+    _args = [
+      (lib.concatStringsSep " + " (b.combo.mods ++ [ (keyToHyprland b.combo.key) ]))
+      (lib.generators.mkLuaInline "hl.dsp.exec_cmd(${lib.generators.toLua { } b.action.exec})")
+    ];
+  };
 in
 {
   wayland.windowManager.hyprland = {
     enable = true;
-    configType = "hyprlang";
+    configType = "lua";
 
     settings = {
-      bind = (import ./binds.nix) ++ (map toHyprland config.keybinds);
+      bind =
+        (import ./binds.nix { inherit lib; })
+        ++ (map toLuaBind config.keybinds)
+        ++ [
+          {
+            _args = [
+              "SUPER + mouse:272"
+              (lib.generators.mkLuaInline "hl.dsp.window.drag()")
+              { mouse = true; }
+            ];
+          }
+          {
+            _args = [
+              "SUPER + mouse:273"
+              (lib.generators.mkLuaInline "hl.dsp.window.resize()")
+              { mouse = true; }
+            ];
+          }
+        ];
 
       animation = import ./animation.nix;
-      decoration = import ./decoration.nix;
-      general = import ./general.nix;
 
-      bindm = [
-        "SUPER, mouse:272, movewindow"
-        "SUPER, mouse:273, resizewindow"
-      ];
+      config = {
+        decoration = import ./decoration.nix;
+        general = import ./general.nix;
+        input.kb_options = "caps:escape";
+      };
 
-      input.kb_options = "caps:escape";
-
-      monitor = [ ",highrr,auto,1" ];
+      monitor = {
+        output = "";
+        mode = "highrr";
+        position = "auto";
+        scale = 1;
+      };
     };
   };
 }

@@ -1,25 +1,35 @@
+{ lib }:
+
+let
+  bind = combo: dispatcher: {
+    _args = [
+      combo
+      (lib.generators.mkLuaInline dispatcher)
+    ];
+  };
+in
 [
-  "SUPER, C, killactive"
-  "SUPER, V, togglefloating"
+  (bind "SUPER + C" "hl.dsp.window.close()")
+  (bind "SUPER + V" ''hl.dsp.window.float({ action = "toggle" })'')
 
-  "SUPER, equal, resizeactive, 100 0"
-  "SUPER, minus, resizeactive, -100 0"
+  (bind "SUPER + equal" "hl.dsp.window.resize({ x = 100, y = 0, relative = true })")
+  (bind "SUPER + minus" "hl.dsp.window.resize({ x = -100, y = 0, relative = true })")
 
-  "SUPER Alt, J, movetoworkspace, +1"
-  "SUPER Alt, K, movetoworkspace, -1"
+  (bind "SUPER + ALT + J" ''hl.dsp.window.move({ workspace = "+1" })'')
+  (bind "SUPER + ALT + K" ''hl.dsp.window.move({ workspace = "-1" })'')
 
-  "SUPER, H, movefocus, l"
-  "SUPER, L, movefocus, r"
-  "SUPER, K, movefocus, u"
-  "SUPER, J, movefocus, d"
+  (bind "SUPER + H" ''hl.dsp.focus({ direction = "left" })'')
+  (bind "SUPER + L" ''hl.dsp.focus({ direction = "right" })'')
+  (bind "SUPER + K" ''hl.dsp.focus({ direction = "up" })'')
+  (bind "SUPER + J" ''hl.dsp.focus({ direction = "down" })'')
 
-  "SUPER, 1, workspace, 1"
-  "SUPER, 2, workspace, 2"
-  "SUPER, 3, workspace, 3"
-  "SUPER, 4, workspace, 4"
-  "SUPER, 5, workspace, 5"
-  "SUPER, 6, workspace, 6"
-  "SUPER, 7, workspace, 7"
-  "SUPER, 8, workspace, 8"
-  "SUPER, 9, workspace, 9"
+  (bind "SUPER + 1" "hl.dsp.focus({ workspace = 1 })")
+  (bind "SUPER + 2" "hl.dsp.focus({ workspace = 2 })")
+  (bind "SUPER + 3" "hl.dsp.focus({ workspace = 3 })")
+  (bind "SUPER + 4" "hl.dsp.focus({ workspace = 4 })")
+  (bind "SUPER + 5" "hl.dsp.focus({ workspace = 5 })")
+  (bind "SUPER + 6" "hl.dsp.focus({ workspace = 6 })")
+  (bind "SUPER + 7" "hl.dsp.focus({ workspace = 7 })")
+  (bind "SUPER + 8" "hl.dsp.focus({ workspace = 8 })")
+  (bind "SUPER + 9" "hl.dsp.focus({ workspace = 9 })")
 ]
