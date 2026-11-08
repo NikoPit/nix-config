@@ -8,6 +8,7 @@
 
     settings = {
       model_provider = "e-flowcode";
+      model_reasoning_effort = "high";
 
       model_providers.e-flowcode = {
         name = "e-flowcode";
