@@ -7,6 +7,8 @@
     enable = true;
     mutableSettings = true;
 
+    context = ./AGENTS.md;
+
     settings = {
       sandbox_mode = "danger-full-access";
       approval_policy = "never";
