@@ -17,8 +17,8 @@ in
 
   (bind "SUPER + ALT + H" ''hl.dsp.window.move({ direction = "left" })'')
   (bind "SUPER + ALT + L" ''hl.dsp.window.move({ direction = "right" })'')
-  (bind "SUPER + ALT + J" ''hl.dsp.window.move({ workspace = "+1" })'')
   (bind "SUPER + ALT + K" ''hl.dsp.window.move({ workspace = "-1" })'')
+  (bind "SUPER + ALT + J" ''hl.dsp.window.move({ workspace = "+1" })'')
 
   (bind "SUPER + H" ''hl.dsp.focus({ direction = "left" })'')
   (bind "SUPER + L" ''hl.dsp.focus({ direction = "right" })'')
