@@ -5,5 +5,6 @@
     qq
     killall
     lunar-client
+    bolt-launcher
   ];
 }

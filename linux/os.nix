@@ -8,6 +8,5 @@
     ./greeter.nix
     ./shell-os.nix
     ./steam.nix
-    ./runescape.nix
   ];
 }
