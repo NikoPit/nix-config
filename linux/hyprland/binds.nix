@@ -15,6 +15,8 @@ in
   (bind "SUPER + equal" "hl.dsp.window.resize({ x = 100, y = 0, relative = true })")
   (bind "SUPER + minus" "hl.dsp.window.resize({ x = -100, y = 0, relative = true })")
 
+  (bind "SUPER + ALT + H" ''hl.dsp.window.move({ direction = "left" })'')
+  (bind "SUPER + ALT + L" ''hl.dsp.window.move({ direction = "right" })'')
   (bind "SUPER + ALT + J" ''hl.dsp.window.move({ workspace = "+1" })'')
   (bind "SUPER + ALT + K" ''hl.dsp.window.move({ workspace = "-1" })'')
 
