@@ -5,6 +5,7 @@
     ./direnv.nix
     ./shell.nix
     ./nh.nix
+    ./syncthing.nix
 
     ./apps.nix
 
