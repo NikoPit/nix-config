@@ -19,10 +19,15 @@ inputs.nixOnDroid.lib.nixOnDroidConfiguration {
     ../hosts/nix-on-droid/${deviceName}/system.nix
 
     {
+      system.stateVersion = "24.05";
       user.userName = settings.user.name;
 
       home-manager = {
         useGlobalPkgs = true;
+
+        sharedModules = [
+          { stylix.overlays.enable = false; }
+        ];
 
         extraSpecialArgs = { inherit deviceName settings; };
 
