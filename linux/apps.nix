@@ -6,5 +6,6 @@
     lunar-client
     bolt-launcher
     discord
+    concord-tui
   ];
 }
