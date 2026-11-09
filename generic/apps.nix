@@ -6,5 +6,6 @@
     ripgrep
     transmission_4
     mpv
+    concord-tui
   ];
 }

@@ -5,6 +5,5 @@
     killall
     lunar-client
     bolt-launcher
-    concord-tui
   ];
 }
