@@ -5,5 +5,6 @@
     killall
     lunar-client
     bolt-launcher
+    discord
   ];
 }
