@@ -9,6 +9,12 @@ let
       (lib.generators.mkLuaInline "hl.dsp.exec_cmd(${lib.generators.toLua { } b.action.exec})")
     ];
   };
+
+  toLuaAutostart = a:
+    if a.workspace == null then
+      "hl.exec_cmd(${lib.generators.toLua { } a.command})"
+    else
+      "hl.exec_cmd(${lib.generators.toLua { } a.command}, { workspace = ${lib.generators.toLua { } a.workspace} })";
 in
 {
   wayland.windowManager.hyprland = {
@@ -49,6 +55,17 @@ in
         mode = "highrr";
         position = "auto";
         scale = 1;
+      };
+
+      on = {
+        _args = [
+          "hyprland.start"
+          (lib.generators.mkLuaInline ''
+            function()
+              ${lib.concatMapStringsSep "\n" toLuaAutostart config.autostarts}
+            end
+          '')
+        ];
       };
     };
   };
