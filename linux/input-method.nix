@@ -1,4 +1,4 @@
-{ pkgs, ... }:
+{ lib, pkgs, ... }:
 
 {
   i18n.inputMethod = {
@@ -17,6 +17,20 @@
 
         qt6Packages.fcitx5-chinese-addons
       ];
+
+      # Temporary workaround for https://github.com/nix-community/stylix/issues/2502
+      themes.stylix.theme = {
+        "InputPanel/Background/Margin" = {
+          Left = lib.mkForce 14;
+          Right = lib.mkForce 14;
+          Top = lib.mkForce 14;
+          Bottom = lib.mkForce 14;
+        };
+        "InputPanel/Highlight/Margin" = {
+          Left = lib.mkForce 14;
+          Right = lib.mkForce 14;
+        };
+      };
 
       settings = {
         inputMethod = {
