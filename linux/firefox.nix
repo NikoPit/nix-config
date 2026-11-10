@@ -29,6 +29,7 @@
         dont-track-me-google1
         privacy-badger
         vimium
+        sponserblock
       ];
     };
   };
