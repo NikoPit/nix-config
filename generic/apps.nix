@@ -7,5 +7,6 @@
     aria2
     mpv
     concord-tui
+    bat
   ];
 }
