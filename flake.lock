@@ -335,27 +335,6 @@
         "type": "github"
       }
     },
-    "nixosHardware": {
-      "inputs": {
-        "nixpkgs": [
-          "nixpkgs"
-        ]
-      },
-      "locked": {
-        "lastModified": 1794051415,
-        "narHash": "sha256-mJok3uMK0awq2MPKdSnvTxm3UD89KD3LclQzASgtY1s=",
-        "owner": "NixOS",
-        "repo": "nixos-hardware",
-        "rev": "1a8ff4f57ffe1f732beaa1db842247a381ea471d",
-        "type": "github"
-      },
-      "original": {
-        "owner": "NixOS",
-        "ref": "master",
-        "repo": "nixos-hardware",
-        "type": "github"
-      }
-    },
     "nixpkgs": {
       "locked": {
         "lastModified": 1793876309,
@@ -511,7 +490,6 @@
         "homeManager": "homeManager",
         "nixOnDroid": "nixOnDroid",
         "nixcraft": "nixcraft",
-        "nixosHardware": "nixosHardware",
         "nixpkgs": "nixpkgs",
         "nixvim": "nixvim",
         "sopsNix": "sopsNix",

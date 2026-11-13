@@ -16,11 +16,6 @@
 
     nixvim.url = "github:nix-community/nixvim";
 
-    nixosHardware = {
-      url = "github:NixOS/nixos-hardware/master";
-      inputs.nixpkgs.follows = "nixpkgs";
-    };
-
     stylix = {
       url = "github:nix-community/stylix";
       inputs.nixpkgs.follows = "nixpkgs";
