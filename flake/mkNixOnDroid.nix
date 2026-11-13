@@ -12,9 +12,13 @@ let
 in
 inputs.nixOnDroid.lib.nixOnDroidConfiguration {
   inherit pkgs;
+  extraSpecialArgs = { inherit deviceName settings; };
   home-manager-path = inputs.homeManager.outPath;
 
   modules = [
+    inputs.stylix.nixOnDroidModules.stylix
+    { stylix.homeManagerIntegration.autoImport = false; }
+
     ../nix-on-droid/system.nix
     ../hosts/nix-on-droid/${deviceName}/system.nix
 

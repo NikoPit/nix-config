@@ -1,4 +1,10 @@
-{ pkgs, settings, ... }:
+{
+  lib,
+  options,
+  pkgs,
+  settings,
+  ...
+}:
 let
   palette = settings.palette;
 
@@ -39,12 +45,6 @@ in
       hash = "sha256-D1eOlqI8Yv+BkrwnNj7kd7gEvGGpfFGl663DbNi4or4=";
     };
 
-    cursor = {
-      name = "Bibata-Modern-Ice";
-      package = pkgs.bibata-cursors;
-      size = 24;
-    };
-
     fonts = {
       serif = font;
       sansSerif = font;
@@ -57,6 +57,13 @@ in
       applications = 0.8;
       desktop = 0.9;
       popups = 0.7;
+    };
+  }
+  // lib.optionalAttrs (lib.hasAttrByPath [ "stylix" "cursor" ] options) {
+    cursor = {
+      name = "Bibata-Modern-Ice";
+      package = pkgs.bibata-cursors;
+      size = 24;
     };
   };
 }
