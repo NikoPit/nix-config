@@ -11,6 +11,13 @@ let
     map (command: lib.escapeShellArg (toString command)) sopsService.Service.ExecStart
   );
   decryptSecrets = pkgs.writeShellScript "decrypt-secrets" ''
+    # sops puts decrypted secrets in the XDG runtime directory. Nix-on-Droid
+    # has no XDG session here, so use a private temporary directory instead.
+    runtimeDir="''${TMPDIR:-/tmp}/nix-on-droid-runtime-$(id -u)"
+    mkdir -p "$runtimeDir"
+    chmod 700 "$runtimeDir"
+    export XDG_RUNTIME_DIR="$runtimeDir"
+
     ${sopsEnvironment}
     ${sopsCommand}
   '';
