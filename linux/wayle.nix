@@ -1,5 +1,0 @@
-{
-  services.wayle = {
-    enable = true;
-  };
-}

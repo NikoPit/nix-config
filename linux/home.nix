@@ -6,7 +6,6 @@
     ./screenshot.nix
     ./input-method.nix
     ./wallpaper.nix
-    ./wayle.nix
     ./qq.nix
 
     ./apps.nix
