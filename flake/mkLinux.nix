@@ -6,7 +6,6 @@ let
 in
 {
   hostname,
-  hardware-module ? null,
 }:
 inputs.nixpkgs.lib.nixosSystem {
   specialArgs = { inherit hostname settings; };
@@ -44,7 +43,10 @@ inputs.nixpkgs.lib.nixosSystem {
           username = settings.user.name;
           homeDirectory = "/home/${settings.user.name}";
 
-          extraImports = [ ../linux/home.nix ../hosts/linux/${hostname}/home.nix ];
+          extraImports = [
+            ../linux/home.nix
+            ../hosts/linux/${hostname}/home.nix
+          ];
         };
       };
     }
@@ -59,6 +61,5 @@ inputs.nixpkgs.lib.nixosSystem {
     {
       networking.hostName = hostname;
     }
-  ]
-  ++ (if hardware-module != null then [ hardware-module ] else [ ]);
+  ];
 }
