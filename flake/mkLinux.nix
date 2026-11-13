@@ -4,9 +4,7 @@ let
 
   mkHome = import ./mkHome.nix inputs;
 in
-{
-  hostname,
-}:
+hostname:
 inputs.nixpkgs.lib.nixosSystem {
   specialArgs = { inherit hostname settings; };
 

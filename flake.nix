@@ -51,13 +51,8 @@
     in
     {
       nixosConfigurations = {
-        elysiapc = mkLinux {
-          hostname = "elysiapc";
-        };
-
-        surface = mkLinux {
-          hostname = "surface";
-        };
+        elysiapc = mkLinux "elysiapc";
+        surface = mkLinux "elysiapc";
       };
 
       nixOnDroidConfigurations.huaweiPad = mkNixOnDroid "huaweiPad";
