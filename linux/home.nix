@@ -4,6 +4,7 @@
 
     ./app-launcher.nix
     ./screenshot.nix
+    ./volset.nix
     ./input-method.nix
     ./wallpaper.nix
     ./qq.nix
