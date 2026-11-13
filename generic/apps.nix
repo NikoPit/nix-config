@@ -4,7 +4,7 @@
   home.packages = with pkgs; [
     lazygit
     ripgrep
-    transmission_4
+    aria2
     mpv
     concord-tui
   ];
