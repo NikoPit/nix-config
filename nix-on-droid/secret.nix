@@ -1,4 +1,4 @@
-{ config, lib, ... }:
+{ config, lib, pkgs, ... }:
 
 let
   sopsService = config.systemd.user.services.sops-nix;
@@ -7,25 +7,22 @@ let
       name: value: "export ${name}=${lib.escapeShellArg (toString value)}"
     ) config.sops.environment
   );
-  sopsFishEnvironment = lib.concatStringsSep "\n" (
-    lib.mapAttrsToList (
-      name: value: "set -gx ${name} ${lib.escapeShellArg (toString value)}"
-    ) config.sops.environment
-  );
   sopsCommand = lib.concatStringsSep " " (
     map (command: lib.escapeShellArg (toString command)) sopsService.Service.ExecStart
   );
+  decryptSecrets = pkgs.writeShellScript "decrypt-secrets" ''
+    ${sopsEnvironment}
+    ${sopsCommand}
+  '';
 in
 {
   home.activation.sops-nix = lib.mkForce ''
-    ${sopsEnvironment}
-    ${sopsCommand}
+    run ${decryptSecrets}
   '';
 
   shellHooks = [
     ''
-      ${sopsFishEnvironment}
-      ${sopsCommand}
+      ${decryptSecrets}
     ''
   ];
 }
