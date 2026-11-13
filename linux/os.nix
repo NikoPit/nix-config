@@ -1,5 +1,6 @@
 {
   imports = [
+    ./style.nix
     ./hyprland/os.nix
     ./system
     ./secret-os.nix

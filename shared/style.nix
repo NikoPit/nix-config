@@ -1,6 +1,4 @@
 {
-  lib,
-  options,
   pkgs,
   settings,
   ...
@@ -57,13 +55,6 @@ in
       applications = 0.8;
       desktop = 0.9;
       popups = 0.7;
-    };
-  }
-  // lib.optionalAttrs (lib.hasAttrByPath [ "stylix" "cursor" ] options) {
-    cursor = {
-      name = "Bibata-Modern-Ice";
-      package = pkgs.bibata-cursors;
-      size = 24;
     };
   };
 }

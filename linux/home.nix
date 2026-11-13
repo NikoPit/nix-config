@@ -1,5 +1,6 @@
 {
   imports = [
+    ./style.nix
     ./hyprland/home.nix
 
     ./app-launcher.nix
