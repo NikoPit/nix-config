@@ -17,6 +17,7 @@ in
   imports = [
     ../lib/keybinds.nix
     ../lib/autostarts.nix
+    ../lib/shell-hooks.nix
 
     inputs.sopsNix.homeManagerModules.sops
     inputs.nixcraft.homeModules.default

@@ -1,7 +1,13 @@
+{ config, lib, ... }:
+
 {
   programs = {
     fish = {
       enable = true;
+
+      interactiveShellInit = lib.mkIf (config.shellHooks != [ ]) (
+        lib.mkAfter (lib.concatStringsSep "\n" config.shellHooks)
+      );
 
       functions = {
         fish_greeting = "";
