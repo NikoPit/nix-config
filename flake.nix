@@ -55,11 +55,14 @@
       mkNixOnDroid = import ./flake/mkNixOnDroid.nix inputs;
     in
     {
-      nixosConfigurations.elysiapc = mkLinux {
-        hostname = "elysiapc";
-      };
-      nixosConfigurations.surface = mkLinux {
-        hostname = "surface";
+      nixosConfigurations = {
+        elysiapc = mkLinux {
+          hostname = "elysiapc";
+        };
+
+        surface = mkLinux {
+          hostname = "surface";
+        };
       };
 
       nixOnDroidConfigurations.huaweiPad = mkNixOnDroid "huaweiPad";
