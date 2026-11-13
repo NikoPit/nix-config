@@ -55,6 +55,9 @@
         surface = mkLinux "elysiapc";
       };
 
-      nixOnDroidConfigurations.huaweiPad = mkNixOnDroid "huaweiPad";
+      nixOnDroidConfigurations = {
+        huaweiPad = mkNixOnDroid "huaweiPad";
+        vivoPhone = mkNixOnDroid "vivoPhone";
+      };
     };
 }
