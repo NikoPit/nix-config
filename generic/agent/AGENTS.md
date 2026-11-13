@@ -7,7 +7,7 @@
 
 Follow these when your creating a new project:
 
-- Create a flake.nix that provides the following (if applicable): A development shell, a package, a `nix run` target.
+- Create a flake.nix that provides the following if needed: A development shell, a package, and a `nix run` target. Do not create `nix run` / packages for projects that do not need them, such as a mod.
 
 # Writing style
 
