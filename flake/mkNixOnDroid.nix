@@ -17,7 +17,10 @@ inputs.nixOnDroid.lib.nixOnDroidConfiguration {
 
   modules = [
     inputs.stylix.nixOnDroidModules.stylix
-    { stylix.homeManagerIntegration.autoImport = false; }
+    {
+      stylix.overlays.enable = false;
+      stylix.homeManagerIntegration.autoImport = false;
+    }
 
     ../nix-on-droid/system.nix
     ../hosts/nix-on-droid/${deviceName}/system.nix
