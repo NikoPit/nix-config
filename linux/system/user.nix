@@ -1,4 +1,4 @@
-{ pkgs, settings, ... }:
+{ settings, ... }:
 
 {
   # Define a user account. Don't forget to set a password with ‘passwd’.
@@ -9,6 +9,5 @@
       "networkmanager"
       "wheel"
     ];
-    shell = pkgs.fish;
   };
 }
