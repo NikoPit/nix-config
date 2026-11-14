@@ -9,8 +9,6 @@ let
   };
 in
 [
-  (bind "SUPER + TAB" "function() hl.plugin.overview.toggle() end")
-
   (bind "SUPER + C" "hl.dsp.window.close()")
   (bind "SUPER + V" ''hl.dsp.window.float({ action = "toggle" })'')
 
