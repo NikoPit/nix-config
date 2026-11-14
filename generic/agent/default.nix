@@ -17,6 +17,8 @@
       model_provider = "e-flowcode";
       model_reasoning_effort = "high";
 
+      agents.max_concurrent_threads_per_session = 64;
+
       tui.show_tooltips = false;
 
       model_providers.e-flowcode = {
