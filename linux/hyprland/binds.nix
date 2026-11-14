@@ -9,6 +9,8 @@ let
   };
 in
 [
+  (bind "SUPER + TAB" ''hl.dsp.exec_cmd("hyprctl dispatch overview:toggle")'')
+
   (bind "SUPER + C" "hl.dsp.window.close()")
   (bind "SUPER + V" ''hl.dsp.window.float({ action = "toggle" })'')
 
