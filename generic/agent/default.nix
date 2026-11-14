@@ -12,6 +12,7 @@
     settings = {
       sandbox_mode = "danger-full-access";
       approval_policy = "never";
+      check_for_update_on_startup = false;
 
       model_provider = "e-flowcode";
       model_reasoning_effort = "high";
