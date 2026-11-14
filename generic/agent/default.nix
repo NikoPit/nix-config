@@ -17,6 +17,8 @@
       model_provider = "e-flowcode";
       model_reasoning_effort = "high";
 
+      tui.show_tooltips = false;
+
       model_providers.e-flowcode = {
         name = "e-flowcode";
         base_url = "https://e-flowcode.cc/v1";
