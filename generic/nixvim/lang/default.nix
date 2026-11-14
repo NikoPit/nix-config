@@ -4,5 +4,6 @@
     ./c.nix
     ./zig.nix
     ./meson.nix
+    ./lua.nix
   ];
 }
