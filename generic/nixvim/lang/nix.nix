@@ -1,13 +1,12 @@
 { config, pkgs, ... }:
 
 {
-  autoCmd = [
-    {
-      event = [ "FileType" ];
-      pattern = [ "nix" ];
-      command = "setlocal expandtab shiftwidth=2 softtabstop=2 tabstop=2";
-    }
-  ];
+  files."after/ftplugin/nix.lua".localOpts = {
+    expandtab = true;
+    shiftwidth = 2;
+    tabstop = 2;
+    softtabstop = 2;
+  };
 
   plugins = {
     treesitter.grammarPackages = [
