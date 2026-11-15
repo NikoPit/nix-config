@@ -1,6 +1,6 @@
 {
   imports = [
-    ./style.nix
-    ./secret.nix
+    ./stylix.nix
+    ./sops.nix
   ];
 }

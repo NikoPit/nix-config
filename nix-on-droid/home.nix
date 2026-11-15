@@ -1,7 +1,7 @@
 {
   imports = [
     ./ns.nix
-    ./secret.nix
+    ./sops.nix
   ];
 
   dconf.enable = false;

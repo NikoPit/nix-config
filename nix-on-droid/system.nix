@@ -1,7 +1,7 @@
 {
   imports = [
-    ../shared/style.nix
     ./shell.nix
+    ../shared/stylix.nix
   ];
 
   environment.motd = "";

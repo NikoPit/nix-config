@@ -1,12 +1,12 @@
 {
   imports = [
-    ./style.nix
+    ./stylix.nix
     ./hyprland/home.nix
 
     ./app-launcher.nix
-    ./screenshot.nix
+    ./hyprshot.nix
     ./volset.nix
-    ./input-method.nix
+    ./fcitx.nix
     ./wallpaper.nix
     ./qq.nix
 

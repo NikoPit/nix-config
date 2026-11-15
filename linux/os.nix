@@ -1,12 +1,12 @@
 {
   imports = [
-    ./style.nix
+    ./stylix.nix
     ./hyprland/os.nix
     ./system
-    ./secret-os.nix
+    ./sops-os.nix
     ./ssh.nix
 
-    ./greeter.nix
+    ./greetd.nix
     ./shell-os.nix
     ./steam.nix
   ];

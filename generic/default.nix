@@ -3,18 +3,18 @@
     ./git.nix
     ./fastfetch.nix
     ./direnv.nix
-    ./shell.nix
+    ./fish.nix
     ./nh.nix
     ./syncthing.nix
 
     ./apps.nix
 
-    ./file-manager.nix
+    ./yazi.nix
 
-    ./terminal.nix
-    ./secret-home.nix
+    ./ghostty.nix
+    ./sops-home.nix
 
     ./nixvim
-    ./agent
+    ./codex
   ];
 }

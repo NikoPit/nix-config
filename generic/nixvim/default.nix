@@ -18,5 +18,5 @@
     ];
   };
 
-  imports = [ ./style.nix ];
+  imports = [ ./stylix.nix ];
 }
