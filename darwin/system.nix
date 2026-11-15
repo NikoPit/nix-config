@@ -7,4 +7,6 @@
   };
 
   users.users.${settings.user.name}.home = "/Users/${settings.user.name}";
+
+  imports = [ ./shell.nix ];
 }
