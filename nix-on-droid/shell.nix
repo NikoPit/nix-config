@@ -1,5 +1,5 @@
-{ pkgs, ... }:
+{ pkgs, lib, ... }:
 
 {
-  user.shell = "${pkgs.fish}/bin/fish";
+  user.shell = lib.getExe pkgs.fish;
 }

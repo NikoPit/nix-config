@@ -1,12 +1,15 @@
-{ pkgs, ... }:
+{ pkgs, lib, ... }:
 
 let
-  rofi = "${pkgs.rofi}/bin/rofi";
+  rofi = lib.getExe pkgs.rofi;
 in
 {
   keybinds = [
     {
-      combo = { mods = [ "SUPER" ]; key = "SPACE"; };
+      combo = {
+        mods = [ "SUPER" ];
+        key = "SPACE";
+      };
       action.exec = "${rofi} -show drun";
     }
   ];

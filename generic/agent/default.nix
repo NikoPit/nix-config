@@ -1,4 +1,4 @@
-{ config, pkgs, ... }:
+{ config, lib, pkgs, ... }:
 
 {
   sops.secrets.e-flowcode-gpt-apikey = { };
@@ -27,7 +27,7 @@
         wire_api = "responses";
 
         auth = {
-          command = "${pkgs.coreutils}/bin/cat";
+          command = lib.getExe' pkgs.coreutils "cat";
           args = [ config.sops.secrets.e-flowcode-gpt-apikey.path ];
         };
       };

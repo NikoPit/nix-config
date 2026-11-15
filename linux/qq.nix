@@ -1,11 +1,11 @@
-{ pkgs, ... }:
+{ lib, pkgs, ... }:
 
 {
   home.packages = [ pkgs.qq ];
 
   autostarts = [
     {
-      command = "${pkgs.qq}/bin/qq";
+      command = lib.getExe pkgs.qq;
       workspace = "9";
     }
   ];

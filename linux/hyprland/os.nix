@@ -1,4 +1,4 @@
-{ pkgs, ... }:
+{ lib, pkgs, ... }:
 
 {
   programs.hyprland = {
@@ -7,5 +7,5 @@
     xwayland.enable = true;
   };
 
-  _module.args.greeterSession = "${pkgs.hyprland}/bin/start-hyprland";
+  _module.args.greeterSession = lib.getExe' pkgs.hyprland "start-hyprland";
 }

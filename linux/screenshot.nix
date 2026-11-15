@@ -1,7 +1,7 @@
-{ pkgs, ... }:
+{ pkgs, lib, ... }:
 
 let
-  hyprshot = "${pkgs.hyprshot}/bin/hyprshot";
+  hyprshot = lib.getExe pkgs.hyprshot;
   command = "${hyprshot} -m region --freeze";
 in
 {

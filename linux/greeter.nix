@@ -1,4 +1,4 @@
-{ greeterSession, settings, pkgs, ... }:
+{ greeterSession, settings, lib, pkgs, ... }:
 
 {
   services.greetd = {
@@ -6,7 +6,7 @@
 
     settings = {
       default_session = {
-        command = "${pkgs.tuigreet}/bin/tuigreet --time --remember --cmd ${greeterSession}";
+        command = "${lib.getExe pkgs.tuigreet} --time --remember --cmd ${greeterSession}";
         user = "greeter";
       };
 

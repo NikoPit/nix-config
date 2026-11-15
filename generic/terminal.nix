@@ -1,12 +1,20 @@
-{ pkgs, settings, ... }:
+{
+  pkgs,
+  lib,
+  settings,
+  ...
+}:
 
 let
-  ghostty = "${pkgs.ghostty}/bin/ghostty";
+  ghostty = lib.getExe pkgs.ghostty;
 in
 {
   keybinds = [
     {
-      combo = { mods = [ "SUPER" ]; key = "Q"; };
+      combo = {
+        mods = [ "SUPER" ];
+        key = "Q";
+      };
       action.exec = ghostty;
     }
   ];
