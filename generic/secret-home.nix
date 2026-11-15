@@ -8,5 +8,4 @@ in
   home.packages = [ pkgs.sops ];
 
   programs.fish.shellAliases.se = "SOPS_AGE_KEY_FILE=${sopsKeyFile} sops";
-
 }
