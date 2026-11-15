@@ -1,7 +1,7 @@
-{ pkgs, settings, ... }:
+{ config, settings, ... }:
 
 {
-  users.users.${settings.user.name}.shell = pkgs.fish;
+  users.users.${settings.user.name}.shell = config.programs.fish.package;
 
   programs = {
     fish.enable = true;

@@ -1,12 +1,12 @@
 {
-  pkgs,
+  config,
   lib,
   settings,
   ...
 }:
 
 let
-  ghostty = lib.getExe pkgs.ghostty;
+  ghostty = lib.getExe config.programs.ghostty.package;
 in
 {
   keybinds = [

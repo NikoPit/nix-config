@@ -1,7 +1,7 @@
-{ pkgs, lib, ... }:
+{ config, lib, ... }:
 
 let
-  rofi = lib.getExe pkgs.rofi;
+  rofi = lib.getExe config.programs.rofi.package;
 in
 {
   keybinds = [
