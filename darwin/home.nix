@@ -1,3 +1,6 @@
 {
-  imports = [ ./ns.nix ];
+  imports = [
+    ./ns.nix
+    ./ghostty.nix
+  ];
 }
