@@ -9,6 +9,11 @@
       inputs.nixpkgs.follows = "nixpkgs";
     };
 
+    nixDarwin = {
+      url = "github:nix-darwin/nix-darwin/master";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
+
     disko = {
       url = "github:nix-community/disko";
       inputs.nixpkgs.follows = "nixpkgs";
@@ -48,8 +53,13 @@
     let
       mkLinux = import ./flake/mkLinux.nix inputs;
       mkNixOnDroid = import ./flake/mkNixOnDroid.nix inputs;
+      mkDarwin = import ./flake/mkDarwin.nix inputs;
     in
     {
+      darwinConfigurations = {
+        macbookAir = mkDarwin "macbookAir";
+      };
+
       nixosConfigurations = {
         elysiapc = mkLinux "elysiapc";
         surface = mkLinux "elysiapc";
