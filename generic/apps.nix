@@ -9,5 +9,6 @@
     concord-tui
     bat
     unar
+    wine
   ];
 }
