@@ -14,5 +14,8 @@
     };
   };
 
-  imports = [ ./shell.nix ];
+  imports = [
+    ./shell.nix
+    ./nix.nix
+  ];
 }
