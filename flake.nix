@@ -46,6 +46,11 @@
       inputs.nixpkgs.follows = "nixpkgs";
       inputs.home-manager.follows = "homeManager";
     };
+
+    wallpaperMachine = {
+      url = "github:NikoPit/WallpaperMachine/nix-support";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
   };
 
   outputs =

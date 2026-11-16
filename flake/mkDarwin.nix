@@ -37,6 +37,8 @@ inputs.nixDarwin.lib.darwinSystem {
           extraImports = [
             ../darwin/home.nix
             ../hosts/darwin/${hostname}/home.nix
+
+            inputs.wallpaperMachine.homeManagerModules.default
           ];
         };
       };
