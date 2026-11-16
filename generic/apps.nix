@@ -8,7 +8,6 @@
     mpv
     concord-tui
     bat
-    unzip
-    unrar
+    unar
   ];
 }
