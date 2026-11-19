@@ -15,8 +15,6 @@ in
     // lib.optionalAttrs (homeDirectory != null) { inherit homeDirectory; };
 
   imports = [
-    ../lib/keybinds.nix
-    ../lib/autostarts.nix
     ../lib/shell-hooks.nix
 
     inputs.sopsNix.homeManagerModules.sops

@@ -44,6 +44,9 @@ inputs.nixpkgs.lib.nixosSystem {
           extraImports = [
             ../linux/home.nix
             ../hosts/linux/${hostname}/home.nix
+
+            ../lib/keybinds.nix
+            ../lib/autostarts.nix
           ];
         };
       };
