@@ -17,6 +17,7 @@
       search.default = "perplexity";
 
       settings = {
+        "sidebar.verticalTabs" = true;
         "browser.display.use_document_fonts" = 0;
         "media.videocontrols.picture-in-picture.enabled" = false;
         "browser.tabs.allowTabDetach" = false;
