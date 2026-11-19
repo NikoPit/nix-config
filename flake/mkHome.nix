@@ -9,10 +9,11 @@ let
   lib = inputs.nixpkgs.lib;
 in
 {
-  home =
-    { stateVersion = "25.05"; }
-    // lib.optionalAttrs (username != null) { inherit username; }
-    // lib.optionalAttrs (homeDirectory != null) { inherit homeDirectory; };
+  home = {
+    stateVersion = "25.05";
+  }
+  // lib.optionalAttrs (username != null) { inherit username; }
+  // lib.optionalAttrs (homeDirectory != null) { inherit homeDirectory; };
 
   imports = [
     ../lib/shell-hooks.nix
