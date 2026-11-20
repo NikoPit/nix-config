@@ -7,6 +7,5 @@
   imports = [
     ./ns.nix
     ./ghostty.nix
-    ./wallpaper.nix
   ];
 }
