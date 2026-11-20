@@ -19,8 +19,6 @@
       };
     };
 
-    ghostty.enableFishIntegration = true;
-
     starship = {
       enable = true;
       enableInteractive = true;

@@ -21,6 +21,7 @@ in
 
   programs.ghostty = {
     enable = true;
+    enableFishIntegration = true;
 
     settings = {
       cursor-color = settings.palette.blue1;
