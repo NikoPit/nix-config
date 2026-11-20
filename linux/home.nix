@@ -11,7 +11,6 @@
     ./qq.nix
 
     ./apps.nix
-    ./firefox.nix
     ./ns.nix
 
     ./music

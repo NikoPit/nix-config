@@ -43,6 +43,7 @@ inputs.nixpkgs.lib.nixosSystem {
 
           extraImports = [
             ../linux/home.nix
+            ../desktop/home.nix
             ../hosts/linux/${hostname}/home.nix
 
             ../lib/keybinds.nix

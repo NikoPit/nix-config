@@ -18,7 +18,11 @@ inputs.nixDarwin.lib.darwinSystem {
     inputs.homeManager.darwinModules.home-manager
     {
       home-manager = {
-        extraSpecialArgs = { inherit hostname settings; };
+        extraSpecialArgs = {
+          inherit hostname settings;
+
+          firefoxAddons = inputs.firefoxAddons;
+        };
 
         useGlobalPkgs = true;
         useUserPackages = true;
@@ -36,6 +40,7 @@ inputs.nixDarwin.lib.darwinSystem {
 
           extraImports = [
             ../darwin/home.nix
+            ../desktop/home.nix
             ../hosts/darwin/${hostname}/home.nix
 
             ../lib/keybinds.nix

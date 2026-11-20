@@ -11,7 +11,6 @@
 
     ./yazi.nix
 
-    ./ghostty.nix
     ./sops-home.nix
 
     ./nixvim
