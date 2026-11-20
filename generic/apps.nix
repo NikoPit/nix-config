@@ -5,7 +5,6 @@
     lazygit
     ripgrep
     aria2
-    mpv
     concord-tui
     bat
     unar
