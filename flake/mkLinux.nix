@@ -45,9 +45,6 @@ inputs.nixpkgs.lib.nixosSystem {
             ../linux/home.nix
             ../desktop/home.nix
             ../hosts/linux/${hostname}/home.nix
-
-            ../lib/keybinds.nix
-            ../lib/autostarts.nix
           ];
         };
       };

@@ -43,9 +43,6 @@ inputs.nixDarwin.lib.darwinSystem {
             ../desktop/home.nix
             ../hosts/darwin/${hostname}/home.nix
 
-            ../lib/keybinds.nix
-            ../lib/autostarts.nix
-
             inputs.wallpaperMachine.homeManagerModules.default
           ];
         };
