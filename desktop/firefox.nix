@@ -21,8 +21,15 @@
         "browser.display.use_document_fonts" = 0;
         "media.videocontrols.picture-in-picture.enabled" = false;
         "browser.tabs.allowTabDetach" = false;
+        "toolkit.legacyUserProfileCustomizations.stylesheets" = true;
         "ui.key.menuAccessKeyFocuses" = false;
       };
+
+      userChrome = ''
+        #tabbrowser-tabs .tab-close-button {
+          display: none !important;
+        }
+      '';
 
       extensions.packages = with firefoxAddons.packages.${pkgs.stdenv.hostPlatform.system}; [
         ublock-origin
