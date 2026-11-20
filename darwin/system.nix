@@ -18,4 +18,6 @@
     ./shell.nix
     ./nix.nix
   ];
+
+  nixpkgs.config.allowUnfree = true;
 }
