@@ -43,7 +43,7 @@ inputs.nixDarwin.lib.darwinSystem {
             ../desktop/home.nix
             ../hosts/darwin/${hostname}/home.nix
 
-            inputs.wallpaperMachine.homeManagerModules.default
+            inputs.rxwpe.homeManagerModules.default
           ];
         };
       };

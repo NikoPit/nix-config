@@ -45,6 +45,8 @@ inputs.nixpkgs.lib.nixosSystem {
             ../linux/home.nix
             ../desktop/home.nix
             ../hosts/linux/${hostname}/home.nix
+
+            inputs.rxwpe.homeManagerModules.default
           ];
         };
       };

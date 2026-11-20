@@ -224,27 +224,6 @@
         "type": "gitlab"
       }
     },
-    "home-manager": {
-      "inputs": {
-        "nixpkgs": [
-          "wallpaperMachine",
-          "nixpkgs"
-        ]
-      },
-      "locked": {
-        "lastModified": 1794715309,
-        "narHash": "sha256-awkBBs5ctFKgEYjpNGpi3t/VqF589n5EWfdinRb2gNI=",
-        "owner": "nix-community",
-        "repo": "home-manager",
-        "rev": "a1293da7dd8e497e08d26173f97e2976b36a31ea",
-        "type": "github"
-      },
-      "original": {
-        "owner": "nix-community",
-        "repo": "home-manager",
-        "type": "github"
-      }
-    },
     "homeManager": {
       "inputs": {
         "nixpkgs": [
@@ -277,27 +256,6 @@
       "original": {
         "owner": "denful",
         "repo": "import-tree",
-        "type": "github"
-      }
-    },
-    "nix-darwin": {
-      "inputs": {
-        "nixpkgs": [
-          "wallpaperMachine",
-          "nixpkgs"
-        ]
-      },
-      "locked": {
-        "lastModified": 1793418699,
-        "narHash": "sha256-+RpTlcdh9KqZ+ZiLkNSTvibQWm935EcIdBzRPCTFsrQ=",
-        "owner": "nix-darwin",
-        "repo": "nix-darwin",
-        "rev": "ff0e21a414d4547183396da1b44a66f2577b65e9",
-        "type": "github"
-      },
-      "original": {
-        "owner": "nix-darwin",
-        "repo": "nix-darwin",
         "type": "github"
       }
     },
@@ -556,9 +514,29 @@
         "nixcraft": "nixcraft",
         "nixpkgs": "nixpkgs",
         "nixvim": "nixvim",
+        "rxwpe": "rxwpe",
         "sopsNix": "sopsNix",
-        "stylix": "stylix",
-        "wallpaperMachine": "wallpaperMachine"
+        "stylix": "stylix"
+      }
+    },
+    "rxwpe": {
+      "inputs": {
+        "nixpkgs": [
+          "nixpkgs"
+        ]
+      },
+      "locked": {
+        "lastModified": 1795172131,
+        "narHash": "sha256-1MjfpnhO0oCrELUqtJJGefT2OdZWcZaROPLy2sGLbZo=",
+        "owner": "NikoPit",
+        "repo": "rxwpe",
+        "rev": "559d4b3d94ac6c127e24b50a6d5dbb8e2c4209fd",
+        "type": "github"
+      },
+      "original": {
+        "owner": "NikoPit",
+        "repo": "rxwpe",
+        "type": "github"
       }
     },
     "scss-reset": {
@@ -741,29 +719,6 @@
       "original": {
         "owner": "tinted-theming",
         "repo": "base16-zed",
-        "type": "github"
-      }
-    },
-    "wallpaperMachine": {
-      "inputs": {
-        "home-manager": "home-manager",
-        "nix-darwin": "nix-darwin",
-        "nixpkgs": [
-          "nixpkgs"
-        ]
-      },
-      "locked": {
-        "lastModified": 1794831487,
-        "narHash": "sha256-0W1IbQ2eFaxykALz7B3TxT4ZPKjvoPhiXrJVxzV/gUU=",
-        "owner": "NikoPit",
-        "repo": "WallpaperMachine",
-        "rev": "33764eba278afe66a058a0b60e04fe2f8ada91e4",
-        "type": "github"
-      },
-      "original": {
-        "owner": "NikoPit",
-        "ref": "nix-support",
-        "repo": "WallpaperMachine",
         "type": "github"
       }
     }

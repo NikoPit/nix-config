@@ -47,8 +47,8 @@
       inputs.home-manager.follows = "homeManager";
     };
 
-    wallpaperMachine = {
-      url = "github:NikoPit/WallpaperMachine/nix-support";
+    rxwpe = {
+      url = "github:NikoPit/rxwpe";
       inputs.nixpkgs.follows = "nixpkgs";
     };
   };

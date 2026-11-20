@@ -7,7 +7,6 @@
     ./hyprshot.nix
     ./volset.nix
     ./fcitx.nix
-    ./wallpaper.nix
     ./qq.nix
 
     ./apps.nix
