@@ -5,7 +5,7 @@
     nixpkgs.url = "git+https://mirrors.nju.edu.cn/git/nixpkgs.git?ref=nixos-unstable&shallow=1";
 
     homeManager = {
-      url = "github:nix-community/home-manager";
+      url = "github:NikoPit/home-manager/codex-extra-packages";
       inputs.nixpkgs.follows = "nixpkgs";
     };
 

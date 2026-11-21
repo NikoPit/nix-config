@@ -1,4 +1,9 @@
-{ config, lib, pkgs, ... }:
+{
+  config,
+  lib,
+  pkgs,
+  ...
+}:
 
 {
   sops.secrets.e-flowcode-gpt-apikey = { };
@@ -8,6 +13,12 @@
     mutableSettings = true;
 
     context = ./AGENTS.md;
+
+    extraPackages = with pkgs; [
+      python3
+      nodejs
+      jq
+    ];
 
     settings = {
       sandbox_mode = "danger-full-access";
