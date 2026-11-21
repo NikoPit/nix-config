@@ -19,6 +19,12 @@ in
     settings = {
       wallpaper = toString wallpaper;
       assets = toString assets;
+
+      properties = {
+        fumes = "0";
+        volume = "0";
+        animatorwebsite1 = "0";
+      };
     };
   };
 }
