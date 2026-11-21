@@ -2,7 +2,7 @@
   description = "System config";
 
   inputs = {
-    nixpkgs.url = "git+https://mirrors.nju.edu.cn/git/nixpkgs.git?ref=nixos-unstable&shallow=1";
+    nixpkgs.url = "github:NikoPit/nixpkgs/concord-tui-darwin-cacert";
 
     homeManager = {
       url = "github:NikoPit/home-manager/codex-extra-packages";
